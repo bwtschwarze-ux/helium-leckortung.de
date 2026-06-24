@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS Heliumtechnik – Helium-Leckortung im laufenden Betrieb | Fernwärme & Prozesswasser</title>
+<meta name="description" content="Spezialisierte Helium-Leckortung für Fernwärmeleitungen und Prozesswassersysteme. Ohne Abschaltung, ohne Entleerung, im laufenden Betrieb. Für Stadtwerke, Energieversorger und Industrie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B1F3A;
+    --navy-mid: #142947;
+    --navy-light: #1C3A5E;
+    --helium: #00C4E8;
+    --helium-dark: #0098B8;
+    --helium-glow: rgba(0,196,232,0.15);
+    --steel: #8FA8C4;
+    --white: #FFFFFF;
+    --off-white: #F0F4F8;
+    --text-muted: #6B8AAA;
+    --border: rgba(143,168,196,0.2);
+    --success: #22C55E;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.2; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(11,31,58,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+  }
+  .nav-logo {
+    display: flex; flex-direction: column; line-height: 1.1;
+  }
+  .nav-logo .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--white); letter-spacing: -0.02em; }
+  .nav-logo .sub { font-size: 0.7rem; color: var(--helium); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--steel); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--helium); color: var(--navy); padding: 0.6rem 1.4rem;
+    border-radius: 6px; font-weight: 700; font-size: 0.85rem; text-decoration: none;
+    transition: background 0.2s; white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--helium-dark); color: var(--white); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding: 120px 2rem 80px;
+    display: flex; align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 60% 40%, rgba(0,196,232,0.08) 0%, transparent 70%),
+                linear-gradient(135deg, var(--navy) 0%, #0D2540 100%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.4;
+  }
+  .hero-content { position: relative; max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--helium-glow); border: 1px solid rgba(0,196,232,0.3);
+    padding: 0.4rem 1rem; border-radius: 100px;
+    font-size: 0.78rem; font-weight: 600; color: var(--helium);
+    letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem;
+  }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--helium); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+  .hero h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 700; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
+  .hero h1 em { font-style: normal; color: var(--helium); }
+  .hero-sub { font-size: 1.15rem; color: var(--steel); line-height: 1.7; margin-bottom: 2rem; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--helium); color: var(--navy); padding: 1rem 2rem;
+    border-radius: 8px; font-weight: 700; font-size: 1rem; text-decoration: none;
+    transition: all 0.2s; border: none; cursor: pointer; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--helium-dark); color: var(--white); transform: translateY(-1px); }
+  .btn-secondary {
+    background: transparent; color: var(--white); padding: 1rem 2rem;
+    border-radius: 8px; font-weight: 600; font-size: 1rem; text-decoration: none;
+    border: 1px solid var(--border); transition: all 0.2s; display: inline-block;
+  }
+  .btn-secondary:hover { border-color: var(--helium); color: var(--helium); }
+  .hero-visual {
+    background: var(--navy-mid);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-visual::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--helium), transparent);
+  }
+  .hero-img-placeholder {
+    width: 100%; aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+    border-radius: 10px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 1rem; color: var(--steel); border: 1px dashed var(--border);
+  }
+  .hero-img-placeholder svg { opacity: 0.4; }
+  .hero-img-placeholder p { font-size: 0.85rem; opacity: 0.6; text-align: center; }
+  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+  .hero-stat { padding: 1rem; background: rgba(0,196,232,0.06); border-radius: 8px; border: 1px solid rgba(0,196,232,0.15); }
+  .hero-stat .val { font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--helium); }
+  .hero-stat .lbl { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--navy-mid);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+  }
+  .trust-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+  .trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; font-weight: 500; color: var(--steel); }
+  .trust-item svg { color: var(--helium); flex-shrink: 0; }
+
+  /* SECTION */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--helium); margin-bottom: 0.8rem; }
+  .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; }
+  .section-sub { font-size: 1.05rem; color: var(--steel); max-width: 560px; line-height: 1.7; }
+
+  /* VORTEILE */
+  .vorteile-section { background: var(--navy); }
+  .vorteile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .vorteil-card {
+    background: var(--navy-mid); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.8rem; transition: border-color 0.2s, transform 0.2s;
+  }
+  .vorteil-card:hover { border-color: var(--helium); transform: translateY(-3px); }
+  .vorteil-icon { width: 44px; height: 44px; background: var(--helium-glow); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; color: var(--helium); }
+  .vorteil-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.6rem; }
+  .vorteil-card p { font-size: 0.88rem; color: var(--steel); line-height: 1.6; }
+
+  /* VERFAHREN */
+  .verfahren-section { background: var(--navy-mid); }
+  .verfahren-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+  .verfahren-steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: flex; gap: 1.5rem; padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border); position: relative;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; font-weight: 700;
+    color: var(--helium); background: var(--helium-glow); border: 1px solid rgba(0,196,232,0.25);
+    width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 0.1rem;
+  }
+  .step h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .step p { font-size: 0.85rem; color: var(--steel); line-height: 1.6; }
+  .verfahren-visual {
+    background: var(--navy); border: 1px solid var(--border); border-radius: 16px;
+    overflow: hidden; position: sticky; top: 100px;
+  }
+  .diagram-placeholder {
+    aspect-ratio: 3/4;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 1rem; color: var(--steel); padding: 2rem; text-align: center;
+  }
+  .diagram-placeholder p { font-size: 0.85rem; opacity: 0.6; }
+
+  /* WARUM HELIUM */
+  .warum-section { background: var(--navy); }
+  .warum-split { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3rem; }
+  .warum-text p { color: var(--steel); line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
+  .compare-table { width: 100%; border-collapse: collapse; }
+  .compare-table thead th { padding: 0.8rem 1rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); text-align: left; border-bottom: 1px solid var(--border); }
+  .compare-table tbody td { padding: 0.9rem 1rem; font-size: 0.88rem; border-bottom: 1px solid var(--border); }
+  .compare-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+  .compare-table td:first-child { color: var(--steel); }
+  .badge-yes { display: inline-flex; align-items: center; gap: 0.3rem; color: var(--success); font-weight: 600; font-size: 0.82rem; }
+  .badge-no { display: inline-flex; align-items: center; gap: 0.3rem; color: #EF4444; font-size: 0.82rem; }
+  .badge-mid { display: inline-flex; align-items: center; gap: 0.3rem; color: #F59E0B; font-size: 0.82rem; }
+
+  /* LEISTUNGEN */
+  .leistungen-section { background: var(--navy-mid); }
+  .leistungen-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .leistung-card {
+    background: var(--navy); border: 1px solid var(--border); border-radius: 12px;
+    padding: 2rem; transition: border-color 0.2s;
+  }
+  .leistung-card:hover { border-color: rgba(0,196,232,0.4); }
+  .leistung-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.6rem; }
+  .leistung-card h3 span { color: var(--helium); }
+  .leistung-card p { font-size: 0.88rem; color: var(--steel); line-height: 1.7; margin-bottom: 1.2rem; }
+  .leistung-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .leistung-list li { font-size: 0.83rem; color: var(--steel); padding-left: 1.2rem; position: relative; }
+  .leistung-list li::before { content: '→'; position: absolute; left: 0; color: var(--helium); font-size: 0.7rem; top: 0.05rem; }
+
+  /* ZIELGRUPPEN */
+  .zielgruppen-section { background: var(--navy); }
+  .zielgruppen-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 3rem; }
+  .zg-card {
+    background: var(--navy-mid); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.5rem; text-align: center; transition: all 0.2s;
+  }
+  .zg-card:hover { border-color: var(--helium); background: rgba(0,196,232,0.05); }
+  .zg-card .icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+  .zg-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .zg-card p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
+
+  /* FAQ */
+  .faq-section { background: var(--navy-mid); }
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 3rem; }
+  .faq-item {
+    background: var(--navy); border: 1px solid var(--border); border-radius: 10px;
+    padding: 1.5rem; cursor: pointer; transition: border-color 0.2s;
+  }
+  .faq-item:hover { border-color: rgba(0,196,232,0.3); }
+  .faq-q { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.6rem; display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
+  .faq-q .arrow { color: var(--helium); flex-shrink: 0; font-size: 1rem; }
+  .faq-a { font-size: 0.85rem; color: var(--steel); line-height: 1.7; }
+
+  /* FOTOS */
+  .fotos-section { background: var(--navy); }
+  .fotos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+  .foto-placeholder {
+    aspect-ratio: 4/3; background: var(--navy-mid); border: 2px dashed var(--border);
+    border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.8rem; color: var(--text-muted); padding: 1.5rem; text-align: center;
+    transition: border-color 0.2s;
+  }
+  .foto-placeholder:hover { border-color: var(--helium); }
+  .foto-placeholder .icon { font-size: 2rem; opacity: 0.4; }
+  .foto-placeholder p { font-size: 0.78rem; line-height: 1.5; opacity: 0.6; }
+
+  /* KONTAKT / FORMULAR */
+  .anfrage-section {
+    background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
+    border-top: 1px solid var(--border);
+  }
+  .anfrage-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
+  .anfrage-left h2 { margin-bottom: 1rem; }
+  .anfrage-left p { color: var(--steel); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem; }
+  .contact-info { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-row { display: flex; align-items: center; gap: 0.8rem; font-size: 0.9rem; }
+  .contact-row .icon { color: var(--helium); width: 20px; flex-shrink: 0; }
+  .contact-row a { color: var(--white); text-decoration: none; }
+  .contact-row a:hover { color: var(--helium); }
+  .contact-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.2rem; }
+  .contact-role { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.5rem; }
+
+  /* FORM */
+  .anfrage-form {
+    background: var(--navy); border: 1px solid var(--border); border-radius: 16px;
+    padding: 2rem; position: relative; overflow: hidden;
+  }
+  .anfrage-form::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--helium), transparent);
+  }
+  .form-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+    color: var(--success); padding: 0.4rem 0.9rem; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .form-badge::before { content: '✓'; }
+  .form-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--steel); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; background: var(--navy-mid); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.75rem 1rem; color: var(--white);
+    font-family: 'Inter', sans-serif; font-size: 0.9rem; transition: border-color 0.2s;
+    outline: none; appearance: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--helium); box-shadow: 0 0 0 3px rgba(0,196,232,0.1);
+  }
+  .form-group input::placeholder { color: var(--text-muted); }
+  .form-group select option { background: var(--navy-mid); }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .form-full { grid-column: 1 / -1; }
+  .form-hint { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem; }
+  .form-submit {
+    width: 100%; background: var(--helium); color: var(--navy); border: none;
+    padding: 1rem; border-radius: 8px; font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+    margin-top: 0.5rem; letter-spacing: -0.01em;
+  }
+  .form-submit:hover { background: var(--helium-dark); color: var(--white); }
+  .form-legal { font-size: 0.72rem; color: var(--text-muted); text-align: center; margin-top: 0.8rem; line-height: 1.5; }
+  #form-success {
+    display: none; text-align: center; padding: 2rem;
+  }
+  #form-success .check { font-size: 3rem; margin-bottom: 1rem; }
+  #form-success h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+  #form-success p { color: var(--steel); font-size: 0.9rem; }
+
+  /* FOOTER */
+  footer {
+    background: #070F1C; border-top: 1px solid var(--border);
+    padding: 3rem 2rem 2rem;
+  }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2rem; }
+  .footer-brand .name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.3rem; }
+  .footer-brand .tag { font-size: 0.78rem; color: var(--helium); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
+  .footer-brand p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; max-width: 300px; }
+  .footer-col h4 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--steel); margin-bottom: 1rem; }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .footer-col ul li a { font-size: 0.85rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--white); }
+  .footer-col address { font-style: normal; font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; }
+  .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: var(--text-muted); }
+  .footer-bottom a { color: var(--text-muted); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--white); }
+
+  /* LOGO SVG */
+  .logo-svg-wrap { display: flex; align-items: center; gap: 0.7rem; }
+  .logo-atom { flex-shrink: 0; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .vorteile-grid { grid-template-columns: 1fr 1fr; }
+    .verfahren-grid, .warum-split, .anfrage-inner { grid-template-columns: 1fr; }
+    .verfahren-visual { display: none; }
+    .zielgruppen-grid { grid-template-columns: 1fr 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .leistungen-grid { grid-template-columns: 1fr; }
+    .fotos-grid { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .nav-links { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .vorteile-grid, .zielgruppen-grid, .fotos-grid { grid-template-columns: 1fr; }
+    section { padding: 3rem 1.2rem; }
+    .trust-bar-inner { gap: 1.5rem; }
+  }
+
+  /* HAMBURGER MENU */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 200;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  @media (max-width: 900px) {
+    .hamburger { display: flex; }
+    .nav-links {
+      display: flex !important;
+      flex-direction: column;
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: rgba(11,31,58,0.98);
+      backdrop-filter: blur(16px);
+      padding: 1.5rem 2rem;
+      gap: 1rem;
+      transform: translateY(-110%);
+      transition: transform 0.3s ease;
+      border-bottom: 1px solid var(--border);
+      z-index: 99;
+    }
+    .nav-links.open { transform: translateY(0); }
+    .nav-links a { font-size: 1.1rem; padding: 0.3rem 0; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-svg-wrap">
+    <svg class="logo-atom" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="4" fill="#00C4E8"/>
+      <ellipse cx="18" cy="18" rx="16" ry="7" stroke="#00C4E8" stroke-width="1.5" fill="none" opacity="0.5"/>
+      <ellipse cx="18" cy="18" rx="16" ry="7" stroke="#00C4E8" stroke-width="1.5" fill="none" opacity="0.5" transform="rotate(60 18 18)"/>
+      <ellipse cx="18" cy="18" rx="16" ry="7" stroke="#00C4E8" stroke-width="1.5" fill="none" opacity="0.5" transform="rotate(120 18 18)"/>
+      <circle cx="18" cy="2" r="2" fill="#00C4E8" opacity="0.8"/>
+    </svg>
+    <div class="nav-logo">
+      <span class="brand">MS Heliumtechnik</span>
+      <span class="sub">Mark Schwarze</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#verfahren">Verfahren</a></li>
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#zielgruppen">Für wen</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="#kontakt" class="nav-cta">Angebotsanfrage</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">Spezialisiertes Verfahren · Hochsensible Messtechnik</div>
+      <h1>Leckortung <em>im laufenden Betrieb</em> – ohne Abschaltung.</h1>
+      <p class="hero-sub">Helium-Leckortung für Fernwärme-, Prozesswasser- und Industrienetze. Keine Entleerung. Keine Versorgungsunterbrechung. Präzise Lokalisierung auch bei tiefliegenden Leitungen.</p>
+      <div class="hero-btns">
+        <a href="#kontakt" class="btn-primary">Kostenlose Angebotsanfrage</a>
+        <a href="#verfahren" class="btn-secondary">Verfahren verstehen</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-placeholder">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <p>📸 Platzhalter für Ihr Bild<br>Hero-Bild einfügen<br><em style="font-size:0.7rem">(z.B. Techniker an Prüföffnung / Fernwärmetrasse)</em></p>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="val">0</div>
+          <div class="lbl">Abschaltungen erforderlich</div>
+        </div>
+        <div class="hero-stat">
+          <div class="val">He</div>
+          <div class="lbl">Hochsensible Messtechnik</div>
+        </div>
+        <div class="hero-stat">
+          <div class="val">&gt;10m</div>
+          <div class="lbl">Tiefe detektierbar</div>
+        </div>
+        <div class="hero-stat">
+          <div class="val">ppb</div>
+          <div class="lbl">Messgenauigkeit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      Kein Betriebsstopp
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      Keine Entleerung
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      Hochsensible Messtechnik
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      Auch bei tiefen Trassen
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      Dokumentierter Ergebnisbericht
+    </div>
+  </div>
+</div>
+
+<!-- VORTEILE -->
+<section class="vorteile-section" id="vorteile">
+  <div class="container">
+    <div class="section-label">Warum MS Heliumtechnik</div>
+    <h2 class="section-title">Spezialisiert wo andere nicht weiterkommen.</h2>
+    <p class="section-sub">Herkömmliche Leckortungsverfahren stoßen bei komplexen Netzen, tiefen Trassen oder laufendem Betrieb schnell an ihre Grenzen. Unser Verfahren nicht.</p>
+    <div class="vorteile-grid">
+      <div class="vorteil-card">
+        <div class="vorteil-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Laufender Betrieb</h3>
+        <p>Die Leckortung erfolgt während der Anlage in Betrieb ist. Keine Abschaltung, keine Versorgungsunterbrechung, kein Druckverlust durch Entleerung.</p>
+      </div>
+      <div class="vorteil-card">
+        <div class="vorteil-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Hochsensible Messtechnik</h3>
+        <p>Keine Standardgeräte aus dem Baumarkt. Wir arbeiten mit hochempfindlicher Analytik, die kleinste Abweichungen vom natürlichen Hintergrundwert messen kann.</p>
+      </div>
+      <div class="vorteil-card">
+        <div class="vorteil-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Punktgenaue Lokalisierung</h3>
+        <p>Statt teurer Suchgrabungen auf Verdacht: systematische Eingrenzung der Schadstelle entlang der Trasse. Weniger Fehlgrabungen, weniger Kosten.</p>
+      </div>
+      <div class="vorteil-card">
+        <div class="vorteil-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Auch bei tiefen Leitungen</h3>
+        <p>Helium ist das kleinste stabile Gas-Molekül. Es diffundiert durch Bodenschichten und ist auch bei Tieflagen über mehrere Meter hinweg messbar – abhängig von Bodenaufbau und Leitungstyp.</p>
+      </div>
+      <div class="vorteil-card">
+        <div class="vorteil-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Klarer Ergebnisbericht</h3>
+        <p>Nach dem Einsatz erhalten Sie eine nachvollziehbare Dokumentation: Messpunkte, Heliumwerte, Eingrenzung der Schadstelle, Grundlage für die Sanierungsplanung.</p>
+      </div>
+      <div class="vorteil-card">
+        <div class="vorteil-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Unklarer Wasserverlust?</h3>
+        <p>Ideal auch wenn der Verlust bekannt ist, aber keine Ursache gefunden wurde. Systematische Heliumprüfung macht auch diffuse oder schwer zugängliche Leckagen lokalisierbar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERFAHREN -->
+<section class="verfahren-section" id="verfahren">
+  <div class="container">
+    <div class="section-label">Das Verfahren</div>
+    <h2 class="section-title">So funktioniert Helium-Leckortung.</h2>
+    <p class="section-sub">Ein systematischer Ablauf – von der Einbringung bis zum Ergebnisbericht.</p>
+    <div class="verfahren-grid">
+      <div class="verfahren-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div>
+            <h3>Erstgespräch & Planungsunterlagen</h3>
+            <p>Wir besprechen Ihr Leitungssystem: Trassenlänge, Leitungstyp, Medium, Betriebsdruck, Temperatur und bekannten Wasserverlust. Vorhandene Pläne werden gesichtet.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div>
+            <h3>Heliumeinbringung im laufenden Betrieb</h3>
+            <p>Über eine geeignete Einbringungsstelle wird Helium blasenfrei mit einer Spezialanlage in das Prozesswasser eingebracht. Der Betrieb läuft weiter – keine Unterbrechung.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div>
+            <h3>Vermischung im Kreislauf</h3>
+            <p>Das Helium vermischt sich gleichmäßig im Umlaufwasser. Nach ausreichender Vermischungszeit beginnt die Messung. Der Zeitraum ist systemabhängig und wird individuell abgestimmt.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div>
+            <h3>Systematische Messung entlang der Trasse</h3>
+            <p>An Prüföffnungen, Bohrpunkten, Schächten und Messpunkten wird Bodenluft angesaugt und mit hochsensibler Analytik auf Heliumgehalte geprüft. Die Messwerte werden protokolliert.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">05</div>
+          <div>
+            <h3>Auswertung & Eingrenzung</h3>
+            <p>Erhöhte Heliumwerte gegenüber dem natürlichen Hintergrundwert zeigen die Bereiche an, in denen das Leitungsmedium austritt. So lässt sich die Schadstelle punktuell eingrenzen.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">06</div>
+          <div>
+            <h3>Ergebnisbericht für den Betreiber</h3>
+            <p>Sie erhalten eine schriftliche Dokumentation mit Messwerten, Trassen-Protokoll, Eingrenzung der Schadstelle und Empfehlungen für die weiteren Schritte.</p>
+          </div>
+        </div>
+      </div>
+      <div class="verfahren-visual">
+        <div class="diagram-placeholder">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#00C4E8" stroke-width="1" opacity="0.4"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(0)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>
+          <p>📸 Platzhalter<br>Schema-Grafik / Ablauf-Illustration einfügen<br><em style="font-size:0.7rem">(Helium im Wasserkreislauf, Messpunkte entlang Trasse)</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WARUM HELIUM -->
+<section class="warum-section" id="warum">
+  <div class="container">
+    <div class="section-label">Warum Helium?</div>
+    <h2 class="section-title">Das Tracergas der Wahl.</h2>
+    <div class="warum-split">
+      <div class="warum-text">
+        <p>Helium ist das kleinste stabile Molekül der Natur. Mit einem Atomdurchmesser von 0,26 nm und einer Dichte, die viermal geringer ist als Luft, dringt es durch Bodenschichten, Schächte und Prüföffnungen – selbst wenn die Schadstelle tief liegt.</p>
+        <p>Der natürliche Heliumgehalt der Atmosphäre liegt bei rund 5,2 ppm – ein stabiler, bekannter Hintergrundwert. Jede Abweichung davon ist messbar und eindeutig auf eine Leckstelle zurückführbar.</p>
+        <p>Helium ist chemisch inert, ungiftig, nicht entzündlich und verbleibt in so geringen Mengen im System, dass es keine betrieblichen Auswirkungen hat. Es ist technisch und sicherheitstechnisch unbedenklich.</p>
+        <p style="color: #8FA8C4; font-size: 0.82rem; border-left: 2px solid rgba(0,196,232,0.3); padding-left: 1rem; margin-top: 1.5rem;">Hinweis: Helium kann je nach Kunststofftyp, Wandstärke und Temperatur partiell durch Rohrmaterial diffundieren. An Leckstellen, Muffen, Übergängen und beschädigten Bereichen tritt es bevorzugt aus. Aluminium-Barrieren (alu-ummantelte Fernwärmerohre) verringern die Diffusion erheblich. Die Eignung für Ihr Leitungssystem wird im Vorfeld individuell bewertet.</p>
+      </div>
+      <div>
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Verfahren</th>
+              <th>Betrieb läuft</th>
+              <th>Tiefe Leitungen</th>
+              <th>Genaue Lok.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Helium-Leckortung (wir)</td>
+              <td><span class="badge-yes">✓ Ja</span></td>
+              <td><span class="badge-yes">✓ Möglich</span></td>
+              <td><span class="badge-yes">✓ Hoch</span></td>
+            </tr>
+            <tr>
+              <td>Akustik / Korrelation</td>
+              <td><span class="badge-mid">~ bedingt</span></td>
+              <td><span class="badge-no">✗ Begrenzt</span></td>
+              <td><span class="badge-mid">~ mittel</span></td>
+            </tr>
+            <tr>
+              <td>Thermografie</td>
+              <td><span class="badge-yes">✓ Ja</span></td>
+              <td><span class="badge-no">✗ Nein</span></td>
+              <td><span class="badge-mid">~ abhängig</span></td>
+            </tr>
+            <tr>
+              <td>Feuchtemessung</td>
+              <td><span class="badge-yes">✓ Ja</span></td>
+              <td><span class="badge-no">✗ Begrenzt</span></td>
+              <td><span class="badge-no">✗ Ungenau</span></td>
+            </tr>
+            <tr>
+              <td>Formiergas (H₂/N₂)</td>
+              <td><span class="badge-mid">~ eingeschränkt</span></td>
+              <td><span class="badge-mid">~ bedingt</span></td>
+              <td><span class="badge-mid">~ mittel</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN -->
+<section class="leistungen-section" id="leistungen">
+  <div class="container">
+    <div class="section-label">Leistungen</div>
+    <h2 class="section-title">Unsere Einsatzbereiche.</h2>
+    <p class="section-sub">Spezialisiert auf wasserbefüllte Druckleitungssysteme in Fernwärme, Industrie und Versorgungs­infrastruktur.</p>
+    <div class="leistungen-grid">
+      <div class="leistung-card">
+        <h3><span>🔥</span> Fernwärme-Leckortung</h3>
+        <p>Leckortung in Fernwärme- und Nahwärmenetzen ohne Abschaltung. Geeignet für einzelne Trassenabschnitte oder komplexe Netzstrukturen mit mehreren Einspeisepunkten.</p>
+        <ul class="leistung-list">
+          <li>Vorvor- und Rücklauf-Leitungen</li>
+          <li>Muffenbereiche und Übergänge</li>
+          <li>Komplexe Netztopologien</li>
+          <li>Auch bei hohen Betriebstemperaturen planbar</li>
+        </ul>
+      </div>
+      <div class="leistung-card">
+        <h3><span>⚙️</span> Prozesswasser-Leckortung</h3>
+        <p>Für Industrieanlagen, Kühlwassernetze, Heizwasserkreisläufe und Prozesswassersysteme, bei denen ein Stillstand nicht akzeptabel ist.</p>
+        <ul class="leistung-list">
+          <li>Geschlossene Wasserkreisläufe</li>
+          <li>Kühlwasser- und Heizwassernetze</li>
+          <li>Werks- und Industriegelände</li>
+          <li>Auch unterirdische Trassenführungen</li>
+        </ul>
+      </div>
+      <div class="leistung-card">
+        <h3><span>🏭</span> Industrie- und Werksnetze</h3>
+        <p>Für Betriebe, Kliniken, Kasernen und große Liegenschaften mit eigenem Wärme- oder Prozesswassernetz. Ortung auch auf weitläufigen Geländen.</p>
+        <ul class="leistung-list">
+          <li>Kliniken und Krankenhäuser</li>
+          <li>Kasernen und Bundesbehörden</li>
+          <li>Wohnungsbaugesellschaften</li>
+          <li>Gewerbeparks und Industriegelände</li>
+        </ul>
+      </div>
+      <div class="leistung-card">
+        <h3><span>🚨</span> Prüfung bei unklarem Wasserverlust</h3>
+        <p>Sie wissen, dass Wasser fehlt – aber wo? Wenn alle bisherigen Methoden gescheitert sind oder keine verwertbare Aussage liefern konnten, ist die Heliumprüfung oft der nächste sinnvolle Schritt.</p>
+        <ul class="leistung-list">
+          <li>Diffuse Verluste ohne eindeutige Quelle</li>
+          <li>Nach erfolglosen Vorortungen</li>
+          <li>Bei schwer zugänglichen Trassen</li>
+          <li>Als ergänzende Methode zur Eingrenzung</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOTOS PLATZHALTER -->
+<section class="fotos-section" id="fotos">
+  <div class="container">
+    <div class="section-label">Eindrücke aus der Praxis</div>
+    <h2 class="section-title">Bilder vom Einsatz.</h2>
+    <div class="fotos-grid">
+      <div class="foto-placeholder">
+        <div class="icon">📸</div>
+        <p>Platzhalter für Ihr Bild<br>Techniker an Prüföffnung / Fernwärmetrasse</p>
+      </div>
+      <div class="foto-placeholder">
+        <div class="icon">📸</div>
+        <p>Platzhalter für Ihr Bild<br>Helium-Messgerät im Einsatz</p>
+      </div>
+      <div class="foto-placeholder">
+        <div class="icon">📸</div>
+        <p>Platzhalter für Ihr Bild<br>Einbringungsanlage / Equipment</p>
+      </div>
+      <div class="foto-placeholder">
+        <div class="icon">📸</div>
+        <p>Platzhalter für Ihr Bild<br>Leitungstrasse / Fernwärmeschacht</p>
+      </div>
+      <div class="foto-placeholder">
+        <div class="icon">📸</div>
+        <p>Platzhalter für Ihr Bild<br>Prozesswasseranlage / Industriebereich</p>
+      </div>
+      <div class="foto-placeholder">
+        <div class="icon">📸</div>
+        <p>Platzhalter für Ihr Bild<br>Ergebnisdokumentation / Messbericht</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZIELGRUPPEN -->
+<section class="zielgruppen-section" id="zielgruppen">
+  <div class="container">
+    <div class="section-label">Für wen geeignet</div>
+    <h2 class="section-title">Unsere Zielkunden.</h2>
+    <p class="section-sub">Überall dort, wo Leitungen unter Druck stehen, Wasser verloren geht und ein Stillstand teuer oder unmöglich ist.</p>
+    <div class="zielgruppen-grid">
+      <div class="zg-card">
+        <div class="icon">🏙️</div>
+        <h3>Stadtwerke</h3>
+        <p>Fernwärme- und Versorgungsnetze ohne Lieferunterbrechung prüfen</p>
+      </div>
+      <div class="zg-card">
+        <div class="icon">⚡</div>
+        <h3>Energieversorger</h3>
+        <p>Fernwärmenetze, Contractoren, Nahwärme-Betreiber</p>
+      </div>
+      <div class="zg-card">
+        <div class="icon">🏗️</div>
+        <h3>Rohrleitungsbau</h3>
+        <p>Tiefbauunternehmen und Leitungsbauer mit Gewährleistungsfällen</p>
+      </div>
+      <div class="zg-card">
+        <div class="icon">🏭</div>
+        <h3>Industrie</h3>
+        <p>Betriebe mit Prozesswasser-, Kühl- und Heizkreisläufen</p>
+      </div>
+      <div class="zg-card">
+        <div class="icon">🏥</div>
+        <h3>Kliniken</h3>
+        <p>Krankenhäuser mit eigener Fernwärme- oder Heizwasser-Infrastruktur</p>
+      </div>
+      <div class="zg-card">
+        <div class="icon">🏢</div>
+        <h3>Wohnungsbau</h3>
+        <p>Große Gesellschaften mit eigenen Nahwärme- oder Heiznetzen</p>
+      </div>
+      <div class="zg-card">
+        <div class="icon">📐</div>
+        <h3>Ingenieurbüros</h3>
+        <p>Als Subunternehmer oder direkter Ansprechpartner für Sanierungsplanung</p>
+      </div>
+      <div class="zg-card">
+        <div class="icon">🏛️</div>
+        <h3>Kommunen</h3>
+        <p>Öffentliche Liegenschaften, Schulen, Kasernen, Verwaltungsgebäude</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-label">Häufige Fragen</div>
+    <h2 class="section-title">FAQ</h2>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">Muss die Leitung abgeschaltet werden? <span class="arrow">→</span></div>
+        <div class="faq-a">Nein. Das Helium wird im laufenden Betrieb eingebracht. Die Anlage bleibt in Betrieb, es gibt keine Versorgungsunterbrechung und keine Entleerung der Leitung.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Ist Helium gefährlich? <span class="arrow">→</span></div>
+        <div class="faq-a">Nein. Helium ist chemisch inert, nicht toxisch, nicht brennbar und physiologisch unbedenklich. Es ist als Tracergas technisch und sicherheitstechnisch unbedenklich.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Funktioniert das bei Kunststoffmantelrohren? <span class="arrow">→</span></div>
+        <div class="faq-a">Helium kann je nach Kunststofftyp, Wandstärke und Temperatur partiell durch Rohrmaterial diffundieren. An Leckstellen, Muffen und Schwachstellen tritt es bevorzugt aus. Die Eignung wird im Einzelfall bewertet.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Funktioniert das bei alu-ummantelten Leitungen? <span class="arrow">→</span></div>
+        <div class="faq-a">Aluminium-Barrieren verringern die Heliumdiffusion deutlich. Dennoch tritt Helium an Leckstellen, offenen Muffen, Übergängen und beschädigten Stellen aus – und kann dort gemessen werden.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Wie genau ist das Verfahren? <span class="arrow">→</span></div>
+        <div class="faq-a">Durch die hochsensible Analytik und systematische Messung entlang der Trasse lässt sich die Schadstelle in der Regel auf wenige Meter eingrenzen. Genauigkeit hängt von Bodenaufbau, Leitungstiefe und Prüföffnungsdichte ab.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Wie lange dauert ein Einsatz? <span class="arrow">→</span></div>
+        <div class="faq-a">Das ist systemabhängig. Einbringung und Vermischungszeit plus die eigentliche Messung entlang der Trasse. Für ein erstes Zeitrahmenschätzung sprechen Sie uns gerne an – wir benötigen Trassenlänge und Systeminformationen.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Ersetzt das Verfahren eine offizielle Druckprüfung? <span class="arrow">→</span></div>
+        <div class="faq-a">Nein. Die Helium-Leckortung ist ein Ortungsverfahren, keine formale Dichtheitsprüfung nach Norm. Sie liefert wertvolle Informationen zur Schadstellenlokalisation, ersetzt aber keine behördlich anerkannte Druckprüfung.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Was wird für ein Angebot benötigt? <span class="arrow">→</span></div>
+        <div class="faq-a">Trassenlänge, Leitungstyp, Medium, Betriebsdruck und -temperatur, bekannter Wasserverlust, Standort und vorhandene Unterlagen. Nutzen Sie gerne das Formular – wir melden uns schnellstmöglich.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANFRAGE / KONTAKT -->
+<section class="anfrage-section" id="kontakt">
+  <div class="container">
+    <div class="anfrage-inner">
+      <div class="anfrage-left">
+        <div class="section-label">Kontakt & Anfrage</div>
+        <h2 class="section-title">Unklarer Wasserverlust im Netz?</h2>
+        <p>Schildern Sie uns Ihr System – wir prüfen die Eignung und erstellen Ihnen ein <strong>kostenloses und unverbindliches Angebot</strong>.</p>
+        <div class="contact-info">
+          <div>
+            <div class="contact-name">MS Heliumtechnik</div>
+            <div class="contact-role">Mark Schwarze · Inhaber</div>
+          </div>
+          <div class="contact-row">
+            <span class="icon">📞</span>
+            <a href="tel:+4917721375032">0177 2137503</a>
+          </div>
+          <div class="contact-row">
+            <span class="icon">✉️</span>
+            <a href="mailto:bwt.schwarze@gmail.com">bwt.schwarze@gmail.com</a>
+          </div>
+          <div class="contact-row">
+            <span class="icon">📍</span>
+            <address>Alter Postweg 80<br>26607 Aurich</address>
+          </div>
+        </div>
+      </div>
+
+      <div class="anfrage-form" id="anfrage-form-wrap">
+        <div class="form-badge">Kostenlos &amp; unverbindlich</div>
+        <div class="form-title">Angebotsanfrage</div>
+        <form id="anfrage-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Name *</label>
+              <input type="text" name="name" placeholder="Ihr Name" required>
+            </div>
+            <div class="form-group">
+              <label>Firma / Organisation *</label>
+              <input type="text" name="firma" placeholder="Stadtwerke Musterstadt GmbH" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Telefon *</label>
+              <input type="tel" name="telefon" placeholder="+49 ..." required>
+            </div>
+            <div class="form-group">
+              <label>E-Mail *</label>
+              <input type="email" name="email" placeholder="name@firma.de" required>
+            </div>
+          </div>
+          <div class="form-group form-full">
+            <label>Standort / Ort der Trasse *</label>
+            <input type="text" name="standort" placeholder="z.B. Berlin, Industriestraße" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Medium im Leitungssystem *</label>
+              <select name="medium" required>
+                <option value="" disabled selected>Bitte wählen</option>
+                <option>Wasser (Fernwärme)</option>
+                <option>Wasser mit Frostschutzmittel</option>
+                <option>Prozesswasser</option>
+                <option>Kühlwasser</option>
+                <option>Heizwasser</option>
+                <option>Sonstiges</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Leitungstyp</label>
+              <select name="leitungstyp">
+                <option value="" disabled selected>Bitte wählen</option>
+                <option>Fernwärmeleitung (KMR)</option>
+                <option>Fernwärmeleitung (Flexrohr)</option>
+                <option>Metallrohr (Stahl/Kupfer)</option>
+                <option>Kunststoffrohr</option>
+                <option>Unbekannt</option>
+                <option>Sonstiges</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Ungefähre Trassenlänge</label>
+              <input type="text" name="laenge" placeholder="z.B. 500 m">
+            </div>
+            <div class="form-group">
+              <label>Nenndurchmesser (DN)</label>
+              <input type="text" name="durchmesser" placeholder="z.B. DN 100">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Betriebsdruck (bar)</label>
+              <input type="text" name="druck" placeholder="z.B. 6 bar">
+            </div>
+            <div class="form-group">
+              <label>Betriebstemperatur (°C)</label>
+              <input type="text" name="temperatur" placeholder="z.B. 80 °C">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Bekannter Wasserverlust</label>
+              <select name="verlust">
+                <option value="" disabled selected>Bitte wählen</option>
+                <option>Unter 100 L/Tag</option>
+                <option>100–500 L/Tag</option>
+                <option>500–2000 L/Tag</option>
+                <option>Über 2000 L/Tag</option>
+                <option>Unbekannt</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Verlust bekannt seit</label>
+              <select name="seit">
+                <option value="" disabled selected>Bitte wählen</option>
+                <option>Wenigen Tagen</option>
+                <option>1–4 Wochen</option>
+                <option>1–6 Monaten</option>
+                <option>Über 6 Monaten</option>
+                <option>Unbekannt</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Vorhandene Unterlagen</label>
+              <select name="unterlagen">
+                <option value="" disabled selected>Bitte wählen</option>
+                <option>Bestandspläne vorhanden</option>
+                <option>Keine Pläne vorhanden</option>
+                <option>Teilweise vorhanden</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Dringlichkeit</label>
+              <select name="dringlichkeit">
+                <option value="" disabled selected>Bitte wählen</option>
+                <option>Sofortiger Handlungsbedarf</option>
+                <option>Innerhalb weniger Wochen</option>
+                <option>Planung / keine Eile</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group form-full">
+            <label>Weitere Angaben / Besonderheiten</label>
+            <textarea name="hinweise" placeholder="z.B. Besondere Tiefenlage, mehrere mögliche Abschnitte, vorherige Ortungsversuche..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Jetzt kostenlos anfragen →</button>
+          <p class="form-legal">Kostenlos und unverbindlich. Keine Weitergabe Ihrer Daten an Dritte. Wir melden uns in der Regel innerhalb von 24 Stunden.</p>
+        </form>
+        <div id="form-success">
+          <div class="check">✅</div>
+          <h3>Anfrage eingegangen!</h3>
+          <p>Vielen Dank. Wir melden uns schnellstmöglich bei Ihnen – in der Regel innerhalb von 24 Stunden.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<!-- IMPRESSUM MODAL -->
+<div id="impressum-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:1000; overflow-y:auto; padding:2rem;">
+  <div style="max-width:600px; margin:3rem auto; background:var(--navy-mid); border:1px solid var(--border); border-radius:12px; padding:2.5rem; position:relative;">
+    <button onclick="document.getElementById('impressum-modal').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--steel);font-size:1.5rem;cursor:pointer;">✕</button>
+    <h2 style="font-family:'Space Grotesk',sans-serif;margin-bottom:1.5rem;color:var(--white);">Impressum</h2>
+    <p style="color:var(--steel);line-height:1.8;">
+      <strong style="color:var(--white);">MS Heliumtechnik</strong><br>
+      Inhaber: Mark Schwarze<br>
+      Alter Postweg 80<br>
+      26607 Aurich<br><br>
+      Telefon: <a href="tel:+4917721375032" style="color:var(--helium);">0177 2137503</a><br>
+      E-Mail: <a href="mailto:bwt.schwarze@gmail.com" style="color:var(--helium);">bwt.schwarze@gmail.com</a><br><br>
+      <strong style="color:var(--white);">Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:</strong><br>
+      [USt-IdNr. eintragen]<br><br>
+      <strong style="color:var(--white);">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
+      Mark Schwarze, Alter Postweg 80, 26607 Aurich
+    </p>
+  </div>
+</div>
+
+<!-- DATENSCHUTZ MODAL -->
+<div id="datenschutz-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:1000; overflow-y:auto; padding:2rem;">
+  <div style="max-width:660px; margin:3rem auto; background:var(--navy-mid); border:1px solid var(--border); border-radius:12px; padding:2.5rem; position:relative;">
+    <button onclick="document.getElementById('datenschutz-modal').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--steel);font-size:1.5rem;cursor:pointer;">✕</button>
+    <h2 style="font-family:'Space Grotesk',sans-serif;margin-bottom:1.5rem;color:var(--white);">Datenschutzerklärung</h2>
+    <div style="color:var(--steel);line-height:1.8;">
+      <p><strong style="color:var(--white);">1. Verantwortlicher</strong><br>
+      MS Heliumtechnik, Mark Schwarze, Alter Postweg 80, 26607 Aurich</p>
+      <br>
+      <p><strong style="color:var(--white);">2. Erhobene Daten</strong><br>
+      Bei der Nutzung des Kontaktformulars werden Name, Firma, Telefon, E-Mail und weitere freiwillige Angaben erhoben. Diese werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</p>
+      <br>
+      <p><strong style="color:var(--white);">3. Zweck und Rechtsgrundlage</strong><br>
+      Die Verarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO).</p>
+      <br>
+      <p><strong style="color:var(--white);">4. Weitergabe an Dritte</strong><br>
+      Ihre Daten werden nicht an Dritte weitergegeben.</p>
+      <br>
+      <p><strong style="color:var(--white);">5. Speicherdauer</strong><br>
+      Daten werden nach Abschluss der Anfrage oder des Auftrags gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+      <br>
+      <p><strong style="color:var(--white);">6. Ihre Rechte</strong><br>
+      Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung. Kontakt: bwt.schwarze@gmail.com</p>
+      <br>
+      <p><strong style="color:var(--white);">7. Hosting</strong><br>
+      Diese Website wird statisch gehostet. Es werden keine Cookies gesetzt.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="name">MS Heliumtechnik</div>
+        <div class="tag">Mark Schwarze · Helium-Leckortung</div>
+        <p>Spezialisierte Helium-Leckortung für Fernwärme-, Prozesswasser- und Industrienetze. Im laufenden Betrieb – ohne Abschaltung, ohne Entleerung.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#verfahren">Das Verfahren</a></li>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#warum">Warum Helium?</a></li>
+          <li><a href="#zielgruppen">Für wen</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#kontakt">Kontakt & Anfrage</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <address>
+          MS Heliumtechnik<br>
+          Mark Schwarze<br>
+          Alter Postweg 80<br>
+          26607 Aurich<br><br>
+          <a href="tel:+4917721375032" style="color:inherit">0177 2137503</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MS Heliumtechnik · Mark Schwarze</span>
+      <span>
+        <a href="#" onclick="event.preventDefault();document.getElementById('impressum-modal').style.display='block'" style="margin-right:1.5rem">Impressum</a>
+        <a href="#" onclick="event.preventDefault();document.getElementById('datenschutz-modal').style.display='block'">Datenschutz</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Form submit -> mailto fallback
+  document.getElementById('anfrage-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const f = e.target;
+    const get = n => f.elements[n] ? f.elements[n].value : '';
+    const body = [
+      'Name: ' + get('name'),
+      'Firma: ' + get('firma'),
+      'Telefon: ' + get('telefon'),
+      'E-Mail: ' + get('email'),
+      'Standort: ' + get('standort'),
+      'Medium: ' + get('medium'),
+      'Leitungstyp: ' + get('leitungstyp'),
+      'Trassenlänge: ' + get('laenge'),
+      'Nenndurchmesser: ' + get('durchmesser'),
+      'Betriebsdruck: ' + get('druck'),
+      'Betriebstemperatur: ' + get('temperatur'),
+      'Wasserverlust: ' + get('verlust'),
+      'Verlust bekannt seit: ' + get('seit'),
+      'Unterlagen: ' + get('unterlagen'),
+      'Dringlichkeit: ' + get('dringlichkeit'),
+      'Hinweise: ' + get('hinweise'),
+    ].join('\n');
+    window.location.href = 'mailto:bwt.schwarze@gmail.com?subject=Angebotsanfrage%20Helium-Leckortung&body=' + encodeURIComponent(body);
+    setTimeout(function() {
+      document.getElementById('anfrage-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }, 500);
+  });
+
+  // Copyright Jahr
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Hamburger Menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+  // Schließen wenn Nav-Link geklickt
+  navLinks.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+
+  // Smooth active nav
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--white)' : '';
+    });
+  });
+</script>
+</body>
+</html>
