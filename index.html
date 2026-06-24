@@ -364,12 +364,12 @@
   }
   /* Inhalt über den Hintergrund legen */
   nav, .trust-bar, section, footer { position: relative; z-index: 1; }
-  /* Sektionen leicht durchscheinend, damit das Rohr dahinter sichtbar wird */
-  .hero-bg { opacity: 0.85; }
-  .vorteile-section, .warum-section, .zielgruppen-section, .fotos-section { background: rgba(11,31,58,0.80); }
-  .verfahren-section, .leistungen-section, .faq-section { background: rgba(20,41,71,0.82); }
-  .anfrage-section { background: linear-gradient(135deg, rgba(20,41,71,0.86) 0%, rgba(11,31,58,0.86) 100%); }
-  .trust-bar { background: rgba(20,41,71,0.85); }
+  /* Sektionen durchscheinend, damit das Rohr dahinter gut sichtbar wird */
+  .hero-bg { opacity: 0.70; }
+  .vorteile-section, .warum-section, .zielgruppen-section, .fotos-section { background: rgba(11,31,58,0.66); }
+  .verfahren-section, .leistungen-section, .faq-section { background: rgba(20,41,71,0.68); }
+  .anfrage-section { background: linear-gradient(135deg, rgba(20,41,71,0.74) 0%, rgba(11,31,58,0.74) 100%); }
+  .trust-bar { background: rgba(20,41,71,0.78); }
   /* Wassertropfen-Animation */
   .drop { animation: leakSpray 1.6s linear infinite; transform-box: fill-box; }
   .drop:nth-child(2){ animation-delay: 0.2s; }
@@ -438,8 +438,7 @@
     nav { padding: 0 1.1rem; padding-top: env(safe-area-inset-top); }
     .logo-atom { width: 28px; height: 28px; }
     .logo-svg-wrap { gap: 0.5rem; }
-    .nav-logo .brand { font-size: 0.98rem; line-height: 1.05; white-space: nowrap; }
-    .nav-logo .sub { display: block; font-size: 0.55rem; letter-spacing: 0.08em; white-space: nowrap; }
+    .nav-logo .brand { font-size: 1.05rem; line-height: 1.05; white-space: nowrap; }
     .nav-links {
       display: flex !important;
       flex-direction: column;
@@ -469,34 +468,46 @@
 
 <!-- LECK-HINTERGRUND: Rohr mit Leckage, das beim Scrollen "repariert" wird -->
 <svg id="leak-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <!-- Rohr -->
-  <g opacity="0.5">
-    <rect x="-40" y="612" width="1520" height="24" rx="6" fill="#00C4E8" opacity="0.06"/>
-    <rect x="-40" y="612" width="1520" height="24" rx="6" fill="none" stroke="#00C4E8" stroke-width="2" opacity="0.45"/>
-    <line x1="-40" y1="624" x2="1480" y2="624" stroke="#00C4E8" stroke-width="1" opacity="0.25"/>
+  <defs>
+    <linearGradient id="pipeGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B4C8DA"/>
+      <stop offset="0.5" stop-color="#62809B"/>
+      <stop offset="1" stop-color="#36506A"/>
+    </linearGradient>
+    <filter id="waterGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Rohr (metallisch, farblich abgesetzt) -->
+  <g opacity="0.9">
+    <rect x="-40" y="602" width="1520" height="42" rx="9" fill="url(#pipeGrad)"/>
+    <rect x="-40" y="602" width="1520" height="42" rx="9" fill="none" stroke="#22344A" stroke-width="1.5"/>
+    <rect x="-40" y="609" width="1520" height="5" rx="2.5" fill="#FFFFFF" opacity="0.30"/>
     <!-- Flansche links/rechts der Leckstelle -->
-    <rect x="470" y="604" width="9" height="40" rx="2" fill="#00C4E8" opacity="0.3"/>
-    <rect x="962" y="604" width="9" height="40" rx="2" fill="#00C4E8" opacity="0.3"/>
+    <rect x="466" y="594" width="13" height="58" rx="3" fill="#4C6884"/>
+    <rect x="961" y="594" width="13" height="58" rx="3" fill="#4C6884"/>
     <!-- Leckstelle -->
-    <circle cx="720" cy="612" r="3" fill="#00C4E8"/>
+    <circle cx="720" cy="603" r="3.5" fill="#0B1F3A"/>
   </g>
-  <!-- Wasser-Spray (nimmt beim Scrollen ab) -->
-  <g id="spray" opacity="1">
-    <g transform="translate(720,610)">
-      <circle class="drop" cx="0"   cy="0" r="3"   fill="#00C4E8"/>
-      <circle class="drop" cx="-9"  cy="0" r="2.4" fill="#00C4E8"/>
-      <circle class="drop" cx="9"   cy="0" r="2.4" fill="#00C4E8"/>
-      <circle class="drop" cx="-18" cy="0" r="2"   fill="#00C4E8"/>
-      <circle class="drop" cx="18"  cy="0" r="2"   fill="#00C4E8"/>
-      <circle class="drop" cx="-4"  cy="0" r="2.6" fill="#00C4E8"/>
-      <circle class="drop" cx="6"   cy="0" r="2.6" fill="#00C4E8"/>
+  <!-- Wasser-Spray (hell, gut sichtbar; nimmt beim Scrollen ab) -->
+  <g id="spray" opacity="1" filter="url(#waterGlow)">
+    <g transform="translate(720,600)">
+      <circle class="drop" cx="0"   cy="0" r="4"   fill="#B6F0FF"/>
+      <circle class="drop" cx="-11" cy="0" r="3.2" fill="#9DEBFF"/>
+      <circle class="drop" cx="11"  cy="0" r="3.2" fill="#9DEBFF"/>
+      <circle class="drop" cx="-22" cy="0" r="2.6" fill="#7FE3FF"/>
+      <circle class="drop" cx="22"  cy="0" r="2.6" fill="#7FE3FF"/>
+      <circle class="drop" cx="-5"  cy="0" r="3.4" fill="#CFF6FF"/>
+      <circle class="drop" cx="7"   cy="0" r="3.4" fill="#CFF6FF"/>
     </g>
   </g>
   <!-- Reparatur-Schelle (erscheint beim Scrollen, unten = dicht) -->
-  <g id="clamp" transform="translate(720,624)">
-    <rect x="-28" y="-22" width="56" height="44" rx="9" fill="none" stroke="#22C55E" stroke-width="3" opacity="0.85"/>
-    <rect x="-28" y="-7" width="56" height="14" rx="4" fill="#22C55E" opacity="0.22"/>
-    <path d="M -9 0 L -2 7 L 11 -9" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g id="clamp" transform="translate(720,623)">
+    <rect x="-30" y="-23" width="60" height="46" rx="10" fill="#16351F" opacity="0.55"/>
+    <rect x="-30" y="-23" width="60" height="46" rx="10" fill="none" stroke="#22C55E" stroke-width="3.5"/>
+    <rect x="-30" y="-7" width="60" height="14" rx="4" fill="#22C55E" opacity="0.35"/>
+    <path d="M -10 0 L -2 8 L 12 -10" fill="none" stroke="#22C55E" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 </svg>
 
@@ -512,7 +523,6 @@
     </svg>
     <div class="nav-logo">
       <span class="brand">MS Heliumtechnik</span>
-      <span class="sub">Mark Schwarze</span>
     </div>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
