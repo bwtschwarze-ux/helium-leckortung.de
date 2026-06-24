@@ -357,6 +357,38 @@
   .logo-svg-wrap { display: flex; align-items: center; gap: 0.7rem; }
   .logo-atom { flex-shrink: 0; }
 
+  /* ===== LECK-HINTERGRUND (scrollgesteuert) ===== */
+  #leak-bg {
+    position: fixed; inset: 0; width: 100%; height: 100%;
+    z-index: 0; pointer-events: none;
+  }
+  /* Inhalt über den Hintergrund legen */
+  nav, .trust-bar, section, footer { position: relative; z-index: 1; }
+  /* Sektionen leicht durchscheinend, damit das Rohr dahinter sichtbar wird */
+  .hero-bg { opacity: 0.85; }
+  .vorteile-section, .warum-section, .zielgruppen-section, .fotos-section { background: rgba(11,31,58,0.80); }
+  .verfahren-section, .leistungen-section, .faq-section { background: rgba(20,41,71,0.82); }
+  .anfrage-section { background: linear-gradient(135deg, rgba(20,41,71,0.86) 0%, rgba(11,31,58,0.86) 100%); }
+  .trust-bar { background: rgba(20,41,71,0.85); }
+  /* Wassertropfen-Animation */
+  .drop { animation: leakSpray 1.6s linear infinite; transform-box: fill-box; }
+  .drop:nth-child(2){ animation-delay: 0.2s; }
+  .drop:nth-child(3){ animation-delay: 0.45s; }
+  .drop:nth-child(4){ animation-delay: 0.7s; }
+  .drop:nth-child(5){ animation-delay: 0.95s; }
+  .drop:nth-child(6){ animation-delay: 1.2s; }
+  .drop:nth-child(7){ animation-delay: 1.4s; }
+  @keyframes leakSpray {
+    0%   { transform: translateY(0) scale(0.6); opacity: 0; }
+    20%  { opacity: 0.9; }
+    100% { transform: translateY(-44px) scale(0.3); opacity: 0; }
+  }
+  #spray { transition: opacity 0.25s linear; }
+  #clamp { opacity: 0; transition: opacity 0.4s ease; }
+  @media (prefers-reduced-motion: reduce) {
+    .drop { animation: none; }
+  }
+
   /* RESPONSIVE */
   @media (max-width: 900px) {
     .hero-content { grid-template-columns: 1fr; }
@@ -403,8 +435,11 @@
   @media (max-width: 900px) {
     .hamburger { display: flex; }
     .nav-cta { display: none; }
-    .nav-logo .sub { display: none; }
-    .nav-logo .brand { font-size: 1rem; }
+    nav { padding: 0 1.1rem; padding-top: env(safe-area-inset-top); }
+    .logo-atom { width: 28px; height: 28px; }
+    .logo-svg-wrap { gap: 0.5rem; }
+    .nav-logo .brand { font-size: 0.98rem; line-height: 1.05; white-space: nowrap; }
+    .nav-logo .sub { display: block; font-size: 0.55rem; letter-spacing: 0.08em; white-space: nowrap; }
     .nav-links {
       display: flex !important;
       flex-direction: column;
@@ -431,6 +466,39 @@
 </style>
 </head>
 <body>
+
+<!-- LECK-HINTERGRUND: Rohr mit Leckage, das beim Scrollen "repariert" wird -->
+<svg id="leak-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <!-- Rohr -->
+  <g opacity="0.5">
+    <rect x="-40" y="612" width="1520" height="24" rx="6" fill="#00C4E8" opacity="0.06"/>
+    <rect x="-40" y="612" width="1520" height="24" rx="6" fill="none" stroke="#00C4E8" stroke-width="2" opacity="0.45"/>
+    <line x1="-40" y1="624" x2="1480" y2="624" stroke="#00C4E8" stroke-width="1" opacity="0.25"/>
+    <!-- Flansche links/rechts der Leckstelle -->
+    <rect x="470" y="604" width="9" height="40" rx="2" fill="#00C4E8" opacity="0.3"/>
+    <rect x="962" y="604" width="9" height="40" rx="2" fill="#00C4E8" opacity="0.3"/>
+    <!-- Leckstelle -->
+    <circle cx="720" cy="612" r="3" fill="#00C4E8"/>
+  </g>
+  <!-- Wasser-Spray (nimmt beim Scrollen ab) -->
+  <g id="spray" opacity="1">
+    <g transform="translate(720,610)">
+      <circle class="drop" cx="0"   cy="0" r="3"   fill="#00C4E8"/>
+      <circle class="drop" cx="-9"  cy="0" r="2.4" fill="#00C4E8"/>
+      <circle class="drop" cx="9"   cy="0" r="2.4" fill="#00C4E8"/>
+      <circle class="drop" cx="-18" cy="0" r="2"   fill="#00C4E8"/>
+      <circle class="drop" cx="18"  cy="0" r="2"   fill="#00C4E8"/>
+      <circle class="drop" cx="-4"  cy="0" r="2.6" fill="#00C4E8"/>
+      <circle class="drop" cx="6"   cy="0" r="2.6" fill="#00C4E8"/>
+    </g>
+  </g>
+  <!-- Reparatur-Schelle (erscheint beim Scrollen, unten = dicht) -->
+  <g id="clamp" transform="translate(720,624)">
+    <rect x="-28" y="-22" width="56" height="44" rx="9" fill="none" stroke="#22C55E" stroke-width="3" opacity="0.85"/>
+    <rect x="-28" y="-7" width="56" height="14" rx="4" fill="#22C55E" opacity="0.22"/>
+    <path d="M -9 0 L -2 7 L 11 -9" fill="none" stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
 
 <!-- NAV -->
 <nav>
@@ -539,7 +607,7 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <h3>Laufender Betrieb</h3>
-        <p>Die Leckortung erfolgt während der Anlage in Betrieb ist. Keine Abschaltung, keine Versorgungsunterbrechung, kein Druckverlust durch Entleerung.</p>
+        <p>Die Leckortung erfolgt während die Anlage in Betrieb ist. Keine Abschaltung, keine Versorgungsunterbrechung, kein Druckverlust durch Entleerung.</p>
       </div>
       <div class="vorteil-card">
         <div class="vorteil-icon">
@@ -648,7 +716,7 @@
     <h2 class="section-title">Das Tracergas der Wahl.</h2>
     <div class="warum-split">
       <div class="warum-text">
-        <p>Helium ist das kleinste stabile Molekül der Natur. Mit einem Atomdurchmesser von 0,26 nm und einer Dichte, die viermal geringer ist als Luft, dringt es durch Bodenschichten, Schächte und Prüföffnungen – selbst wenn die Schadstelle tief liegt.</p>
+        <p>Helium ist das kleinste stabile Molekül der Natur. Mit einem Atomdurchmesser von 0,26 nm und einer Dichte, die rund siebenmal geringer ist als die von Luft, dringt es durch Bodenschichten, Schächte und Prüföffnungen – selbst wenn die Schadstelle tief liegt.</p>
         <p>Der natürliche Heliumgehalt der Atmosphäre liegt bei rund 5,2 ppm – ein stabiler, bekannter Hintergrundwert. Jede Abweichung davon ist messbar und eindeutig auf eine Leckstelle zurückführbar.</p>
         <p>Helium ist chemisch inert, ungiftig, nicht entzündlich und verbleibt in so geringen Mengen im System, dass es keine betrieblichen Auswirkungen hat. Es ist technisch und sicherheitstechnisch unbedenklich.</p>
         <p style="color: #8FA8C4; font-size: 0.82rem; border-left: 2px solid rgba(0,196,232,0.3); padding-left: 1rem; margin-top: 1.5rem;">Hinweis: Helium kann je nach Kunststofftyp, Wandstärke und Temperatur partiell durch Rohrmaterial diffundieren. An Leckstellen, Muffen, Übergängen und beschädigten Bereichen tritt es bevorzugt aus. Aluminium-Barrieren (alu-ummantelte Fernwärmerohre) verringern die Diffusion erheblich. Die Eignung für Ihr Leitungssystem wird im Vorfeld individuell bewertet.</p>
@@ -894,7 +962,7 @@
           </div>
           <div class="contact-row">
             <span class="icon">📞</span>
-            <a href="tel:+4917721375032">0177 2137503</a>
+            <a href="tel:+491772137503">0177 2137503</a>
           </div>
           <div class="contact-row">
             <span class="icon">✉️</span>
@@ -1042,22 +1110,19 @@
   </div>
 </section>
 
-<!-- FOOTER -->
-
 <!-- IMPRESSUM MODAL -->
 <div id="impressum-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:1000; overflow-y:auto; padding:2rem;">
   <div style="max-width:600px; margin:3rem auto; background:var(--navy-mid); border:1px solid var(--border); border-radius:12px; padding:2.5rem; position:relative;">
     <button onclick="document.getElementById('impressum-modal').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--steel);font-size:1.5rem;cursor:pointer;">✕</button>
-    <h2 style="font-family:'Space Grotesk',sans-serif;margin-bottom:1.5rem;color:var(--white);">Impressum</h2>
+    <h2 style="font-family:'Space Grotesk',sans-serif;margin-bottom:0.5rem;color:var(--white);">Impressum</h2>
+    <p style="color:var(--text-muted);font-size:0.8rem;margin-bottom:1.5rem;">Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)</p>
     <p style="color:var(--steel);line-height:1.8;">
       <strong style="color:var(--white);">MS Heliumtechnik</strong><br>
       Inhaber: Mark Schwarze<br>
       Alter Postweg 80<br>
       26607 Aurich<br><br>
-      Telefon: <a href="tel:+4917721375032" style="color:var(--helium);">0177 2137503</a><br>
+      Telefon: <a href="tel:+491772137503" style="color:var(--helium);">0177 2137503</a><br>
       E-Mail: <a href="mailto:bwt.schwarze@gmail.com" style="color:var(--helium);">bwt.schwarze@gmail.com</a><br><br>
-      <strong style="color:var(--white);">Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:</strong><br>
-      [USt-IdNr. eintragen]<br><br>
       <strong style="color:var(--white);">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</strong><br>
       Mark Schwarze, Alter Postweg 80, 26607 Aurich
     </p>
@@ -1074,7 +1139,7 @@
       MS Heliumtechnik, Mark Schwarze, Alter Postweg 80, 26607 Aurich</p>
       <br>
       <p><strong style="color:var(--white);">2. Erhobene Daten</strong><br>
-      Bei der Nutzung des Kontaktformulars werden Name, Firma, Telefon, E-Mail und weitere freiwillige Angaben erhoben. Diese werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</p>
+      Bei der Nutzung des Kontaktformulars werden Name, Firma, Telefon, E-Mail und weitere freiwillige Angaben erhoben. Das Formular öffnet Ihr E-Mail-Programm; die Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</p>
       <br>
       <p><strong style="color:var(--white);">3. Zweck und Rechtsgrundlage</strong><br>
       Die Verarbeitung erfolgt zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO).</p>
@@ -1088,8 +1153,16 @@
       <p><strong style="color:var(--white);">6. Ihre Rechte</strong><br>
       Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung. Kontakt: bwt.schwarze@gmail.com</p>
       <br>
-      <p><strong style="color:var(--white);">7. Hosting</strong><br>
-      Diese Website wird statisch gehostet. Es werden keine Cookies gesetzt.</p>
+      <p><strong style="color:var(--white);">7. Hosting (GitHub Pages)</strong><br>
+      Diese Website wird als statische Seite bei GitHub Pages gehostet, einem Dienst der GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (Tochterunternehmen der Microsoft Corporation). Beim Aufruf der Seite verarbeitet GitHub technisch notwendige Verbindungsdaten, insbesondere die IP-Adresse des Besuchers, um die Auslieferung der Website zu ermöglichen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und effizienten Bereitstellung). Eine Übermittlung in die USA kann nicht ausgeschlossen werden; GitHub ist unter dem EU-US Data Privacy Framework zertifiziert. Durch diese Website selbst werden keine Cookies gesetzt.</p>
+      <br>
+      <p><strong style="color:var(--white);">8. Schriftarten (Google Fonts)</strong><br>
+      Diese Website bindet Schriftarten („Google Fonts“) über Server von Google ein (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Beim Laden der Schriften wird die IP-Adresse des Besuchers an Google übertragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen Darstellung). Weitere Informationen: https://policies.google.com/privacy</p>
+      <br>
+      <p><strong style="color:var(--white);">9. Beschwerderecht</strong><br>
+      Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig ist die Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover.</p>
+      <br>
+      <p style="font-size:0.78rem;color:var(--text-muted);">Stand: Juni 2026</p>
     </div>
   </div>
 </div>
@@ -1120,7 +1193,7 @@
           Mark Schwarze<br>
           Alter Postweg 80<br>
           26607 Aurich<br><br>
-          <a href="tel:+4917721375032" style="color:inherit">0177 2137503</a>
+          <a href="tel:+491772137503" style="color:inherit">0177 2137503</a>
         </address>
       </div>
     </div>
@@ -1195,6 +1268,23 @@
       a.style.color = a.getAttribute('href') === '#' + current ? 'var(--white)' : '';
     });
   });
+
+  // Leck-Heilung: beim Runterscrollen nimmt das Spritzen ab, unten ist es repariert
+  (function() {
+    var spray = document.getElementById('spray');
+    var clamp = document.getElementById('clamp');
+    if (!spray || !clamp) return;
+    function updateLeak() {
+      var doc = document.documentElement;
+      var max = (doc.scrollHeight - doc.clientHeight) || 1;
+      var p = Math.min(1, Math.max(0, (window.scrollY || doc.scrollTop) / max));
+      spray.style.opacity = Math.max(0, 1 - p * 1.2).toFixed(3);
+      clamp.style.opacity = Math.min(1, Math.max(0, (p - 0.6) / 0.3)).toFixed(3);
+    }
+    window.addEventListener('scroll', updateLeak, { passive: true });
+    window.addEventListener('resize', updateLeak);
+    updateLeak();
+  })();
 </script>
 </body>
 </html>
