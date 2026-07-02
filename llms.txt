@@ -20,7 +20,7 @@ Wir orten Leckagen in wasserbefüllten Druckleitungssystemen mit Helium als Trac
 - Auch bei tief liegenden Leitungen über mehrere Meter messbar
 - Punktgenaue Lokalisierung statt teurer Suchgrabungen
 - Dokumentierter Ergebnisbericht als Grundlage der Sanierungsplanung
-- Helium ist beim Umweltbundesamt nach § 11 TrinkwV zur Leckortung gelistet
+- Helium ist beim Umweltbundesamt nach § 20 TrinkwV zur Leckortung gelistet
 
 ## Leistungen
 

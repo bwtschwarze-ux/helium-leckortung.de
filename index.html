@@ -144,8 +144,6 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #0B1F3A;
@@ -164,13 +162,13 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background: var(--navy);
     color: var(--white);
     line-height: 1.6;
     overflow-x: hidden;
   }
-  h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; line-height: 1.2; }
+  h1,h2,h3,h4 { font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif; line-height: 1.2; }
 
   /* NAV */
   .logo-svg-wrap { display: flex; align-items: center; gap: 0.75rem; }
@@ -188,7 +186,7 @@
   .nav-logo {
     display: flex; flex-direction: column; line-height: 1.1;
   }
-  .nav-logo .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--white); letter-spacing: -0.02em; }
+  .nav-logo .brand { font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--white); letter-spacing: -0.02em; }
   .nav-logo .sub { font-size: 0.7rem; color: var(--helium); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; }
   /* Desktop: nav-links außerhalb <nav>, aber visuell zentriert in der Navbar */
   .nav-links {
@@ -281,7 +279,7 @@
   .hero-img-placeholder p { font-size: 0.85rem; opacity: 0.6; text-align: center; }
   .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
   .hero-stat { padding: 1rem; background: rgba(0,196,232,0.06); border-radius: 8px; border: 1px solid rgba(0,196,232,0.15); }
-  .hero-stat .val { font-family: 'Space Grotesk', sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--helium); }
+  .hero-stat .val { font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif; font-size: 1.6rem; font-weight: 700; color: var(--helium); }
   .hero-stat .lbl { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
 
   /* TRUST BAR */
@@ -324,7 +322,7 @@
   }
   .step:last-child { border-bottom: none; }
   .step-num {
-    font-family: 'Space Grotesk', sans-serif; font-size: 0.75rem; font-weight: 700;
+    font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif; font-size: 0.75rem; font-weight: 700;
     color: var(--helium); background: var(--helium-glow); border: 1px solid rgba(0,196,232,0.25);
     width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
     flex-shrink: 0; margin-top: 0.1rem;
@@ -420,7 +418,7 @@
   .contact-row .icon { color: var(--helium); width: 20px; flex-shrink: 0; }
   .contact-row a { color: var(--white); text-decoration: none; }
   .contact-row a:hover { color: var(--helium); }
-  .contact-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.2rem; }
+  .contact-name { font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif; font-weight: 700; font-size: 1.05rem; margin-bottom: 0.2rem; }
   .contact-role { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.5rem; }
 
   /* FORM */
@@ -447,7 +445,7 @@
   .form-group input, .form-group select, .form-group textarea {
     width: 100%; background: var(--navy-mid); border: 1px solid var(--border);
     border-radius: 8px; padding: 0.75rem 1rem; color: var(--white);
-    font-family: 'Inter', sans-serif; font-size: 0.9rem; transition: border-color 0.2s;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 0.9rem; transition: border-color 0.2s;
     outline: none; appearance: none;
   }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
@@ -460,7 +458,7 @@
   .form-hint { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem; }
   .form-submit {
     width: 100%; background: var(--helium); color: var(--navy); border: none;
-    padding: 1rem; border-radius: 8px; font-family: 'Space Grotesk', sans-serif;
+    padding: 1rem; border-radius: 8px; font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
     font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
     margin-top: 0.5rem; letter-spacing: -0.01em;
   }
@@ -480,7 +478,7 @@
   }
   .footer-inner { max-width: 1200px; margin: 0 auto; }
   .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2rem; }
-  .footer-brand .name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.3rem; }
+  .footer-brand .name { font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.3rem; }
   .footer-brand .tag { font-size: 0.78rem; color: var(--helium); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; }
   .footer-brand p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; max-width: 300px; }
   .footer-col h4 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--steel); margin-bottom: 1rem; }
@@ -614,7 +612,7 @@
     display: flex; align-items: center; gap: 0.4rem;
     background: rgba(143,168,196,0.08); border: 1px solid var(--border); color: var(--steel);
     padding: 0.45rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600;
-    cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.2s;
+    cursor: pointer; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; transition: all 0.2s;
   }
   .lang-btn:hover { color: var(--white); border-color: var(--helium); }
   .lang-current { text-transform: uppercase; letter-spacing: 0.05em; }
@@ -629,7 +627,7 @@
   .lang-menu button {
     background: none; border: none; color: var(--steel); text-align: left;
     padding: 0.55rem 0.7rem; border-radius: 5px; font-size: 0.85rem; cursor: pointer;
-    font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 0.55rem; transition: all 0.15s;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; display: flex; align-items: center; gap: 0.55rem; transition: all 0.15s;
   }
   .lang-menu button:hover { background: rgba(0,196,232,0.1); color: var(--white); }
   .lang-menu button.active { color: var(--helium); font-weight: 600; }
@@ -686,7 +684,7 @@
     <circle r="3" fill="#22C55E"/>
   </g>
   <!-- Status-Text -->
-  <text id="statuslbl" x="720" y="678" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="15" letter-spacing="2" fill="#E24B4A" opacity="0.85">ORTUNG LÄUFT …</text>
+  <text id="statuslbl" x="720" y="678" text-anchor="middle" font-family="'Segoe UI', system-ui, -apple-system, Roboto, sans-serif" font-size="15" letter-spacing="2" fill="#E24B4A" opacity="0.85">ORTUNG LÄUFT …</text>
 </svg>
 
 <!-- NAV -->
@@ -796,7 +794,7 @@
     </div>
     <div class="trust-item">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-      <span data-i18n="trust6">Helium nach § 11 TrinkwV gelistet</span>
+      <span data-i18n="trust6">Helium nach § 20 TrinkwV gelistet</span>
     </div>
   </div>
 </div>
@@ -879,8 +877,8 @@
         <div class="step">
           <div class="step-num">03</div>
           <div>
-            <h3 data-i18n="s3_h">Blasenfreie Bindung an das Medium</h3>
-            <p data-i18n="s3_p">Das Helium wird nicht pur eingebracht: Die Spezialanlage löst es blasenfrei im zu prüfenden Medium und erzeugt eine stabile Verbindung mit dem Umlaufwasser, in der es gebunden bleibt und mitzirkuliert – der Zeitraum bis zur vollständigen Verteilung im Netz ist systemabhängig. Erst dort, wo das Medium durch eine Undichtigkeit aus dem Rohr austritt und mit Sauerstoff in Kontakt kommt, löst sich das Helium wieder aus dem Wasser und wird an der Oberfläche messbar.</p>
+            <h3 data-i18n="s3_h">Blasenfreies Lösen im Medium</h3>
+            <p data-i18n="s3_p">Das Helium wird nicht pur eingebracht: Die Spezialanlage löst es blasenfrei im zu prüfenden Medium, sodass es homogen im Umlaufwasser gelöst bleibt und mitzirkuliert – der Zeitraum bis zur vollständigen Verteilung im Netz ist systemabhängig. Erst dort, wo das Medium durch eine Undichtigkeit aus dem Rohr austritt und der Druck abfällt, entweicht das gelöste Helium wieder aus dem Wasser und wird an der Oberfläche messbar.</p>
           </div>
         </div>
         <div class="step">
@@ -920,9 +918,9 @@
     <div class="warum-split">
       <div class="warum-text">
         <p data-i18n="warum_p1">Helium ist das kleinste stabile Molekül der Natur. Mit einem Atomdurchmesser von 0,26 nm und einer Dichte, die rund siebenmal geringer ist als die von Luft, dringt es durch Bodenschichten, Schächte und Prüföffnungen – selbst wenn die Schadstelle tief liegt.</p>
-        <p data-i18n="warum_p2">Der natürliche Heliumgehalt der Atmosphäre liegt bei rund 5,2 ppm – ein stabiler, bekannter Hintergrundwert. Jede Abweichung davon ist messbar und eindeutig auf eine Leckstelle zurückführbar.</p>
+        <p data-i18n="warum_p2">Der natürliche Heliumgehalt der Atmosphäre liegt bei rund 5,2 ppm – ein stabiler, bekannter Hintergrundwert. Eine deutliche Erhöhung über diesen Wert ist messbar und ein starker Hinweis auf eine austretende Leckstelle, den wir entlang der Trasse systematisch eingrenzen.</p>
         <p data-i18n="warum_p3">Helium ist chemisch inert, ungiftig, nicht entzündlich und verbleibt in so geringen Mengen im System, dass es keine betrieblichen Auswirkungen hat. Es ist technisch und sicherheitstechnisch unbedenklich.</p>
-        <p data-i18n="warum_p4">Zudem ist Helium beim Umweltbundesamt nach § 11 TrinkwV als Stoff zur Ortung von Leckagen im Rohrsystem gelistet – einsetzbar bis hin zu Trinkwassernetzen.</p>
+        <p data-i18n="warum_p4">Zudem ist Helium beim Umweltbundesamt nach § 20 TrinkwV als Stoff zur Ortung von Leckagen im Rohrsystem gelistet – einsetzbar bis hin zu Trinkwassernetzen.</p>
         <p style="color: #8FA8C4; font-size: 0.82rem; border-left: 2px solid rgba(0,196,232,0.3); padding-left: 1rem; margin-top: 1.5rem;" data-i18n="warum_hinweis">Hinweis: Helium kann je nach Kunststofftyp, Wandstärke und Temperatur partiell durch Rohrmaterial diffundieren. An Leckstellen, Muffen, Übergängen und beschädigten Bereichen tritt es bevorzugt aus. Aluminium-Barrieren (alu-ummantelte Fernwärmerohre) verringern die Diffusion erheblich. Die Eignung für Ihr Leitungssystem wird im Vorfeld individuell bewertet.</p>
       </div>
       <div>
@@ -1337,7 +1335,7 @@
 <div id="impressum-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:1000; overflow-y:auto; padding:2rem;">
   <div style="max-width:600px; margin:3rem auto; background:var(--navy-mid); border:1px solid var(--border); border-radius:12px; padding:2.5rem; position:relative;">
     <button onclick="document.getElementById('impressum-modal').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--steel);font-size:1.5rem;cursor:pointer;">✕</button>
-    <h2 style="font-family:'Space Grotesk',sans-serif;margin-bottom:0.5rem;color:var(--white);">Impressum</h2>
+    <h2 style="font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;margin-bottom:0.5rem;color:var(--white);">Impressum</h2>
     <p style="color:var(--text-muted);font-size:0.8rem;margin-bottom:1.5rem;">Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)</p>
     <p style="color:var(--steel);line-height:1.8;">
       <strong style="color:var(--white);">MS Heliumtechnik</strong><br>
@@ -1358,7 +1356,7 @@
 <div id="datenschutz-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:1000; overflow-y:auto; padding:2rem;">
   <div style="max-width:660px; margin:3rem auto; background:var(--navy-mid); border:1px solid var(--border); border-radius:12px; padding:2.5rem; position:relative;">
     <button onclick="document.getElementById('datenschutz-modal').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:var(--steel);font-size:1.5rem;cursor:pointer;">✕</button>
-    <h2 style="font-family:'Space Grotesk',sans-serif;margin-bottom:1.5rem;color:var(--white);">Datenschutzerklärung</h2>
+    <h2 style="font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;margin-bottom:1.5rem;color:var(--white);">Datenschutzerklärung</h2>
     <div style="color:var(--steel);line-height:1.8;">
       <p><strong style="color:var(--white);">1. Verantwortlicher</strong><br>
       MS Heliumtechnik, Mark Schwarze, Alter Postweg 80, 26607 Aurich</p>
@@ -1381,8 +1379,8 @@
       <p><strong style="color:var(--white);">7. Hosting (GitHub Pages)</strong><br>
       Diese Website wird als statische Seite bei GitHub Pages gehostet, einem Dienst der GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (Tochterunternehmen der Microsoft Corporation). Beim Aufruf der Seite verarbeitet GitHub technisch notwendige Verbindungsdaten, insbesondere die IP-Adresse des Besuchers, um die Auslieferung der Website zu ermöglichen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und effizienten Bereitstellung). Eine Übermittlung in die USA kann nicht ausgeschlossen werden; GitHub ist unter dem EU-US Data Privacy Framework zertifiziert. Durch diese Website selbst werden keine Cookies gesetzt.</p>
       <br>
-      <p><strong style="color:var(--white);">8. Schriftarten (Google Fonts)</strong><br>
-      Diese Website bindet Schriftarten („Google Fonts“) über Server von Google ein (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Beim Laden der Schriften wird die IP-Adresse des Besuchers an Google übertragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen Darstellung). Weitere Informationen: https://policies.google.com/privacy</p>
+      <p><strong style="color:var(--white);">8. Schriftarten</strong><br>
+      Alle Schriftarten werden lokal von diesem Server ausgeliefert bzw. es kommen Systemschriftarten zum Einsatz. Es findet keine Einbindung externer Schriftdienste (z. B. Google Fonts) und damit keine Übertragung Ihrer IP-Adresse an Dritte zu diesem Zweck statt.</p>
       <br>
       <p><strong style="color:var(--white);">9. Beschwerderecht</strong><br>
       Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig ist die Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover.</p>
@@ -1546,7 +1544,7 @@
       hero_sub: "Helium leak detection for district heating, process-water and industrial networks. No draining. No supply interruption. Precise localisation even for deeply buried pipes.",
       hero_cta1: "Free quote request", hero_cta2: "Understand the method",
       hero_stat1: "Shutdowns required", hero_stat2: "High-sensitivity metrology", hero_stat3: "Depth detectable", hero_stat4: "Measurement accuracy",
-      trust1: "No operational stop", trust2: "No draining", trust3: "High-sensitivity metrology", trust4: "Even deep pipe routes", trust5: "Documented result report", trust6: "Helium listed under § 11 German Drinking Water Ordinance",
+      trust1: "No operational stop", trust2: "No draining", trust3: "High-sensitivity metrology", trust4: "Even deep pipe routes", trust5: "Documented result report", trust6: "Helium listed under § 20 German Drinking Water Ordinance",
       vorteile_label: "Why MS Heliumtechnik", vorteile_title: "Specialised where others reach their limits.", vorteile_sub: "Conventional leak-detection methods quickly reach their limits with complex networks, deep pipe routes or live operation. Our method does not.",
       v1_h: "Live operation", v1_p: "Leak detection is carried out while the system stays in operation. No shutdown, no supply interruption, no pressure loss from draining.",
       v2_h: "High-sensitivity metrology", v2_p: "No off-the-shelf devices. We work with highly sensitive analytics able to measure the smallest deviations from the natural background level.",
@@ -1557,15 +1555,15 @@
       verf_label: "The method", verf_title: "How helium leak detection works.", verf_sub: "A systematic process – from injection to the result report.",
       s1_h: "Initial consultation & planning documents", s1_p: "We discuss your pipe system: route length, pipe type, medium, operating pressure, temperature and known water loss. Existing plans are reviewed.",
       s2_h: "Helium injection during live operation", s2_p: "Via a suitable injection point, helium is introduced bubble-free into the process water with a special unit. Operation continues – no interruption.",
-      s3_h: "Bubble-free bond with the medium", s3_p: "Helium is not injected pure: the special unit dissolves it bubble-free in the medium being tested and forms a stable bond with the circulating water, in which it stays bound and circulates – the time until full distribution in the network is system-dependent. Only where the medium escapes the pipe through a leak and comes into contact with oxygen does the helium release from the water again and become measurable at the surface.",
+      s3_h: "Bubble-free dissolution in the medium", s3_p: "Helium is not injected pure: the special unit dissolves it bubble-free in the medium being tested, so that it stays homogeneously dissolved in the circulating water and circulates with it – the time until full distribution in the network is system-dependent. Only where the medium escapes the pipe through a leak and the pressure drops does the dissolved helium come out of the water again and become measurable at the surface.",
       s4_h: "Systematic measurement along the route", s4_p: "At test openings, drill points, shafts and measurement points, soil air is drawn in and checked for helium content with high-sensitivity analytics. The readings are logged.",
       s5_h: "Evaluation & narrowing down", s5_p: "Elevated helium values compared to the natural background level indicate the areas where the pipe medium is escaping. This allows the damage point to be narrowed down precisely.",
       s6_h: "Result report for the operator", s6_p: "You receive written documentation with readings, route log, narrowing of the damage point and recommendations for the next steps.",
       warum_label: "Why helium?", warum_title: "The tracer gas of choice.",
       warum_p1: "Helium is the smallest stable molecule in nature. With an atomic diameter of 0.26 nm and a density around seven times lower than air, it penetrates soil layers, shafts and test openings – even when the damage point is deep.",
-      warum_p2: "The natural helium content of the atmosphere is around 5.2 ppm – a stable, known background value. Any deviation from it is measurable and clearly traceable to a leak.",
+      warum_p2: "The natural helium content of the atmosphere is around 5.2 ppm – a stable, known background value. A marked increase above this value is measurable and a strong indication of an escaping leak, which we narrow down systematically along the route.",
       warum_p3: "Helium is chemically inert, non-toxic, non-flammable and remains in such small quantities in the system that it has no operational effects. It is technically and safety-wise harmless.",
-      warum_p4: "In addition, helium is listed by the German Federal Environment Agency under § 11 of the Drinking Water Ordinance as a substance for locating leaks in pipe systems – usable up to drinking-water networks.",
+      warum_p4: "In addition, helium is listed by the German Federal Environment Agency under § 20 of the Drinking Water Ordinance as a substance for locating leaks in pipe systems – usable up to drinking-water networks.",
       warum_hinweis: "Note: depending on plastic type, wall thickness and temperature, helium can partly diffuse through pipe material. At leaks, sleeves, joints and damaged areas it escapes preferentially. Aluminium barriers (alu-clad district-heating pipes) considerably reduce diffusion. Suitability for your pipe system is assessed individually in advance.",
       tbl_h1: "Method", tbl_h2: "Operation running", tbl_h3: "Deep pipes", tbl_h4: "Precise loc.",
       tbl_m1: "Helium leak detection (us)", tbl_m2: "Acoustics / correlation", tbl_m3: "Thermography", tbl_m4: "Moisture measurement", tbl_m5: "Forming gas (H₂/N₂)",
@@ -1621,7 +1619,7 @@
       hero_sub: "Détection de fuites à l'hélium pour réseaux de chauffage urbain, d'eau de process et industriels. Sans vidange. Sans interruption d'alimentation. Localisation précise même pour les conduites profondes.",
       hero_cta1: "Demande de devis gratuite", hero_cta2: "Comprendre la méthode",
       hero_stat1: "Coupures nécessaires", hero_stat2: "Métrologie haute sensibilité", hero_stat3: "Profondeur détectable", hero_stat4: "Précision de mesure",
-      trust1: "Aucun arrêt d'exploitation", trust2: "Aucune vidange", trust3: "Métrologie haute sensibilité", trust4: "Même conduites profondes", trust5: "Rapport de résultats documenté", trust6: "Hélium listé selon § 11 du règlement allemand sur l'eau potable",
+      trust1: "Aucun arrêt d'exploitation", trust2: "Aucune vidange", trust3: "Métrologie haute sensibilité", trust4: "Même conduites profondes", trust5: "Rapport de résultats documenté", trust6: "Hélium listé selon § 20 du règlement allemand sur l'eau potable",
       vorteile_label: "Pourquoi MS Heliumtechnik", vorteile_title: "Spécialisés là où les autres atteignent leurs limites.", vorteile_sub: "Les méthodes classiques de détection atteignent vite leurs limites sur des réseaux complexes, des conduites profondes ou en fonctionnement. Pas notre méthode.",
       v1_h: "En fonctionnement", v1_p: "La détection s'effectue pendant que l'installation reste en service. Aucune coupure, aucune interruption d'alimentation, aucune perte de pression due à une vidange.",
       v2_h: "Métrologie haute sensibilité", v2_p: "Pas d'appareils grand public. Nous travaillons avec une analytique très sensible, capable de mesurer les plus infimes écarts par rapport au niveau naturel de fond.",
@@ -1632,15 +1630,15 @@
       verf_label: "La méthode", verf_title: "Comment fonctionne la détection à l'hélium.", verf_sub: "Un déroulement systématique – de l'injection au rapport de résultats.",
       s1_h: "Premier entretien & documents de planification", s1_p: "Nous examinons votre réseau : longueur du tracé, type de conduite, fluide, pression de service, température et perte d'eau connue. Les plans existants sont analysés.",
       s2_h: "Injection d'hélium en fonctionnement", s2_p: "Via un point d'injection adapté, l'hélium est introduit sans bulles dans l'eau de process à l'aide d'une installation spéciale. L'exploitation continue – sans interruption.",
-      s3_h: "Liaison sans bulles avec le fluide", s3_p: "L'hélium n'est pas injecté pur : l'installation spéciale le dissout sans bulles dans le fluide à contrôler et crée une liaison stable avec l'eau en circulation, dans laquelle il reste lié et circule – le délai jusqu'à la répartition complète dans le réseau dépend du système. Ce n'est qu'à l'endroit où le fluide s'échappe de la conduite par une fuite et entre en contact avec l'oxygène que l'hélium se libère de l'eau et devient mesurable en surface.",
+      s3_h: "Dissolution sans bulles dans le fluide", s3_p: "L'hélium n'est pas injecté pur : l'installation spéciale le dissout sans bulles dans le fluide à contrôler, de sorte qu'il reste dissous de façon homogène dans l'eau en circulation et circule avec elle – le délai jusqu'à la répartition complète dans le réseau dépend du système. Ce n'est qu'à l'endroit où le fluide s'échappe de la conduite par une fuite et où la pression chute que l'hélium dissous ressort de l'eau et devient mesurable en surface.",
       s4_h: "Mesure systématique le long du tracé", s4_p: "Aux ouvertures de contrôle, points de forage, regards et points de mesure, l'air du sol est aspiré et analysé en hélium avec une analytique très sensible. Les valeurs sont consignées.",
       s5_h: "Évaluation & délimitation", s5_p: "Des valeurs d'hélium élevées par rapport au niveau naturel de fond indiquent les zones où le fluide s'échappe. Le point endommagé peut ainsi être délimité précisément.",
       s6_h: "Rapport de résultats pour l'exploitant", s6_p: "Vous recevez une documentation écrite avec valeurs de mesure, protocole de tracé, délimitation du point endommagé et recommandations pour la suite.",
       warum_label: "Pourquoi l'hélium ?", warum_title: "Le gaz traceur de choix.",
       warum_p1: "L'hélium est la plus petite molécule stable de la nature. Avec un diamètre atomique de 0,26 nm et une densité environ sept fois inférieure à celle de l'air, il pénètre les couches de sol, regards et ouvertures de contrôle – même si le point endommagé est profond.",
-      warum_p2: "La teneur naturelle en hélium de l'atmosphère est d'environ 5,2 ppm – une valeur de fond stable et connue. Tout écart est mesurable et clairement attribuable à une fuite.",
+      warum_p2: "La teneur naturelle en hélium de l'atmosphère est d'environ 5,2 ppm – une valeur de fond stable et connue. Une augmentation nette au-dessus de cette valeur est mesurable et constitue un indice fort d'une fuite, que nous délimitons systématiquement le long du tracé.",
       warum_p3: "L'hélium est chimiquement inerte, non toxique, ininflammable et reste en quantités si faibles dans le système qu'il n'a aucun effet sur l'exploitation. Il est sans danger sur le plan technique et sécuritaire.",
-      warum_p4: "De plus, l'hélium est listé par l'Agence fédérale allemande de l'environnement selon le § 11 du règlement sur l'eau potable comme substance de localisation des fuites dans les réseaux de conduites – utilisable jusqu'aux réseaux d'eau potable.",
+      warum_p4: "De plus, l'hélium est listé par l'Agence fédérale allemande de l'environnement selon le § 20 du règlement sur l'eau potable comme substance de localisation des fuites dans les réseaux de conduites – utilisable jusqu'aux réseaux d'eau potable.",
       warum_hinweis: "Remarque : selon le type de plastique, l'épaisseur de paroi et la température, l'hélium peut diffuser partiellement à travers le matériau. Aux fuites, manchons, raccords et zones endommagées, il s'échappe de préférence. Les barrières en aluminium (conduites de chauffage urbain gainées alu) réduisent fortement la diffusion. L'adéquation à votre réseau est évaluée individuellement au préalable.",
       tbl_h1: "Méthode", tbl_h2: "En service", tbl_h3: "Conduites profondes", tbl_h4: "Loc. précise",
       tbl_m1: "Détection à l'hélium (nous)", tbl_m2: "Acoustique / corrélation", tbl_m3: "Thermographie", tbl_m4: "Mesure d'humidité", tbl_m5: "Gaz de formage (H₂/N₂)",
@@ -1696,7 +1694,7 @@
       hero_sub: "Heliumlekdetectie voor stadsverwarming, proceswater- en industrienetten. Geen aftappen. Geen leveringsonderbreking. Nauwkeurige lokalisatie ook bij diepliggende leidingen.",
       hero_cta1: "Gratis offerteaanvraag", hero_cta2: "Methode begrijpen",
       hero_stat1: "Uitschakelingen nodig", hero_stat2: "Hooggevoelige meettechniek", hero_stat3: "Diepte detecteerbaar", hero_stat4: "Meetnauwkeurigheid",
-      trust1: "Geen bedrijfsstop", trust2: "Geen aftappen", trust3: "Hooggevoelige meettechniek", trust4: "Ook bij diepe tracés", trust5: "Gedocumenteerd resultaatrapport", trust6: "Helium vermeld volgens § 11 Duitse drinkwaterverordening",
+      trust1: "Geen bedrijfsstop", trust2: "Geen aftappen", trust3: "Hooggevoelige meettechniek", trust4: "Ook bij diepe tracés", trust5: "Gedocumenteerd resultaatrapport", trust6: "Helium vermeld volgens § 20 Duitse drinkwaterverordening",
       vorteile_label: "Waarom MS Heliumtechnik", vorteile_title: "Gespecialiseerd waar anderen vastlopen.", vorteile_sub: "Gangbare lekdetectiemethoden lopen bij complexe netten, diepe tracés of tijdens bedrijf snel tegen hun grenzen aan. Onze methode niet.",
       v1_h: "Tijdens bedrijf", v1_p: "De lekdetectie vindt plaats terwijl de installatie in bedrijf is. Geen uitschakeling, geen leveringsonderbreking, geen drukverlies door aftappen.",
       v2_h: "Hooggevoelige meettechniek", v2_p: "Geen standaardapparatuur uit de bouwmarkt. Wij werken met hooggevoelige analytiek die de kleinste afwijkingen van de natuurlijke achtergrondwaarde kan meten.",
@@ -1707,15 +1705,15 @@
       verf_label: "De methode", verf_title: "Zo werkt heliumlekdetectie.", verf_sub: "Een systematisch verloop – van injectie tot resultaatrapport.",
       s1_h: "Eerste gesprek & planningsdocumenten", s1_p: "Wij bespreken uw leidingsysteem: tracélengte, leidingtype, medium, bedrijfsdruk, temperatuur en bekend waterverlies. Bestaande plannen worden bekeken.",
       s2_h: "Heliuminjectie tijdens bedrijf", s2_p: "Via een geschikt injectiepunt wordt helium bellenvrij met een speciale installatie in het proceswater gebracht. Het bedrijf loopt door – geen onderbreking.",
-      s3_h: "Bellenvrije binding aan het medium", s3_p: "Het helium wordt niet puur ingebracht: de speciale installatie lost het bellenvrij op in het te controleren medium en vormt een stabiele verbinding met het circulerende water, waarin het gebonden blijft en meecirculeert – de tijd tot volledige verdeling in het net is systeemafhankelijk. Pas daar waar het medium door een lek uit de leiding treedt en met zuurstof in contact komt, komt het helium weer uit het water vrij en wordt aan de oppervlakte meetbaar.",
+      s3_h: "Bellenvrij oplossen in het medium", s3_p: "Het helium wordt niet puur ingebracht: de speciale installatie lost het bellenvrij op in het te controleren medium, zodat het homogeen opgelost blijft in het circulerende water en meecirculeert – de tijd tot volledige verdeling in het net is systeemafhankelijk. Pas daar waar het medium door een lek uit de leiding treedt en de druk wegvalt, komt het opgeloste helium weer uit het water vrij en wordt aan de oppervlakte meetbaar.",
       s4_h: "Systematische meting langs het tracé", s4_p: "Bij controleopeningen, boorpunten, putten en meetpunten wordt bodemlucht aangezogen en met hooggevoelige analytiek op heliumgehalte gecontroleerd. De meetwaarden worden geregistreerd.",
       s5_h: "Evaluatie & inperking", s5_p: "Verhoogde heliumwaarden ten opzichte van de natuurlijke achtergrondwaarde geven de zones aan waar het leidingmedium uittreedt. Zo kan de schadeplek nauwkeurig worden ingeperkt.",
       s6_h: "Resultaatrapport voor de exploitant", s6_p: "U ontvangt een schriftelijke documentatie met meetwaarden, tracéprotocol, inperking van de schadeplek en aanbevelingen voor de vervolgstappen.",
       warum_label: "Waarom helium?", warum_title: "Het tracergas bij uitstek.",
       warum_p1: "Helium is het kleinste stabiele molecuul in de natuur. Met een atoomdiameter van 0,26 nm en een dichtheid die ongeveer zeven keer lager is dan die van lucht, dringt het door bodemlagen, putten en controleopeningen – zelfs als de schadeplek diep ligt.",
-      warum_p2: "Het natuurlijke heliumgehalte van de atmosfeer bedraagt ongeveer 5,2 ppm – een stabiele, bekende achtergrondwaarde. Elke afwijking daarvan is meetbaar en eenduidig aan een lek toe te schrijven.",
+      warum_p2: "Het natuurlijke heliumgehalte van de atmosfeer bedraagt ongeveer 5,2 ppm – een stabiele, bekende achtergrondwaarde. Een duidelijke verhoging boven deze waarde is meetbaar en een sterke aanwijzing voor een lek, dat wij systematisch langs het tracé inperken.",
       warum_p3: "Helium is chemisch inert, niet giftig, niet brandbaar en blijft in zulke kleine hoeveelheden in het systeem dat het geen bedrijfsmatige gevolgen heeft. Het is technisch en veiligheidstechnisch onbedenkelijk.",
-      warum_p4: "Bovendien is helium bij het Duitse federale milieuagentschap volgens § 11 van de drinkwaterverordening vermeld als stof voor het opsporen van lekken in leidingsystemen – inzetbaar tot en met drinkwaternetten.",
+      warum_p4: "Bovendien is helium bij het Duitse federale milieuagentschap volgens § 20 van de drinkwaterverordening vermeld als stof voor het opsporen van lekken in leidingsystemen – inzetbaar tot en met drinkwaternetten.",
       warum_hinweis: "Let op: afhankelijk van kunststoftype, wanddikte en temperatuur kan helium gedeeltelijk door leidingmateriaal diffunderen. Bij lekken, moffen, overgangen en beschadigde plekken treedt het bij voorkeur uit. Aluminiumbarrières (alu-omhulde stadsverwarmingsbuizen) verminderen de diffusie aanzienlijk. De geschiktheid voor uw leidingsysteem wordt vooraf individueel beoordeeld.",
       tbl_h1: "Methode", tbl_h2: "In bedrijf", tbl_h3: "Diepe leidingen", tbl_h4: "Nauwk. loc.",
       tbl_m1: "Heliumlekdetectie (wij)", tbl_m2: "Akoestiek / correlatie", tbl_m3: "Thermografie", tbl_m4: "Vochtmeting", tbl_m5: "Vormgas (H₂/N₂)",
@@ -1771,7 +1769,7 @@
       hero_sub: "Localizzazione perdite a elio per reti di teleriscaldamento, acqua di processo e industriali. Nessuno svuotamento. Nessuna interruzione della fornitura. Localizzazione precisa anche per condotte profonde.",
       hero_cta1: "Richiesta di preventivo gratuita", hero_cta2: "Capire il metodo",
       hero_stat1: "Spegnimenti necessari", hero_stat2: "Metrologia ad alta sensibilità", hero_stat3: "Profondità rilevabile", hero_stat4: "Precisione di misura",
-      trust1: "Nessun arresto d'esercizio", trust2: "Nessuno svuotamento", trust3: "Metrologia ad alta sensibilità", trust4: "Anche tracciati profondi", trust5: "Rapporto risultati documentato", trust6: "Elio elencato secondo § 11 del regolamento tedesco sull'acqua potabile",
+      trust1: "Nessun arresto d'esercizio", trust2: "Nessuno svuotamento", trust3: "Metrologia ad alta sensibilità", trust4: "Anche tracciati profondi", trust5: "Rapporto risultati documentato", trust6: "Elio elencato secondo § 20 del regolamento tedesco sull'acqua potabile",
       vorteile_label: "Perché MS Heliumtechnik", vorteile_title: "Specializzati dove gli altri si fermano.", vorteile_sub: "I metodi tradizionali di localizzazione raggiungono presto i loro limiti con reti complesse, tracciati profondi o durante l'esercizio. Il nostro metodo no.",
       v1_h: "Durante l'esercizio", v1_p: "La localizzazione avviene mentre l'impianto resta in funzione. Nessuno spegnimento, nessuna interruzione della fornitura, nessuna perdita di pressione dovuta allo svuotamento.",
       v2_h: "Metrologia ad alta sensibilità", v2_p: "Niente apparecchi da ferramenta. Lavoriamo con analitica ad alta sensibilità in grado di misurare le minime deviazioni dal valore di fondo naturale.",
@@ -1782,15 +1780,15 @@
       verf_label: "Il metodo", verf_title: "Come funziona la localizzazione a elio.", verf_sub: "Un processo sistematico – dall'immissione al rapporto risultati.",
       s1_h: "Primo colloquio & documenti di progetto", s1_p: "Analizziamo il vostro sistema di condotte: lunghezza del tracciato, tipo di condotta, fluido, pressione d'esercizio, temperatura e perdita d'acqua nota. I piani esistenti vengono esaminati.",
       s2_h: "Immissione di elio durante l'esercizio", s2_p: "Tramite un punto di immissione idoneo, l'elio viene introdotto senza bolle nell'acqua di processo con un impianto speciale. L'esercizio prosegue – nessuna interruzione.",
-      s3_h: "Legame senza bolle con il fluido", s3_p: "L'elio non viene immesso puro: l'impianto speciale lo scioglie senza bolle nel fluido da controllare e crea un legame stabile con l'acqua in circolazione, in cui resta legato e circola – il tempo fino alla completa distribuzione nella rete dipende dal sistema. Solo dove il fluido fuoriesce dalla condotta attraverso una perdita e entra in contatto con l'ossigeno, l'elio si libera nuovamente dall'acqua e diventa misurabile in superficie.",
+      s3_h: "Dissoluzione senza bolle nel fluido", s3_p: "L'elio non viene immesso puro: l'impianto speciale lo scioglie senza bolle nel fluido da controllare, in modo che resti disciolto in modo omogeneo nell'acqua in circolazione e circoli con essa – il tempo fino alla completa distribuzione nella rete dipende dal sistema. Solo dove il fluido fuoriesce dalla condotta attraverso una perdita e la pressione diminuisce, l'elio disciolto esce nuovamente dall'acqua e diventa misurabile in superficie.",
       s4_h: "Misurazione sistematica lungo il tracciato", s4_p: "In corrispondenza di aperture di controllo, punti di trivellazione, pozzetti e punti di misura, l'aria del terreno viene aspirata e analizzata per il contenuto di elio con analitica ad alta sensibilità. I valori vengono registrati.",
       s5_h: "Valutazione & delimitazione", s5_p: "Valori di elio elevati rispetto al valore di fondo naturale indicano le zone in cui il fluido fuoriesce. Così il punto danneggiato può essere delimitato con precisione.",
       s6_h: "Rapporto risultati per il gestore", s6_p: "Ricevete una documentazione scritta con valori di misura, protocollo del tracciato, delimitazione del punto danneggiato e raccomandazioni per i passi successivi.",
       warum_label: "Perché l'elio?", warum_title: "Il gas tracciante d'elezione.",
       warum_p1: "L'elio è la più piccola molecola stabile in natura. Con un diametro atomico di 0,26 nm e una densità circa sette volte inferiore a quella dell'aria, penetra strati di terreno, pozzetti e aperture di controllo – anche quando il punto danneggiato è profondo.",
-      warum_p2: "Il contenuto naturale di elio dell'atmosfera è di circa 5,2 ppm – un valore di fondo stabile e noto. Ogni deviazione è misurabile e chiaramente riconducibile a una perdita.",
+      warum_p2: "Il contenuto naturale di elio dell'atmosfera è di circa 5,2 ppm – un valore di fondo stabile e noto. Un aumento marcato al di sopra di questo valore è misurabile e un forte indizio di una perdita, che delimitiamo sistematicamente lungo il tracciato.",
       warum_p3: "L'elio è chimicamente inerte, non tossico, non infiammabile e resta in quantità così ridotte nel sistema da non avere effetti sull'esercizio. È innocuo dal punto di vista tecnico e della sicurezza.",
-      warum_p4: "Inoltre l'elio è elencato dall'Agenzia federale tedesca per l'ambiente ai sensi del § 11 del regolamento sull'acqua potabile come sostanza per la localizzazione di perdite nei sistemi di condotte – utilizzabile fino alle reti di acqua potabile.",
+      warum_p4: "Inoltre l'elio è elencato dall'Agenzia federale tedesca per l'ambiente ai sensi del § 20 del regolamento sull'acqua potabile come sostanza per la localizzazione di perdite nei sistemi di condotte – utilizzabile fino alle reti di acqua potabile.",
       warum_hinweis: "Nota: a seconda del tipo di plastica, dello spessore della parete e della temperatura, l'elio può diffondere parzialmente attraverso il materiale della condotta. In corrispondenza di perdite, manicotti, giunzioni e zone danneggiate fuoriesce preferenzialmente. Le barriere in alluminio (tubi di teleriscaldamento rivestiti in alluminio) riducono notevolmente la diffusione. L'idoneità per il vostro sistema viene valutata individualmente in anticipo.",
       tbl_h1: "Metodo", tbl_h2: "In esercizio", tbl_h3: "Condotte profonde", tbl_h4: "Loc. precisa",
       tbl_m1: "Localizzazione a elio (noi)", tbl_m2: "Acustica / correlazione", tbl_m3: "Termografia", tbl_m4: "Misura di umidità", tbl_m5: "Gas di formatura (H₂/N₂)",
