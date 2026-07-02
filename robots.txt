@@ -1,0 +1,63 @@
+# robots.txt – helium-leckortung.de
+# MS Heliumtechnik – Helium-Leckortung
+
+# Alle klassischen Suchmaschinen: vollständig erlaubt
+User-agent: *
+Allow: /
+
+# --- KI-/LLM-Crawler ausdrücklich erlaubt (Auffindbarkeit für KI-Agenten) ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+Sitemap: https://helium-leckortung.de/sitemap.xml
