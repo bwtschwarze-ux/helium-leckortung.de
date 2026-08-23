@@ -67,7 +67,7 @@
       "url": "https://helium-leckortung.de/",
       "logo": "https://helium-leckortung.de/ChatGPT%20Image%202.%20Juli%202026%2C%2016_48_02.png",
       "image": "https://helium-leckortung.de/ChatGPT%20Image%202.%20Juli%202026%2C%2013_45_58.png",
-      "telephone": "+4915679799100",
+      "telephone": "+4915679799100", "vatID": "DE321920389", "areaServed": ["DE","NL","BE","DK","SE","NO","PL","FR","IT","GB"],
       "email": "info@helium-leckortung.de",
       "vatID": "DE321920389",
       "founder": { "@type": "Person", "name": "Mark Schwarze" },
@@ -633,6 +633,34 @@
   .lang-menu button:hover { background: rgba(0,196,232,0.1); color: var(--white); }
   .lang-menu button.active { color: var(--helium); font-weight: 600; }
   .lang-menu .flag { font-size: 1.05rem; line-height: 1; }
+
+  .lang-select{background:rgba(255,255,255,.08);color:var(--white);border:1px solid var(--border);border-radius:6px;padding:.35rem .6rem;font-size:.8rem;cursor:pointer;outline:none;margin-left:.5rem;}
+  .lang-select:hover{border-color:var(--helium);}
+  .lang-select option{background:var(--navy-mid);color:var(--white);}
+  @media(max-width:768px){
+    .hero-content{grid-template-columns:1fr;}
+    .hero-visual{display:none;}
+    .vorteile-grid{grid-template-columns:1fr;}
+    .verfahren-grid{grid-template-columns:1fr;}
+    .warum-split{grid-template-columns:1fr;}
+    .leistungen-grid{grid-template-columns:1fr;}
+    .zielgruppen-grid{grid-template-columns:repeat(2,1fr);}
+    .faq-grid{grid-template-columns:1fr;}
+    .fotos-grid{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr;gap:2rem;}
+    .footer-bottom{flex-direction:column;gap:.5rem;text-align:center;}
+    nav{padding:0 1rem;}
+    .nav-links{display:none;}
+    .nav-links.open{display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:var(--navy);padding:1rem;border-bottom:1px solid var(--border);z-index:99;}
+  }
+  @media(max-width:480px){
+    .hero h1{font-size:1.8rem;}
+    .hero-btns{flex-direction:column;}
+    .zielgruppen-grid{grid-template-columns:1fr;}
+    section{padding:3rem 1rem;}
+    .anfrage-form-inner{grid-template-columns:1fr !important;}
+    .footer-bottom a{margin-right:.75rem !important;}
+  }
 </style>
 </head>
 <body>
@@ -719,7 +747,8 @@
     <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
       <span></span><span></span><span></span>
     </button>
-    <a href="#kontakt" class="nav-cta" data-i18n="nav_cta">Angebotsanfrage</a>
+    <select class="lang-select" id="lang-switcher" onchange="setLang(this.value)"><option value="de">DE</option><option value="en">EN</option><option value="fr">FR</option><option value="nl">NL</option><option value="da">DA</option><option value="it">IT</option><option value="sv">SV</option><option value="pl">PL</option><option value="no">NO</option></select>
+      <a href="#kontakt" class="nav-cta" data-i18n="nav_cta">Angebotsanfrage</a>
   </div>
 </nav>
 <ul class="nav-links">
@@ -1440,34 +1469,7 @@
 
 <script>
   // Form submit -> Web3Forms (direkter Versand)
-  document.getElementById('anfrage-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var form = e.target;
-    var btn = form.querySelector('.form-submit');
-    var orig = btn ? btn.textContent : '';
-    if (btn) { btn.textContent = (window.__f_sending || 'Wird gesendet …'); btn.disabled = true; }
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: new FormData(form)
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(res) {
-      if (res && res.success) {
-        document.getElementById('anfrage-form').style.display = 'none';
-        document.getElementById('form-success').style.display = 'block';
-      } else {
-        if (btn) { btn.textContent = orig; btn.disabled = false; }
-        alert(window.__f_error || 'Das Senden hat nicht geklappt. Bitte schreiben Sie uns direkt an info@helium-leckortung.de.');
-      }
-    })
-    .catch(function() {
-      if (btn) { btn.textContent = orig; btn.disabled = false; }
-      alert(window.__f_error || 'Das Senden hat nicht geklappt. Bitte schreiben Sie uns direkt an info@helium-leckortung.de.');
-    });
-  });
-
-  // Copyright Jahr
+  
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Hamburger Menu
