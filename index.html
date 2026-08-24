@@ -1923,5 +1923,38 @@
   apply(initial);
 })();
 </script>
+
+<script>
+/* Formular-Submit-Handler – Web3Forms */
+(function(){
+  var form = document.getElementById('anfrage-form');
+  var successDiv = document.getElementById('form-success');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = form.querySelector('[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Wird gesendet…'; }
+    var data = new FormData(form);
+    var obj = {};
+    data.forEach(function(v,k){ obj[k]=v; });
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(obj)
+    }).then(function(r){ return r.json(); }).then(function(res){
+      if (res.success) {
+        form.style.display = 'none';
+        if (successDiv) successDiv.style.display = 'block';
+      } else {
+        alert('Fehler beim Senden. Bitte schreiben Sie uns: info@helium-leckortung.de');
+        if (btn) { btn.disabled = false; btn.textContent = 'Jetzt kostenlos anfragen →'; }
+      }
+    }).catch(function(){
+      alert('Fehler beim Senden. Bitte schreiben Sie uns: info@helium-leckortung.de');
+      if (btn) { btn.disabled = false; btn.textContent = 'Jetzt kostenlos anfragen →'; }
+    });
+  });
+})();
+</script>
 </body>
 </html>
