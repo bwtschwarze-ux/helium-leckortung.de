@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://helium-leckortung.de/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://helium-leckortung.de/"/>
@@ -17,13 +17,16 @@
     <xhtml:link rel="alternate" hreflang="no" href="https://helium-leckortung.de/?lang=no"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://helium-leckortung.de/"/>
   </url>
-  <url><loc>https://helium-leckortung.de/?lang=en</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://helium-leckortung.de/?lang=fr</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://helium-leckortung.de/?lang=nl</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://helium-leckortung.de/?lang=da</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://helium-leckortung.de/?lang=it</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://helium-leckortung.de/?lang=sv</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://helium-leckortung.de/?lang=pl</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://helium-leckortung.de/?lang=no</loc><lastmod>2026-08-23</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://helium-leckortung.de/agb.html</loc><lastmod>2026-08-23</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://helium-leckortung.de/?lang=en</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://helium-leckortung.de/?lang=fr</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://helium-leckortung.de/?lang=nl</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://helium-leckortung.de/?lang=da</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://helium-leckortung.de/?lang=it</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://helium-leckortung.de/?lang=sv</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://helium-leckortung.de/?lang=pl</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://helium-leckortung.de/?lang=no</loc><lastmod>2026-09-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://helium-leckortung.de/download.html</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://helium-leckortung.de/impressum.html</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://helium-leckortung.de/datenschutz.html</loc><lastmod>2026-08-24</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://helium-leckortung.de/agb.html</loc><lastmod>2026-08-23</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>

@@ -22,6 +22,10 @@
 <link rel="alternate" hreflang="fr" href="https://helium-leckortung.de/?lang=fr">
 <link rel="alternate" hreflang="nl" href="https://helium-leckortung.de/?lang=nl">
 <link rel="alternate" hreflang="it" href="https://helium-leckortung.de/?lang=it">
+<link rel="alternate" hreflang="da" href="https://helium-leckortung.de/?lang=da">
+<link rel="alternate" hreflang="sv" href="https://helium-leckortung.de/?lang=sv">
+<link rel="alternate" hreflang="pl" href="https://helium-leckortung.de/?lang=pl">
+<link rel="alternate" hreflang="no" href="https://helium-leckortung.de/?lang=no">
 <link rel="alternate" hreflang="x-default" href="https://helium-leckortung.de/">
 
 <!-- Geo -->
@@ -67,7 +71,7 @@
       "url": "https://helium-leckortung.de/",
       "logo": "https://helium-leckortung.de/ChatGPT%20Image%202.%20Juli%202026%2C%2016_48_02.png",
       "image": "https://helium-leckortung.de/ChatGPT%20Image%202.%20Juli%202026%2C%2013_45_58.png",
-      "telephone": "+4915679799100", "vatID": "DE321920389", "areaServed": ["DE","NL","BE","DK","SE","NO","PL","FR","IT","GB"],
+      "telephone": "+4915679799100",
       "email": "info@helium-leckortung.de",
       "vatID": "DE321920389",
       "founder": { "@type": "Person", "name": "Mark Schwarze" },
@@ -79,16 +83,24 @@
         "addressRegion": "Niedersachsen",
         "addressCountry": "DE"
       },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "08:00", "closes": "17:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:00", "closes": "13:00" }
+      ],
       "areaServed": [
         { "@type": "Country", "name": "Deutschland" },
         { "@type": "Country", "name": "Österreich" },
         { "@type": "Country", "name": "Schweiz" },
-        { "@type": "Country", "name": "Frankreich" },
+        { "@type": "Country", "name": "Italien" },
         { "@type": "Country", "name": "Niederlande" },
         { "@type": "Country", "name": "Belgien" },
-        { "@type": "Country", "name": "Italien" }
+        { "@type": "Country", "name": "Frankreich" },
+        { "@type": "Country", "name": "Dänemark" },
+        { "@type": "Country", "name": "Schweden" },
+        { "@type": "Country", "name": "Norwegen" },
+        { "@type": "Country", "name": "Polen" }
       ],
-      "knowsLanguage": ["de", "en", "fr", "nl", "it"],
+      "knowsLanguage": ["de", "en", "fr", "nl", "it", "da", "sv", "pl", "no"],
       "priceRange": "€€€"
     },
     {
@@ -1888,15 +1900,15 @@
     try { localStorage.setItem('site_lang', lang); } catch (e) {}
   }
 
-  // Startsprache: ?lang= > localStorage > Browsersprache > de
+  // Startsprache: ?lang= > localStorage > de
+  // Keine Browsersprachen-Erkennung: Googlebot rendert mit en-US und würde sonst
+  // die kanonische deutsche URL mit englischem Inhalt indexieren.
   var initial = 'de';
   var urlLang = new URLSearchParams(window.location.search).get('lang');
   var stored = null;
   try { stored = localStorage.getItem('site_lang'); } catch (e) {}
-  var nav = (navigator.language || 'de').slice(0, 2).toLowerCase();
   if (urlLang && LANGS.indexOf(urlLang) !== -1) initial = urlLang;
   else if (stored && LANGS.indexOf(stored) !== -1) initial = stored;
-  else if (LANGS.indexOf(nav) !== -1) initial = nav;
 
   // Menü-Interaktion
   var btn = document.getElementById('lang-btn');
