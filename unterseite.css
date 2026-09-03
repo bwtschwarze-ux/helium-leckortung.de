@@ -1,0 +1,55 @@
+:root{--navy:#0B1F3A;--navy2:#122B4F;--cyan:#17C7E6;--ink:#1a1a2e;--muted:#5b6b7f;--line:#e3e8ef;--bg:#f6f8fb}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+a{color:var(--navy)}
+.top{background:var(--navy);color:#fff;padding:.9rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.top .brand{color:#fff;text-decoration:none;font-weight:800;letter-spacing:.02em;font-size:1.05rem;display:flex;align-items:center;gap:.6rem}
+.top .brand svg{flex:none}
+.top nav{display:flex;gap:1.1rem;align-items:center;flex-wrap:wrap;font-size:.92rem}
+.top nav a{color:#c9d6e6;text-decoration:none}
+.top nav a:hover{color:#fff}
+.top nav a.cta{background:var(--cyan);color:var(--navy);font-weight:700;padding:.5rem .95rem;border-radius:6px}
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:3.2rem 1.25rem 2.6rem}
+.hero .wrap{max-width:900px;margin:0 auto}
+.crumbs{font-size:.8rem;color:#9fb3cc;margin-bottom:1.1rem}
+.crumbs a{color:#9fb3cc;text-decoration:none}
+.crumbs a:hover{color:#fff}
+.label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:.6rem}
+h1{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:800;line-height:1.2;margin-bottom:.9rem}
+.lead{font-size:1.08rem;color:#d6e1ef;max-width:760px}
+.hero .actions{margin-top:1.6rem;display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:700;font-size:.95rem}
+.btn-primary{background:var(--cyan);color:var(--navy)}
+.btn-ghost{border:1px solid rgba(255,255,255,.35);color:#fff}
+main{max-width:900px;margin:0 auto;padding:2.4rem 1.25rem 3rem}
+h2{font-size:1.4rem;font-weight:800;margin:2.2rem 0 .8rem;color:var(--navy)}
+h3{font-size:1.05rem;font-weight:700;margin:1.3rem 0 .4rem}
+p{margin-bottom:.9rem;color:#2b3442}
+ul,ol{padding-left:1.3rem;margin:.4rem 0 1rem}
+li{margin-bottom:.35rem;color:#2b3442}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.9rem;margin:1.2rem 0 .4rem}
+.fact{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem}
+.fact strong{display:block;color:var(--navy);margin-bottom:.25rem}
+.fact span{font-size:.92rem;color:var(--muted)}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{position:relative;padding-left:2.6rem;margin-bottom:.9rem}
+.steps li::before{counter-increment:s;content:counter(s,decimal-leading-zero);position:absolute;left:0;top:.1rem;font-weight:800;color:var(--cyan);font-size:.95rem}
+.note{border-left:3px solid var(--cyan);background:#fff;padding:.9rem 1.1rem;border-radius:0 8px 8px 0;font-size:.93rem;color:#3a4657;margin:1.2rem 0}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:8px;padding:.85rem 1.05rem;margin-bottom:.6rem}
+.faq summary{cursor:pointer;font-weight:700;color:var(--navy)}
+.faq details p{margin:.6rem 0 0}
+.cta{background:var(--navy);color:#fff;border-radius:12px;padding:1.8rem 1.6rem;margin-top:2.4rem}
+.cta h2{color:#fff;margin-top:0}
+.cta p{color:#d6e1ef}
+.cta .btn-primary{margin-top:.6rem}
+.related{margin-top:2.2rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+.related h2{font-size:1.05rem;margin-top:0}
+.related ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.5rem}
+.related a{display:block;background:#fff;border:1px solid var(--line);border-radius:8px;padding:.7rem .9rem;text-decoration:none;font-weight:600;font-size:.93rem}
+.related a:hover{border-color:var(--cyan)}
+footer{background:#fff;border-top:1px solid var(--line);padding:1.6rem 1.25rem;font-size:.85rem;color:var(--muted)}
+footer .wrap{max-width:900px;margin:0 auto;display:flex;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
+footer a{color:var(--muted);text-decoration:none;margin-right:1rem}
+footer a:hover{color:var(--navy)}
+@media(max-width:640px){.top nav a:not(.cta){display:none}}
