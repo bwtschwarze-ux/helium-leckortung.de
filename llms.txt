@@ -28,7 +28,7 @@ Wir orten Leckagen in wasserbefüllten Druckleitungssystemen mit Helium als Trac
 - Prozesswasser-Leckortung (Industrie, Kühl-/Heizkreisläufe)
 - Industrie- und Werksnetze (Kliniken, Kasernen, Liegenschaften)
 - Prüfung bei unklarem Wasserverlust
-- Dichtheitsprüfung mittels Helium-Tracergas nach DIN EN 1779 & DIN EN 13185 (ergänzend zu AGFW FW 602, DIN EN 805, DVGW G 469)
+- Dichtheitsprüfung mittels Helium-Tracergas nach DIN EN ISO 20485 (ergänzend zur Abnahme-Druckprüfung nach AGFW FW 602, DIN EN 805, DVGW G 469)
 
 ## Einsatzgebiete
 
@@ -44,6 +44,14 @@ Stadtwerke, Energieversorger, Netzbetreiber, Rohrleitungsbau, Industrie, Klinike
 - Ist Helium gefährlich? Nein – Helium ist inert, ungiftig, nicht brennbar.
 - Funktioniert das bei Kunststoff-/alu-ummantelten Rohren? Ja, mit anlagenspezifischer Eignungsprüfung; an Leckstellen und Muffen tritt Helium bevorzugt aus.
 - Wie genau ist das Verfahren? Eingrenzung in der Regel auf wenige Meter, abhängig von Bodenaufbau, Leitungstiefe und Prüföffnungsdichte.
+
+## Fachseiten
+
+- https://helium-leckortung.de/fernwaerme-leckortung.html – Fernwärme-Leckortung ohne Abschaltung
+- https://helium-leckortung.de/prozesswasser-leckortung.html – Prozesswasser-Leckortung ohne Stillstand
+- https://helium-leckortung.de/dichtheitspruefung-helium.html – Dichtheitsprüfung mit Helium-Tracergas
+- https://helium-leckortung.de/helium-leckortung-verfahren.html – So funktioniert das Verfahren
+- https://helium-leckortung.de/download.html – Infoflyer (PDF)
 
 ## Kontakt / Angebot
 

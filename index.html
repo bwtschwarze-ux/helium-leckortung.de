@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>MS Heliumtechnik – Helium-Leckortung im laufenden Betrieb | Fernwärme & Prozesswasser</title>
+<title>Helium-Leckortung im laufenden Betrieb | MS Heliumtechnik</title>
 <meta name="description" content="Spezialisierte Helium-Leckortung für Fernwärmeleitungen und Prozesswassersysteme. Ohne Abschaltung, ohne Entleerung, im laufenden Betrieb. Für Stadtwerke, Energieversorger und Industrie.">
-<link rel="icon" type="image/png" href="ChatGPT%20Image%202.%20Juli%202026%2C%2016_48_02.png">
-<link rel="apple-touch-icon" href="ChatGPT%20Image%202.%20Juli%202026%2C%2016_48_02.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="preload" as="image" href="hero-fernwaerme-trasse.webp" type="image/webp" fetchpriority="high">
 
 <!-- SEO / Crawling -->
 <meta name="google-site-verification" content="KA0oiFEAviNOlSwlqBFVMn9n7Qxcxo8hCSeIVHdCucc">
@@ -22,10 +23,6 @@
 <link rel="alternate" hreflang="fr" href="https://helium-leckortung.de/?lang=fr">
 <link rel="alternate" hreflang="nl" href="https://helium-leckortung.de/?lang=nl">
 <link rel="alternate" hreflang="it" href="https://helium-leckortung.de/?lang=it">
-<link rel="alternate" hreflang="da" href="https://helium-leckortung.de/?lang=da">
-<link rel="alternate" hreflang="sv" href="https://helium-leckortung.de/?lang=sv">
-<link rel="alternate" hreflang="pl" href="https://helium-leckortung.de/?lang=pl">
-<link rel="alternate" hreflang="no" href="https://helium-leckortung.de/?lang=no">
 <link rel="alternate" hreflang="x-default" href="https://helium-leckortung.de/">
 
 <!-- Geo -->
@@ -40,7 +37,10 @@
 <meta property="og:title" content="MS Heliumtechnik – Helium-Leckortung im laufenden Betrieb">
 <meta property="og:description" content="Spezialisierte Helium-Leckortung für Fernwärme-, Prozesswasser- und Industrienetze. Ohne Abschaltung, ohne Entleerung. Für Stadtwerke, Energieversorger und Industrie.">
 <meta property="og:url" content="https://helium-leckortung.de/">
-<meta property="og:image" content="https://helium-leckortung.de/ChatGPT%20Image%202.%20Juli%202026%2C%2013_45_58.png">
+<meta property="og:image" content="https://helium-leckortung.de/og-helium-leckortung.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:alt" content="Fernwärme-Trasse mit Vor- und Rücklauf – Helium-Leckortung im laufenden Betrieb">
 <meta property="og:locale" content="de_DE">
 <meta property="og:locale:alternate" content="en_US">
@@ -52,7 +52,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MS Heliumtechnik – Helium-Leckortung im laufenden Betrieb">
 <meta name="twitter:description" content="Spezialisierte Helium-Leckortung für Fernwärme-, Prozesswasser- und Industrienetze. Ohne Abschaltung, ohne Entleerung.">
-<meta name="twitter:image" content="https://helium-leckortung.de/ChatGPT%20Image%202.%20Juli%202026%2C%2013_45_58.png">
+<meta name="twitter:image" content="https://helium-leckortung.de/og-helium-leckortung.jpg">
 
 <!-- KI-Agenten -->
 <link rel="alternate" type="text/markdown" href="https://helium-leckortung.de/llms.txt" title="llms.txt">
@@ -69,8 +69,8 @@
       "alternateName": "Helium-Leckortung MS Heliumtechnik",
       "description": "Spezialisierte Helium-Leckortung für Fernwärme-, Prozesswasser- und Industrienetze im laufenden Betrieb – ohne Abschaltung, ohne Entleerung.",
       "url": "https://helium-leckortung.de/",
-      "logo": "https://helium-leckortung.de/ChatGPT%20Image%202.%20Juli%202026%2C%2016_48_02.png",
-      "image": "https://helium-leckortung.de/ChatGPT%20Image%202.%20Juli%202026%2C%2013_45_58.png",
+      "logo": "https://helium-leckortung.de/logo-ms-heliumtechnik.png",
+      "image": "https://helium-leckortung.de/og-helium-leckortung.jpg",
       "telephone": "+4915679799100",
       "email": "info@helium-leckortung.de",
       "vatID": "DE321920389",
@@ -100,7 +100,7 @@
         { "@type": "Country", "name": "Norwegen" },
         { "@type": "Country", "name": "Polen" }
       ],
-      "knowsLanguage": ["de", "en", "fr", "nl", "it", "da", "sv", "pl", "no"],
+      "knowsLanguage": ["de", "en", "fr", "nl", "it"],
       "priceRange": "€€€"
     },
     {
@@ -616,7 +616,7 @@
   .foto-real { aspect-ratio: 4/3; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: var(--navy-mid); }
   .foto-real img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
   .foto-real:hover img { transform: scale(1.05); }
-  .hero-real { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; display: block; }
+  .hero-real { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; display: block; }
 
   /* SPRACHUMSCHALTER */
   .nav-right { display: flex; align-items: center; gap: 0.8rem; }
@@ -744,22 +744,21 @@
   </div>
   <div class="nav-right">
     <div class="lang-switch">
-      <button class="lang-btn" id="lang-btn" aria-label="Sprache wählen / Choose language" aria-haspopup="true" aria-expanded="false">
+      <button type="button" class="lang-btn" id="lang-btn" aria-label="Sprache wählen / Choose language" aria-haspopup="true" aria-expanded="false">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         <span class="lang-current" id="lang-current">DE</span>
       </button>
       <div class="lang-menu" id="lang-menu" role="menu">
-        <button data-lang="de" class="active"><span class="flag">🇩🇪</span> Deutsch</button>
-        <button data-lang="en"><span class="flag">🇬🇧</span> English</button>
-        <button data-lang="fr"><span class="flag">🇫🇷</span> Français</button>
-        <button data-lang="nl"><span class="flag">🇳🇱</span> Nederlands</button>
-        <button data-lang="it"><span class="flag">🇮🇹</span> Italiano</button>
+        <button type="button" data-lang="de" class="active"><span class="flag">🇩🇪</span> Deutsch</button>
+        <button type="button" data-lang="en"><span class="flag">🇬🇧</span> English</button>
+        <button type="button" data-lang="fr"><span class="flag">🇫🇷</span> Français</button>
+        <button type="button" data-lang="nl"><span class="flag">🇳🇱</span> Nederlands</button>
+        <button type="button" data-lang="it"><span class="flag">🇮🇹</span> Italiano</button>
       </div>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menü öffnen">
       <span></span><span></span><span></span>
     </button>
-    <select class="lang-select" id="lang-switcher" onchange="setLang(this.value)"><option value="de">DE</option><option value="en">EN</option><option value="fr">FR</option><option value="nl">NL</option><option value="da">DA</option><option value="it">IT</option><option value="sv">SV</option><option value="pl">PL</option><option value="no">NO</option></select>
       <a href="#kontakt" class="nav-cta" data-i18n="nav_cta">Angebotsanfrage</a>
   </div>
 </nav>
@@ -787,7 +786,10 @@
       </div>
     </div>
     <div class="hero-visual">
-      <img class="hero-real" src="ChatGPT%20Image%202.%20Juli%202026%2C%2013_45_58.png" alt="Fernwärme-Trasse mit Vor- und Rücklauf – Helium-Leckortung im laufenden Betrieb">
+      <picture>
+        <source srcset="hero-fernwaerme-trasse.webp" type="image/webp">
+        <img class="hero-real" src="hero-fernwaerme-trasse.jpg" width="1122" height="1402" fetchpriority="high" decoding="async" alt="Fernwärme-Trasse mit Vor- und Rücklauf – Helium-Leckortung im laufenden Betrieb">
+      </picture>
 
       <div class="hero-stats">
         <div class="hero-stat">
@@ -946,7 +948,10 @@
         </div>
       </div>
       <div class="verfahren-visual">
-        <img src="ChatGPT%20Image%202.%20Juli%202026%2C%2015_31_37.png" alt="Schema der Helium-Leckortung: Beladestation, gelöstes Helium in Vor- und Rücklauf, Austritt an der Leckstelle und Detektion an Messpunkten an der Oberfläche" style="width:100%;height:auto;display:block;">
+        <picture>
+          <source srcset="schema-helium-leckortung.webp" type="image/webp">
+          <img src="schema-helium-leckortung.jpg" width="1122" height="1402" loading="lazy" decoding="async" alt="Schema der Helium-Leckortung: Beladestation, gelöstes Helium in Vor- und Rücklauf, Austritt an der Leckstelle und Detektion an Messpunkten an der Oberfläche" style="width:100%;height:auto;display:block;">
+        </picture>
       </div>
     </div>
   </div>
@@ -1080,12 +1085,12 @@
     <div class="section-label" data-i18n="fotos_label">Eindrücke aus der Praxis</div>
     <h2 class="section-title" data-i18n="fotos_title">Bilder vom Einsatz.</h2>
     <div class="fotos-grid">
-      <div class="foto-real"><img src="beladestation.jpg" alt="Helium-Beladestation – Anlage im Einsatz" loading="lazy"></div>
-      <div class="foto-real"><img src="steuertafel.jpg" alt="Steuertafel der Helium-Beladestation" loading="lazy"></div>
-      <div class="foto-real"><img src="helium-flasche.jpg" alt="Helium-Flasche im Feldeinsatz" loading="lazy"></div>
-      <div class="foto-real"><img src="manometer.jpg" alt="Druck- und Messtechnik" loading="lazy"></div>
-      <div class="foto-real"><img src="armatur.jpg" alt="Fernwärme-Armatur / Regelventil im Schacht" loading="lazy"></div>
-      <div class="foto-real"><img src="helium-label.jpg" alt="Helium 4.6 – das eingesetzte Tracergas" loading="lazy"></div>
+      <div class="foto-real"><img src="beladestation.jpg" width="900" height="1200" alt="Helium-Beladestation – Anlage im Einsatz" loading="lazy" decoding="async"></div>
+      <div class="foto-real"><img src="steuertafel.jpg" width="900" height="1200" alt="Steuertafel der Helium-Beladestation" loading="lazy" decoding="async"></div>
+      <div class="foto-real"><img src="helium-flasche.jpg" width="900" height="1200" alt="Helium-Flasche im Feldeinsatz" loading="lazy" decoding="async"></div>
+      <div class="foto-real"><img src="manometer.jpg" width="900" height="1200" alt="Druck- und Messtechnik" loading="lazy" decoding="async"></div>
+      <div class="foto-real"><img src="armatur.jpg" width="900" height="1200" alt="Fernwärme-Armatur / Regelventil im Schacht" loading="lazy" decoding="async"></div>
+      <div class="foto-real"><img src="helium-label.jpg" width="900" height="1200" alt="Helium 4.6 – das eingesetzte Tracergas" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -1221,7 +1226,7 @@
           </div>
           <div class="contact-row">
             <span class="icon">📞</span>
-            <a href="tel:+4915679799100">0156 79799100</a>
+            <a href="tel:+4915679799100">0156&nbsp;79799100</a>
           </div>
           <div class="contact-row">
             <span class="icon">✉️</span>
@@ -1241,7 +1246,7 @@
           <input type="hidden" name="access_key" value="1b805680-3b4e-47b2-a57a-f4bc35ce02fa">
           <input type="hidden" name="subject" value="Neue Angebotsanfrage – Helium-Leckortung">
           <input type="hidden" name="from_name" value="helium-leckortung.de">
-          <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
+          <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1">
           <div class="form-row">
             <div class="form-group">
               <label data-i18n="f_name">Name *</label>
@@ -1384,7 +1389,7 @@
       Inhaber: Mark Schwarze<br>
       Alter Postweg 80<br>
       26607 Aurich<br><br>
-      Telefon: <a href="tel:+4915679799100" style="color:var(--helium);">0156 79799100</a><br>
+      Telefon: <a href="tel:+4915679799100" style="color:var(--helium);">0156&nbsp;79799100</a><br>
       E-Mail: <a href="mailto:info@helium-leckortung.de" style="color:var(--helium);">info@helium-leckortung.de</a><br><br>
       <strong style="color:var(--white);">Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:</strong><br>
       DE321920389<br><br>
@@ -1473,7 +1478,7 @@
           Mark Schwarze<br>
           Alter Postweg 80<br>
           26607 Aurich<br><br>
-          <a href="tel:+4915679799100" style="color:inherit">0156 79799100</a>
+          <a href="tel:+4915679799100" style="color:inherit">0156&nbsp;79799100</a>
         </address>
       </div>
     </div>
@@ -1894,6 +1899,8 @@
       if (v != null) el.setAttribute('placeholder', v);
     });
     document.documentElement.setAttribute('lang', lang);
+    var canon = document.querySelector('link[rel="canonical"]');
+    if (canon) canon.setAttribute('href', 'https://helium-leckortung.de/' + (lang === 'de' ? '' : '?lang=' + lang));
     document.title = (lang === 'de') ? docTitle : (dict && dict.meta_title) || docTitle;
     if (metaDescEl) metaDescEl.setAttribute('content', (lang === 'de') ? docDesc : (dict && dict.meta_desc) || docDesc);
     // dynamische Texte
