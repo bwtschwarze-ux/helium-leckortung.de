@@ -1432,11 +1432,14 @@
       <p><strong style="color:var(--white);">9. Beschwerderecht</strong><br>
       Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig ist die Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover.</p>
       <br>
-      <p style="font-size:0.78rem;color:var(--text-muted);">Stand: Juli 2026</p>
+      <p><strong style="color:var(--white);">10. Cookies und Reichweitenmessung (Google Analytics 4)</strong><br>
+      Beim ersten Besuch fragen wir Sie über einen Cookie-Hinweis, ob wir Google Analytics 4 einsetzen dürfen. Ohne Ihre Zustimmung wird kein Google-Skript geladen und kein Cookie gesetzt; nur Ihre Entscheidung und die gewählte Sprache liegen im lokalen Speicher Ihres Browsers (technisch notwendig, § 25 Abs. 2 TDDDG). Stimmen Sie zu, verarbeitet Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irland) in unserem Auftrag Nutzungsdaten (aufgerufene Seiten, Verweildauer, Herkunft, Gerät, gekürzte IP-Adresse) zu anonymen Statistiken. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG). Eine Übertragung in die USA ist möglich; Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert. Löschung bei Google nach 14 Monaten. Widerruf jederzeit über <a href="#" data-consent-open style="color:var(--helium);">Cookie-Einstellungen</a> im Seitenfuß.</p>
       <br>
-      <p><strong style="color:var(--white);">8. Widerspruchsrecht gegen Direktwerbung (§ 21 DSGVO)</strong><br>
+      <p><strong style="color:var(--white);">11. Widerspruchsrecht gegen Direktwerbung (Art. 21 DSGVO)</strong><br>
       Sie haben das Recht, der Verarbeitung Ihrer Daten zu Werbezwecken jederzeit zu widersprechen. Widerspruch formlos per E-Mail:
       <a href="mailto:info@helium-leckortung.de?subject=Werbewiderspruch" style="color:var(--helium);">info@helium-leckortung.de</a></p>
+      <br>
+      <p style="font-size:0.78rem;color:var(--text-muted);">Stand: September 2026</p>
     </div>
   </div>
 </div>
@@ -1488,7 +1491,8 @@
         <a href="#" onclick="event.preventDefault();document.getElementById('impressum-modal').style.display='block'" style="margin-right:1.5rem">Impressum</a>
         <a href="#" onclick="event.preventDefault();document.getElementById('datenschutz-modal').style.display='block'" style="margin-right:1.5rem">Datenschutz</a>
         <a href="/agb.html" style="margin-right:1.5rem">AGB</a>
-        <a href="mailto:info@helium-leckortung.de?subject=Werbewiderspruch" title="E-Mail-Werbung ablehnen">Werbewiderspruch</a>
+        <a href="mailto:info@helium-leckortung.de?subject=Werbewiderspruch" title="E-Mail-Werbung ablehnen" style="margin-right:1.5rem">Werbewiderspruch</a>
+        <a href="#" data-consent-open>Cookie-Einstellungen</a>
       </span>
     </div>
   </div>
@@ -1915,6 +1919,7 @@
       b.classList.toggle('active', b.getAttribute('data-lang') === lang);
     });
     try { localStorage.setItem('site_lang', lang); } catch (e) {}
+    if (window.mshConsent) window.mshConsent.setLang(lang);
   }
 
   // Startsprache: ?lang= > localStorage > de
@@ -1985,5 +1990,6 @@
   });
 })();
 </script>
+<script src="/consent.js" defer></script>
 </body>
 </html>

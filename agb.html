@@ -6,8 +6,6 @@
 <title>AGB – MS Heliumtechnik | Allgemeine Geschäftsbedingungen</title>
 <meta name="description" content="Allgemeine Geschäftsbedingungen der MS Heliumtechnik (Mark Schwarze) für Helium-Leckortungsleistungen.">
 <meta name="robots" content="noindex">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
 <style>
   :root {
@@ -18,10 +16,10 @@
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);line-height:1.7;min-height:100vh}
-  h1,h2,h3{font-family:'Space Grotesk',sans-serif}
+  body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--navy);color:var(--white);line-height:1.7;min-height:100vh}
+  h1,h2,h3{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif}
   nav{background:rgba(11,31,58,0.97);border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
-  .nav-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.6rem}
+  .nav-brand{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;font-weight:700;font-size:1rem;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:0.6rem}
   .nav-brand span{color:var(--helium)}
   .nav-back{font-size:0.85rem;color:var(--text-muted);text-decoration:none;transition:color 0.2s}
   .nav-back:hover{color:var(--white)}
@@ -139,7 +137,7 @@
   </div>
   <div class="agb-section">
     <h2><span class="num">§ 9</span>Datenschutz</h2>
-    <p>Die Verarbeitung personenbezogener Daten erfolgt im Einklang mit der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG). Näheres regelt die <a href="/">Datenschutzerklärung</a> auf der Startseite.</p>
+    <p>Die Verarbeitung personenbezogener Daten erfolgt im Einklang mit der Datenschutz-Grundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG). Näheres regelt die <a href="/datenschutz.html">Datenschutzerklärung</a> auf der Startseite.</p>
     <p>Im Rahmen der Auftragsabwicklung werden Name, Kontaktdaten und ggf. technische Informationen des Ansprechpartners beim Auftraggeber verarbeitet. Eine Weitergabe an Dritte erfolgt nur, soweit dies zur Vertragserfüllung erforderlich ist.</p>
   </div>
   <div class="agb-section">
@@ -156,7 +154,8 @@
 </div>
 <footer>
   <span>© <script>document.write(new Date().getFullYear())</script> MS Heliumtechnik · Mark Schwarze</span>
-  <span><a href="/">Startseite</a><a href="#" onclick="event.preventDefault();window.history.back()">Zurück</a></span>
+  <span><a href="/">Startseite</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="#" data-consent-open>Cookie-Einstellungen</a></span>
 </footer>
+<script src="/consent.js" defer></script>
 </body>
 </html>
