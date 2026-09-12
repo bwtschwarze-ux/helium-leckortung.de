@@ -618,6 +618,19 @@
   .foto-real:hover img { transform: scale(1.05); }
   .hero-real { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; display: block; }
 
+  /* WER MACHT DAS */
+  .person-section { padding: 6rem 2rem; background: var(--navy-mid); border-top: 1px solid var(--border); }
+  .person-grid { display: grid; grid-template-columns: 320px 1fr; gap: 3.5rem; align-items: center; margin-top: 2.5rem; }
+  .person-photo { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 3/4; background: var(--navy); }
+  .person-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .person-text p { color: var(--steel); line-height: 1.75; margin-bottom: 1.1rem; font-size: 1rem; }
+  .person-text p strong { color: var(--white); }
+  .person-facts { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.4rem 0 1.8rem; }
+  .person-facts span { border: 1px solid rgba(0,196,232,0.35); color: var(--helium); border-radius: 999px; padding: 0.35rem 0.9rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.02em; }
+  .person-cta { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--white); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--helium); padding-bottom: 2px; }
+  .person-cta:hover { color: var(--helium); }
+  @media (max-width: 800px) { .person-grid { grid-template-columns: 1fr; gap: 2rem; } .person-photo { max-width: 320px; } }
+
   /* SPRACHUMSCHALTER */
   .nav-right { display: flex; align-items: center; gap: 0.8rem; }
   .lang-switch { position: relative; display: flex; align-items: center; }
@@ -674,60 +687,145 @@
     .anfrage-form-inner{grid-template-columns:1fr !important;}
     .footer-bottom a{margin-right:.75rem !important;}
   }
+  /* ===== REDESIGN 09/2026 ===== */
+  :root { --steel: #A6BAD0; --text-muted: #86A0BC; }
+  .nav-phone { display: flex; align-items: center; gap: 0.45rem; color: var(--white); font-weight: 600; font-size: 0.9rem; text-decoration: none; margin-right: 0.9rem; white-space: nowrap; }
+  .nav-phone svg { color: var(--helium); }
+  .nav-phone:hover { color: var(--helium); }
+  .hero2 { position: relative; padding: 6.5rem 2rem 0; background: radial-gradient(900px 520px at 78% 20%, rgba(0,196,232,0.16), transparent 60%), var(--navy);
+    background-image: radial-gradient(900px 520px at 78% 20%, rgba(0,196,232,0.16), transparent 60%), linear-gradient(rgba(143,168,196,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(143,168,196,0.07) 1px, transparent 1px); background-size: auto, 64px 64px, 64px 64px; }
+  .h2-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 3.5rem; align-items: center; }
+  .h2-text { display: flex; flex-direction: column; gap: 1.5rem; max-width: 640px; }
+  .h2-kicker { display: inline-flex; align-items: center; gap: 0.6rem; align-self: flex-start; border: 1px solid rgba(0,196,232,0.4); border-radius: 999px; padding: 0.45rem 1rem; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--helium); }
+  .h2-kicker .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--helium); box-shadow: 0 0 10px var(--helium); }
+  .hero2 h1 { font-size: clamp(2.3rem, 4.4vw, 3.9rem); line-height: 1.06; font-weight: 800; letter-spacing: -0.03em; margin: 0; }
+  .hero2 h1 em { font-style: normal; color: var(--helium); }
+  .h2-sub { font-size: 1.15rem; line-height: 1.6; color: #B7C7D9; margin: 0; max-width: 540px; }
+  .h2-btns { display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+  .h2-link { color: var(--white); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--helium); padding-bottom: 2px; }
+  .h2-link:hover { color: var(--helium); }
+  .h2-facts { display: flex; gap: 1.6rem; flex-wrap: wrap; color: var(--steel); font-size: 0.88rem; }
+  .h2-facts > span { display: inline-flex; align-items: center; gap: 0.5rem; white-space: nowrap; }
+  .h2-scene { position: relative; height: 400px; perspective: 1400px; }
+  .h2-card { position: absolute; right: 0; top: 10px; width: min(520px, 100%); height: 360px; border-radius: 18px; overflow: hidden; border: 1px solid rgba(143,168,196,0.35); box-shadow: 0 40px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(0,196,232,0.15); transform: rotateY(-14deg) rotateX(6deg); }
+  .h2-card picture { display: block; width: 100%; height: 100%; }
+  .h2-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .h2-card-shade { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(11,31,58,0.85)); }
+  .h2-card-cap { position: absolute; left: 20px; bottom: 18px; font-size: 0.78rem; color: #B7C7D9; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+  .h2-chip { position: absolute; background: rgba(20,41,71,0.94); border: 1px solid rgba(0,196,232,0.45); border-radius: 12px; padding: 0.7rem 1rem; box-shadow: 0 20px 40px rgba(0,0,0,0.5); display: flex; align-items: center; gap: 0.75rem; animation: h2float 6s ease-in-out infinite; }
+  .h2-chip-1 { left: 0; top: 40px; }
+  .h2-chip-2 { left: 30px; top: 250px; border-color: rgba(34,197,94,0.45); animation-duration: 7s; animation-delay: 1.5s; }
+  .h2-chip .ic { width: 36px; height: 36px; border-radius: 9px; background: rgba(0,196,232,0.15); display: flex; align-items: center; justify-content: center; }
+  .h2-chip .ic.green { background: rgba(34,197,94,0.15); }
+  .h2-chip .l { font-size: 0.7rem; color: var(--steel); letter-spacing: 0.08em; text-transform: uppercase; }
+  .h2-chip .v { font-weight: 700; font-size: 0.98rem; }
+  @keyframes h2float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .illu { position: relative; margin-top: 4rem; border-radius: 22px 22px 0 0; overflow: hidden; border: 1px solid rgba(143,168,196,0.25); border-bottom: 0; background: #0E2340; box-shadow: 0 -20px 60px rgba(0,196,232,0.08); }
+  .illu-head { display: flex; align-items: baseline; gap: 0.8rem; padding: 1.3rem 1.75rem 0.5rem; flex-wrap: wrap; }
+  .illu-t { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--helium); }
+  .illu-s { font-size: 0.85rem; color: var(--steel); }
+  .illu-svg { display: block; width: 100%; height: auto; font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif; }
+  .illu-legend { display: none; list-style: none; margin: 0; padding: 0.8rem 1rem 1rem; flex-direction: column; gap: 0.45rem; font-size: 0.85rem; color: #D6E1EC; background: #0E2340; }
+  .illu-legend li { display: flex; align-items: center; gap: 0.6rem; }
+  .illu-legend .n { width: 20px; height: 20px; border-radius: 50%; background: var(--helium); color: var(--navy); font-weight: 800; font-size: 0.72rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .illu-stage { position: relative; }
+  .h2-scene:not(.is-visible) .h2-chip { animation-play-state: paused; }
+  @media (prefers-reduced-motion: reduce) { .h2-chip { animation: none !important; } }
+  .trust2 { background: var(--navy-mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.8rem 2rem; }
+  .trust2-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+  .trust2-item { display: flex; align-items: center; gap: 0.9rem; }
+  .trust2-item svg { flex-shrink: 0; }
+  .trust2-item .t { font-weight: 700; font-size: 0.95rem; }
+  .trust2-item .d { font-size: 0.82rem; color: var(--steel); }
+  .verf2 { background: var(--off-white); color: var(--navy); padding: 6.5rem 2rem; }
+  .verf2 .section-label { color: var(--helium-dark); }
+  .verf2 .section-title { color: var(--navy); }
+  .verf2 .section-sub { color: #4A5B73; }
+  .verf2-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem; align-items: center; }
+  .verf2-steps { display: flex; flex-direction: column; margin-top: 1.8rem; }
+  .verf2-step { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 1.1rem; padding: 1.1rem 0; border-top: 1px solid #D5DEE8; }
+  .verf2-step:last-child { border-bottom: 1px solid #D5DEE8; }
+  .verf2-step .n { width: 44px; height: 44px; border-radius: 12px; background: var(--navy); color: var(--helium); font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; }
+  .verf2-step h3 { font-size: 1.05rem; font-weight: 700; margin: 0 0 0.2rem; color: var(--navy); }
+  .verf2-step p { color: #4A5B73; font-size: 0.95rem; line-height: 1.6; margin: 0; }
+  .verf2-more { display: inline-block; margin-top: 1.6rem; color: var(--navy); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--helium); padding-bottom: 2px; }
+  .verf2-more:hover { color: var(--helium-dark); }
+  .verf2-visual { position: relative; perspective: 1200px; }
+  .verf2-glow { position: absolute; inset: 10% -6% -4% 6%; border-radius: 40px; background: radial-gradient(closest-side, rgba(0,196,232,0.2), rgba(0,196,232,0.08) 60%, transparent); }
+  .verf2-card { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 50px 90px rgba(11,31,58,0.32), 0 0 0 6px var(--white); transform: rotateY(8deg) rotateX(3deg); background: var(--white); }
+  .verf2-card img { width: 100%; height: auto; display: block; }
+  .verf2-why { position: absolute; left: -24px; bottom: 40px; background: var(--navy); color: var(--white); border-radius: 14px; padding: 1rem 1.25rem; box-shadow: 0 24px 40px rgba(11,31,58,0.35); max-width: 300px; }
+  .verf2-why .l { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--helium); font-weight: 700; }
+  .verf2-why .p { font-size: 0.92rem; color: #B7C7D9; margin-top: 0.25rem; line-height: 1.55; }
+  .einsatz { padding: 6rem 2rem; background: var(--navy); background-image: linear-gradient(rgba(143,168,196,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(143,168,196,0.06) 1px, transparent 1px); background-size: 64px 64px; }
+  .einsatz-head { margin-bottom: 2.5rem; }
+  .einsatz-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; }
+  .einsatz-card { background: var(--navy-mid); border: 1px solid var(--border); border-radius: 16px; padding: 1.6rem; display: flex; flex-direction: column; gap: 0.6rem; transition: border-color 0.2s, transform 0.2s; }
+  .einsatz-card:hover { border-color: var(--helium); transform: translateY(-3px); }
+  .einsatz-card h3 { font-size: 1.1rem; font-weight: 700; margin: 0; }
+  .einsatz-card p { font-size: 0.9rem; color: var(--steel); line-height: 1.6; margin: 0; }
+  .person-section { background: var(--white); color: var(--navy); border-top: 1px solid #D5DEE8; padding: 6rem 2rem; }
+  .person-section .section-label { color: var(--helium-dark); }
+  .person-section .section-title { color: var(--navy); }
+  .person-grid { display: grid; grid-template-columns: 440px minmax(0, 1fr); gap: 4.5rem; align-items: center; margin-top: 0; }
+  .person-visual { position: relative; perspective: 1000px; }
+  .person-photo { border-radius: 18px; overflow: hidden; box-shadow: 0 30px 60px rgba(11,31,58,0.25); transform: rotateY(8deg); aspect-ratio: auto; border: 0; background: transparent; }
+  .person-photo img { width: 100%; height: auto; display: block; }
+  .person-inset { position: absolute; right: -28px; bottom: -22px; width: 160px; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 40px rgba(11,31,58,0.3); border: 4px solid var(--white); transform: rotateY(-8deg); }
+  .person-inset img { width: 100%; height: auto; display: block; }
+  .person-text p { color: #4A5B73; line-height: 1.7; margin-bottom: 1rem; font-size: 1.02rem; }
+  .person-text p strong { color: var(--navy); }
+  .person-facts span { border-color: var(--helium-dark); color: var(--helium-dark); }
+  .person-refs { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; margin: 1.2rem 0 1.6rem; }
+  .person-refs .lbl { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #6B8AAA; margin-right: 0.2rem; }
+  .person-refs span:not(.lbl) { background: var(--off-white); border-radius: 8px; padding: 0.45rem 0.75rem; font-size: 0.85rem; color: #4A5B73; }
+  .person-cta { color: var(--navy); border-bottom-color: var(--helium); }
+  .person-cta:hover { color: var(--helium-dark); }
+  .faq-section { background: var(--navy); }
+  .k-steps { display: flex; flex-direction: column; gap: 0.8rem; margin: 1.4rem 0 1.8rem; }
+  .k-step { display: flex; gap: 0.8rem; align-items: flex-start; color: var(--steel); font-size: 0.95rem; line-height: 1.55; }
+  .k-step .n { width: 26px; height: 26px; border-radius: 50%; background: var(--helium); color: var(--navy); font-weight: 800; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .k-step strong { color: var(--white); }
+  .contact-row .icon { display: inline-flex; align-items: center; }
+  @media (max-width: 1360px) { .nav-phone { display: none; } }
+  @media (max-width: 1100px) { .einsatz-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .person-grid { grid-template-columns: 360px minmax(0, 1fr); gap: 3rem; } .nav-links { gap: 1.4rem; } }
+  @media (max-width: 900px) {
+    .hero2 { padding-top: 5.5rem; }
+    .h2-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .h2-scene { height: auto; perspective: none; }
+    .h2-card { position: relative; right: auto; top: auto; width: 100%; height: auto; aspect-ratio: 4/3; transform: none; }
+    .h2-chip { display: none; }
+    .illu { margin-top: 2.5rem; border-radius: 14px 14px 0 0; }
+    .trust2-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .verf2, .einsatz, .person-section { padding: 4rem 1.25rem; }
+    .verf2-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .verf2-card { transform: none; }
+    .verf2-why { position: static; margin-top: 1rem; max-width: none; }
+    .person-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .person-visual { max-width: 380px; }
+    .person-photo { transform: none; }
+    .person-inset { transform: none; right: -10px; }
+  }
+  @media (max-width: 600px) {
+    .hero2 { padding: 5rem 1.1rem 0; }
+    .h2-facts { gap: 0.6rem 1rem; }
+    .h2-facts > span { white-space: normal; }
+    .illu-head { padding: 1rem 1rem 0.4rem; }
+    .illu-svg { height: 220px; }
+    .illu-labels text { display: none; }
+    .illu-labels circle { display: none; }
+    .illu-s { display: none; }
+    .illu-legend { display: flex; }
+    .trust2 { padding: 1.4rem 1.1rem; }
+    .trust2-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .einsatz-grid { grid-template-columns: 1fr; }
+    .person-inset { width: 120px; }
+  }
 </style>
 </head>
 <body>
 
 <!-- LECK-HINTERGRUND: Rohr mit Leckage, das beim Scrollen "repariert" wird -->
-<svg id="leak-bg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <defs>
-    <linearGradient id="pipeGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#B4C8DA"/>
-      <stop offset="0.5" stop-color="#62809B"/>
-      <stop offset="1" stop-color="#36506A"/>
-    </linearGradient>
-    <filter id="waterGlow" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="2.4" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-  <!-- Sensor-Scanlinie -->
-  <line id="scanline" x1="0" y1="623" x2="1440" y2="623" stroke="#00C4E8" stroke-width="1.5" opacity="0.13"/>
-  <!-- Rohr (metallisch, farblich abgesetzt) -->
-  <g opacity="0.9">
-    <rect x="-40" y="602" width="1520" height="42" rx="9" fill="url(#pipeGrad)"/>
-    <rect x="-40" y="602" width="1520" height="42" rx="9" fill="none" stroke="#22344A" stroke-width="1.5"/>
-    <rect x="-40" y="609" width="1520" height="5" rx="2.5" fill="#FFFFFF" opacity="0.30"/>
-    <!-- Flansche links/rechts der Leckstelle -->
-    <rect x="466" y="594" width="13" height="58" rx="3" fill="#4C6884"/>
-    <rect x="961" y="594" width="13" height="58" rx="3" fill="#4C6884"/>
-  </g>
-  <!-- Sensor-Spray: Radar-Pulse + Tropfen (Farbe wechselt rot->grün beim Scrollen) -->
-  <g id="spray" opacity="1">
-    <circle class="ring" cx="720" cy="612" r="9"  fill="none" stroke="#E24B4A" stroke-width="2.2"/>
-    <circle class="ring" cx="720" cy="612" r="9"  fill="none" stroke="#E24B4A" stroke-width="2.2" style="animation-delay:0.85s"/>
-    <circle class="ring" cx="720" cy="612" r="9"  fill="none" stroke="#E24B4A" stroke-width="2.2" style="animation-delay:1.7s"/>
-    <circle class="drop" cx="720" cy="606" r="4"   fill="#E24B4A"/>
-    <circle class="drop" cx="709" cy="606" r="3"   fill="#E24B4A" style="animation-delay:0.3s"/>
-    <circle class="drop" cx="731" cy="606" r="3"   fill="#E24B4A" style="animation-delay:0.6s"/>
-    <circle class="drop" cx="714" cy="606" r="2.6" fill="#E24B4A" style="animation-delay:0.95s"/>
-    <circle class="drop" cx="726" cy="606" r="2.6" fill="#E24B4A" style="animation-delay:1.25s"/>
-  </g>
-  <!-- Leck-Punkt -->
-  <circle id="leakdot" cx="720" cy="612" r="4" fill="#E24B4A"/>
-  <!-- Ortungsmarkierung (grünes Fadenkreuz, erscheint beim Scrollen = Leck geortet) -->
-  <g id="clamp" transform="translate(720,612)">
-    <circle r="22" fill="none" stroke="#22C55E" stroke-width="2.4" opacity="0.9"/>
-    <circle r="10" fill="none" stroke="#22C55E" stroke-width="2"/>
-    <line x1="-30" y1="0" x2="-13" y2="0" stroke="#22C55E" stroke-width="2.4"/>
-    <line x1="13"  y1="0" x2="30"  y2="0" stroke="#22C55E" stroke-width="2.4"/>
-    <line x1="0" y1="-30" x2="0" y2="-13" stroke="#22C55E" stroke-width="2.4"/>
-    <line x1="0" y1="13"  x2="0" y2="30"  stroke="#22C55E" stroke-width="2.4"/>
-    <circle r="3" fill="#22C55E"/>
-  </g>
-  <!-- Status-Text -->
-  <text id="statuslbl" x="720" y="678" text-anchor="middle" font-family="'Segoe UI', system-ui, -apple-system, Roboto, sans-serif" font-size="15" letter-spacing="2" fill="#E24B4A" opacity="0.85">ORTUNG LÄUFT …</text>
-</svg>
 
 <!-- NAV -->
 <nav>
@@ -760,388 +858,213 @@
     <button type="button" class="hamburger" id="hamburger" aria-label="Menü öffnen">
       <span></span><span></span><span></span>
     </button>
+      <a href="tel:+4915679799100" class="nav-phone"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.8 2z"></path></svg><span>0156&nbsp;79799100</span></a>
       <a href="#kontakt" class="nav-cta" data-i18n="nav_cta">Angebotsanfrage</a>
   </div>
 </nav>
 <ul class="nav-links">
   <li><a href="#verfahren" data-i18n="nav_verfahren">Verfahren</a></li>
-  <li><a href="#leistungen" data-i18n="nav_leistungen">Leistungen</a></li>
-  <li><a href="#zielgruppen" data-i18n="nav_fuerwen">Für wen</a></li>
+  <li><a href="#einsatz" data-i18n="n_nav_einsatz">Einsatzbereiche</a></li>
+  <li><a href="#person" data-i18n="n_nav_person">Über uns</a></li>
   <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
-  <li><a href="#referenzen" data-i18n="nav_referenzen">Referenzen</a></li>
+  <li><a href="/download.html" data-i18n="n_nav_downloads">Downloads</a></li>
   <li><a href="#kontakt" data-i18n="nav_kontakt">Kontakt</a></li>
 </ul>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content">
-    <div class="hero-text">
-      <div class="hero-badge" data-i18n="hero_badge">Spezialisiertes Verfahren · Hochsensible Messtechnik</div>
-      <h1 data-i18n="hero_h1">Leckortung <em>im laufenden Betrieb</em> – ohne Abschaltung.</h1>
-      <p class="hero-sub" data-i18n="hero_sub">Helium-Leckortung für Fernwärme-, Prozesswasser- und Industrienetze. Keine Entleerung. Keine Versorgungsunterbrechung. Präzise Lokalisierung auch bei tiefliegenden Leitungen.</p>
-      <div class="hero-btns">
-        <a href="#kontakt" class="btn-primary" data-i18n="hero_cta1">Kostenlose Angebotsanfrage</a>
-        <a href="#verfahren" class="btn-secondary" data-i18n="hero_cta2">Verfahren verstehen</a>
+<section class="hero2" id="top">
+  <div class="container">
+    <div class="h2-grid">
+      <div class="h2-text">
+        <div class="h2-kicker"><span class="dot"></span><span data-i18n="n_kicker">Helium-Leckortung · Fernwärme · Prozesswasser</span></div>
+        <h1 data-i18n="n_h1">Das Leck finden, <em>ohne das Netz abzuschalten.</em></h1>
+        <p class="h2-sub" data-i18n="n_sub">Helium löst sich im Wasser, tritt nur an der Schadstelle aus und wird an der Oberfläche gemessen. Keine Entleerung, keine Versorgungslücke, punktgenaue Eingrenzung – auch bei tief liegenden Leitungen.</p>
+        <div class="h2-btns">
+          <a href="#kontakt" class="btn-primary" data-i18n="n_cta1">Kostenlose Einschätzung anfragen</a>
+          <a href="#verfahren" class="h2-link" data-i18n="n_cta2">So funktioniert es ↓</a>
+        </div>
+        <div class="h2-facts">
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span data-i18n="n_f1">Seit 2022 im Einsatz</span></span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span data-i18n="n_f2">Eigene Anlage &amp; Messtechnik</span></span>
+          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg><span data-i18n="n_f3">§ 20 TrinkwV gelistet</span></span>
+        </div>
+      </div>
+      <div class="h2-scene">
+        <div class="h2-card">
+          <picture>
+            <source srcset="hero-fernwaerme-trasse.webp" type="image/webp">
+            <img src="hero-fernwaerme-trasse.jpg" width="1122" height="1402" fetchpriority="high" decoding="async" alt="Fernwärme-Trasse mit Vor- und Rücklauf – Helium-Leckortung im laufenden Betrieb">
+          </picture>
+          <div class="h2-card-shade"></div>
+          <div class="h2-card-cap" data-i18n="n_card_cap">Fernwärme-Trasse · Vor- und Rücklauf</div>
+        </div>
+        <div class="h2-chip h2-chip-1"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00C4E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></div><div><div class="l" data-i18n="n_chip1_l">Betrieb</div><div class="v" data-i18n="n_chip1_v">läuft weiter</div></div></div>
+        <div class="h2-chip h2-chip-2"><div class="ic green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div><div><div class="l" data-i18n="n_chip2_l">Helium</div><div class="v" data-i18n="n_chip2_v">inert, ungiftig</div></div></div>
       </div>
     </div>
-    <div class="hero-visual">
-      <picture>
-        <source srcset="hero-fernwaerme-trasse.webp" type="image/webp">
-        <img class="hero-real" src="hero-fernwaerme-trasse.jpg" width="1122" height="1402" fetchpriority="high" decoding="async" alt="Fernwärme-Trasse mit Vor- und Rücklauf – Helium-Leckortung im laufenden Betrieb">
-      </picture>
 
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="val">0</div>
-          <div class="lbl" data-i18n="hero_stat1">Abschaltungen erforderlich</div>
-        </div>
-        <div class="hero-stat">
-          <div class="val">5,2</div>
-          <div class="lbl" data-i18n="hero_stat2">ppm Hintergrundwert (He)</div>
-        </div>
-        <div class="hero-stat">
-          <div class="val">&gt;10m</div>
-          <div class="lbl" data-i18n="hero_stat3">Tiefe detektierbar</div>
-        </div>
-        <div class="hero-stat">
-          <div class="val">ppb</div>
-          <div class="lbl" data-i18n="hero_stat4">Nachweisgrenze</div>
-        </div>
+    <div class="illu">
+      <div class="illu-head"><span class="illu-t" data-i18n="n_illu_t">Das Verfahren in einem Bild</span><span class="illu-s" data-i18n="n_illu_s">Helium fließt mit dem Wasser, verlässt das Rohr nur am Leck und steigt zum Messpunkt auf.</span></div>
+      <div class="illu-stage">
+      <svg viewBox="0 0 1296 330" class="illu-svg" role="img" aria-label="Schnitt durch eine Fernwärmetrasse: Helium wird eingespeist, tritt an der Leckstelle aus und wird am Messpunkt an der Oberfläche gemessen">
+        <defs>
+          <linearGradient id="i-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E2340"></stop><stop offset="1" stop-color="#132C4D"></stop></linearGradient>
+          <linearGradient id="i-soil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A2F4C"></stop><stop offset="0.5" stop-color="#132741"></stop><stop offset="1" stop-color="#0B1F3A"></stop></linearGradient>
+          <linearGradient id="i-pipeV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6E3A2E"></stop><stop offset="0.3" stop-color="#E07A5F"></stop><stop offset="0.55" stop-color="#8B4634"></stop><stop offset="1" stop-color="#2A1610"></stop></linearGradient>
+          <linearGradient id="i-pipeR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#27476E"></stop><stop offset="0.3" stop-color="#7FA6D6"></stop><stop offset="0.55" stop-color="#2F4F78"></stop><stop offset="1" stop-color="#101F35"></stop></linearGradient>
+          <linearGradient id="i-mantle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B3F5C"></stop><stop offset="0.4" stop-color="#5A7395"></stop><stop offset="1" stop-color="#16233A"></stop></linearGradient>
+          <radialGradient id="i-glow"><stop offset="0" stop-color="#00C4E8" stop-opacity="0.95"></stop><stop offset="1" stop-color="#00C4E8" stop-opacity="0"></stop></radialGradient>
+          <linearGradient id="i-plume" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#00C4E8" stop-opacity="0.55"></stop><stop offset="1" stop-color="#00C4E8" stop-opacity="0"></stop></linearGradient>
+          <pattern id="i-dash" width="28" height="6" patternUnits="userSpaceOnUse"><rect x="0" y="2" width="14" height="2" rx="1" fill="#00C4E8" opacity="0.7"></rect></pattern>
+        </defs>
+        <rect x="0" y="0" width="1296" height="330" fill="url(#i-sky)"></rect>
+        <rect x="0" y="96" width="1296" height="234" fill="url(#i-soil)"></rect>
+        <line x1="0" y1="96" x2="1296" y2="96" stroke="#8FA8C4" stroke-opacity="0.6" stroke-width="1.5"></line>
+        <line x1="0" y1="150" x2="1296" y2="150" stroke="#8FA8C4" stroke-opacity="0.12" stroke-dasharray="4 8"></line>
+        <line x1="0" y1="290" x2="1296" y2="290" stroke="#8FA8C4" stroke-opacity="0.12" stroke-dasharray="4 8"></line>
+        <rect x="60" y="30" width="118" height="66" rx="6" fill="#142947" stroke="#00C4E8" stroke-opacity="0.7" stroke-width="1.5"></rect>
+        <rect x="74" y="42" width="40" height="42" rx="3" fill="#0B1F3A" stroke="#8FA8C4" stroke-opacity="0.5"></rect>
+        <circle cx="94" cy="56" r="8" fill="none" stroke="#00C4E8" stroke-width="1.5"></circle><line x1="94" y1="56" x2="99" y2="51" stroke="#00C4E8" stroke-width="1.5"></line>
+        <rect x="124" y="44" width="40" height="8" rx="2" fill="#00C4E8" opacity="0.8"></rect><rect x="124" y="58" width="40" height="8" rx="2" fill="#00C4E8" opacity="0.45"></rect><rect x="124" y="72" width="40" height="8" rx="2" fill="#00C4E8" opacity="0.25"></rect>
+        <rect x="112" y="96" width="14" height="84" fill="#5A7395"></rect>
+        <rect x="114" y="96" width="10" height="84" fill="url(#i-dash)"></rect>
+        <rect x="0" y="176" width="1296" height="58" rx="29" fill="url(#i-mantle)"></rect>
+        <rect x="0" y="186" width="1296" height="38" rx="19" fill="url(#i-pipeV)"></rect>
+        <rect x="0" y="203" width="1296" height="6" fill="url(#i-dash)" opacity="0.9"></rect>
+        <rect x="0" y="252" width="1296" height="52" rx="26" fill="url(#i-mantle)"></rect>
+        <rect x="0" y="261" width="1296" height="34" rx="17" fill="url(#i-pipeR)"></rect>
+        <rect x="0" y="276" width="1296" height="5" fill="url(#i-dash)" opacity="0.6"></rect>
+        <path d="M760 186 q-6 -30 0 -60 q10 30 0 60z" fill="url(#i-plume)"></path>
+        <path d="M752 186 l8 -10 l8 10z" fill="#FFFFFF"></path>
+        <circle cx="760" cy="186" r="44" fill="url(#i-glow)" opacity="0.6"><animate attributeName="opacity" values="0.5;1;0.5" dur="2.2s" repeatCount="indefinite"></animate><animate attributeName="r" values="40;50;40" dur="2.2s" repeatCount="indefinite"></animate></circle>
+        <circle cx="760" cy="176" r="4" fill="#00C4E8" opacity="0"><animate attributeName="cy" values="176;30" dur="3.6s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="3.6s" begin="0s" repeatCount="indefinite"></animate></circle>
+        <circle cx="750" cy="176" r="3" fill="#00C4E8" opacity="0"><animate attributeName="cy" values="176;30" dur="3.6s" begin="1.2s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="3.6s" begin="1.2s" repeatCount="indefinite"></animate></circle>
+        <circle cx="770" cy="176" r="3.5" fill="#00C4E8" opacity="0"><animate attributeName="cy" values="176;30" dur="3.6s" begin="2.4s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="3.6s" begin="2.4s" repeatCount="indefinite"></animate></circle>
+        <circle cx="756" cy="176" r="2.5" fill="#7FE3F5" opacity="0"><animate attributeName="cy" values="176;30" dur="3.6s" begin="0.6s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="3.6s" begin="0.6s" repeatCount="indefinite"></animate></circle>
+        <circle cx="766" cy="176" r="3" fill="#7FE3F5" opacity="0"><animate attributeName="cy" values="176;30" dur="3.6s" begin="1.8s" repeatCount="indefinite"></animate><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="3.6s" begin="1.8s" repeatCount="indefinite"></animate></circle>
+        <rect x="742" y="96" width="36" height="80" fill="#0B1F3A" opacity="0.55"></rect>
+        <line x1="760" y1="96" x2="760" y2="176" stroke="#00C4E8" stroke-width="2" stroke-dasharray="3 5"></line>
+        <rect x="738" y="40" width="44" height="56" rx="6" fill="#142947" stroke="#00C4E8" stroke-width="1.5"></rect>
+        <rect x="746" y="48" width="28" height="18" rx="3" fill="#0B1F3A"></rect>
+        <text x="760" y="61" text-anchor="middle" font-size="10" font-weight="700" fill="#00C4E8">He ▲</text>
+        <rect x="748" y="72" width="24" height="4" rx="2" fill="#22C55E"></rect><rect x="748" y="80" width="16" height="4" rx="2" fill="#22C55E" opacity="0.6"></rect>
+        <rect x="430" y="96" width="14" height="80" fill="#0B1F3A" opacity="0.4"></rect><line x1="437" y1="96" x2="437" y2="176" stroke="#8FA8C4" stroke-opacity="0.35" stroke-dasharray="3 5"></line>
+        <rect x="1060" y="96" width="14" height="80" fill="#0B1F3A" opacity="0.4"></rect><line x1="1067" y1="96" x2="1067" y2="176" stroke="#8FA8C4" stroke-opacity="0.35" stroke-dasharray="3 5"></line>
+        <g class="illu-labels">
+          <circle cx="119" cy="20" r="11" fill="#00C4E8"></circle><text x="119" y="24" text-anchor="middle" font-size="11" font-weight="800" fill="#0B1F3A">1</text>
+          <text x="138" y="24" font-size="13" font-weight="700" fill="#FFFFFF" data-i18n="n_l1">Einspeisung im Betrieb</text>
+          <circle cx="437" cy="20" r="11" fill="#8FA8C4"></circle><text x="437" y="24" text-anchor="middle" font-size="11" font-weight="800" fill="#0B1F3A">2</text>
+          <text x="456" y="24" font-size="13" font-weight="700" fill="#FFFFFF" data-i18n="n_l2">Prüföffnung: kein Helium</text>
+          <circle cx="760" cy="20" r="11" fill="#00C4E8"></circle><text x="760" y="24" text-anchor="middle" font-size="11" font-weight="800" fill="#0B1F3A">3</text>
+          <text x="779" y="24" font-size="13" font-weight="700" fill="#FFFFFF" data-i18n="n_l3">Messpunkt über dem Leck: Helium erhöht</text>
+          <circle cx="1067" cy="20" r="11" fill="#8FA8C4"></circle><text x="1067" y="24" text-anchor="middle" font-size="11" font-weight="800" fill="#0B1F3A">4</text>
+          <text x="1086" y="24" font-size="13" font-weight="700" fill="#FFFFFF" data-i18n="n_l4">Prüföffnung: kein Helium</text>
+          <text x="1268" y="212" text-anchor="end" font-size="11" fill="#FFD9CE" letter-spacing="1.5" opacity="0.9" data-i18n="n_vor">VORLAUF</text>
+          <text x="1268" y="284" text-anchor="end" font-size="11" fill="#CFE0F5" letter-spacing="1.5" opacity="0.9" data-i18n="n_rueck">RÜCKLAUF</text>
+          <text x="20" y="318" font-size="11" fill="#8FA8C4" letter-spacing="1.5" data-i18n="n_soil">ERDREICH · LEITUNGSTIEFE BIS MEHRERE METER</text>
+          <text x="1268" y="90" text-anchor="end" font-size="11" fill="#8FA8C4" letter-spacing="1.5" data-i18n="n_surface">OBERFLÄCHE</text>
+        </g>
+      </svg>
       </div>
+      <ol class="illu-legend">
+        <li><span class="n">1</span><span data-i18n="n_l1">Einspeisung im Betrieb</span></li>
+        <li><span class="n">2</span><span data-i18n="n_l2">Prüföffnung: kein Helium</span></li>
+        <li><span class="n">3</span><span data-i18n="n_l3">Messpunkt über dem Leck: Helium erhöht</span></li>
+        <li><span class="n">4</span><span data-i18n="n_l4">Prüföffnung: kein Helium</span></li>
+      </ol>
     </div>
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-bar-inner">
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-      <span data-i18n="trust1">Kein Betriebsstopp</span>
-    </div>
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-      <span data-i18n="trust2">Keine Entleerung</span>
-    </div>
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-      <span data-i18n="trust3">Hochsensible Messtechnik</span>
-    </div>
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-      <span data-i18n="trust4">Auch bei tiefen Trassen</span>
-    </div>
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-      <span data-i18n="trust5">Dokumentierter Ergebnisbericht</span>
-    </div>
-    <div class="trust-item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-      <span data-i18n="trust6">Helium nach § 20 TrinkwV gelistet</span>
-    </div>
+<!-- TRUST -->
+<div class="trust2">
+  <div class="container trust2-grid">
+    <div class="trust2-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00C4E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><div><div class="t" data-i18n="n_t1">Kein Betriebsstopp</div><div class="d" data-i18n="n_t1s">Ortung während der Versorgung</div></div></div>
+    <div class="trust2-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00C4E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"></path></svg><div><div class="t" data-i18n="n_t2">Hochsensible Messung</div><div class="d" data-i18n="n_t2s">ppm-Abweichung vom Hintergrund</div></div></div>
+    <div class="trust2-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00C4E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg><div><div class="t" data-i18n="n_t3">Punktgenau</div><div class="d" data-i18n="n_t3s">Statt Suchgrabung auf Verdacht</div></div></div>
+    <div class="trust2-item"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00C4E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6M8 13h8M8 17h5"></path></svg><div><div class="t" data-i18n="n_t4">Ergebnisbericht</div><div class="d" data-i18n="n_t4s">Grundlage für die Sanierung</div></div></div>
   </div>
 </div>
 
-<!-- VORTEILE -->
-<section class="vorteile-section" id="vorteile">
-  <div class="container">
-    <div class="section-label" data-i18n="vorteile_label">Warum MS Heliumtechnik</div>
-    <h2 class="section-title" data-i18n="vorteile_title">Spezialisiert wo andere nicht weiterkommen.</h2>
-    <p class="section-sub" data-i18n="vorteile_sub">Herkömmliche Leckortungsverfahren stoßen bei komplexen Netzen, tiefen Trassen oder laufendem Betrieb schnell an ihre Grenzen. Unser Verfahren nicht.</p>
-    <div class="vorteile-grid">
-      <div class="vorteil-card">
-        <div class="vorteil-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        </div>
-        <h3 data-i18n="v1_h">Laufender Betrieb</h3>
-        <p data-i18n="v1_p">Die Leckortung erfolgt während die Anlage in Betrieb ist. Keine Abschaltung, keine Versorgungsunterbrechung, kein Druckverlust durch Entleerung.</p>
-      </div>
-      <div class="vorteil-card">
-        <div class="vorteil-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3 data-i18n="v2_h">Hochsensible Messtechnik</h3>
-        <p data-i18n="v2_p">Keine Standardgeräte aus dem Baumarkt. Wir arbeiten mit hochempfindlicher Analytik, die kleinste Abweichungen vom natürlichen Hintergrundwert messen kann.</p>
-      </div>
-      <div class="vorteil-card">
-        <div class="vorteil-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
-        <h3 data-i18n="v3_h">Punktgenaue Lokalisierung</h3>
-        <p data-i18n="v3_p">Statt teurer Suchgrabungen auf Verdacht: systematische Eingrenzung der Schadstelle entlang der Trasse. Weniger Fehlgrabungen, weniger Kosten.</p>
-      </div>
-      <div class="vorteil-card">
-        <div class="vorteil-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        </div>
-        <h3 data-i18n="v4_h">Auch bei tiefen Leitungen</h3>
-        <p data-i18n="v4_p">Helium ist das kleinste stabile Gas-Molekül. Es diffundiert durch Bodenschichten und ist auch bei Tieflagen über mehrere Meter hinweg messbar – abhängig von Bodenaufbau und Leitungstyp.</p>
-      </div>
-      <div class="vorteil-card">
-        <div class="vorteil-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <h3 data-i18n="v5_h">Klarer Ergebnisbericht</h3>
-        <p data-i18n="v5_p">Nach dem Einsatz erhalten Sie eine nachvollziehbare Dokumentation: Messpunkte, Heliumwerte, Eingrenzung der Schadstelle, Grundlage für die Sanierungsplanung.</p>
-      </div>
-      <div class="vorteil-card">
-        <div class="vorteil-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3 data-i18n="v6_h">Wenn andere Methoden scheitern</h3>
-        <p data-i18n="v6_p">Verluste bekannt, Quelle nicht gefunden – oder Voruntersuchungen erfolglos geblieben. Die Heliumprüfung arbeitet unabhängig von Geräuschpegel, Oberflächenzustand oder Leitungstiefe.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- VERFAHREN -->
-<section class="verfahren-section" id="verfahren">
+<section class="verf2" id="verfahren">
   <div class="container">
-    <div class="section-label" data-i18n="verf_label">Das Verfahren</div>
-    <h2 class="section-title" data-i18n="verf_title">So funktioniert Helium-Leckortung.</h2>
-    <p class="section-sub" data-i18n="verf_sub">Ein systematischer Ablauf – von der Einbringung bis zum Ergebnisbericht.</p>
-    <div class="verfahren-grid">
-      <div class="verfahren-steps">
-        <div class="step">
-          <div class="step-num">01</div>
-          <div>
-            <h3 data-i18n="s1_h">Erstgespräch & Planungsunterlagen</h3>
-            <p data-i18n="s1_p">Wir besprechen Ihr Leitungssystem: Trassenlänge, Leitungstyp, Medium, Betriebsdruck, Temperatur und bekannten Wasserverlust. Vorhandene Pläne werden gesichtet.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <div>
-            <h3 data-i18n="s2_h">Heliumeinbringung im laufenden Betrieb</h3>
-            <p data-i18n="s2_p">Über eine geeignete Einbringungsstelle wird Helium blasenfrei mit einer Spezialanlage in das Prozesswasser eingebracht. Der Betrieb läuft weiter – keine Unterbrechung.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <div>
-            <h3 data-i18n="s3_h">Blasenfreies Lösen im Medium</h3>
-            <p data-i18n="s3_p">Das Helium wird nicht pur eingebracht: Die Spezialanlage löst es blasenfrei im zu prüfenden Medium, sodass es homogen im Umlaufwasser gelöst bleibt und mitzirkuliert – der Zeitraum bis zur vollständigen Verteilung im Netz ist systemabhängig. Erst dort, wo das Medium durch eine Undichtigkeit aus dem Rohr austritt und der Druck abfällt, entweicht das gelöste Helium wieder aus dem Wasser und wird an der Oberfläche messbar.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">04</div>
-          <div>
-            <h3 data-i18n="s4_h">Systematische Messung entlang der Trasse</h3>
-            <p data-i18n="s4_p">An Prüföffnungen, Bohrpunkten, Schächten und Messpunkten wird Bodenluft angesaugt und mit hochsensibler Analytik auf Heliumgehalte geprüft. Die Messwerte werden protokolliert.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">05</div>
-          <div>
-            <h3 data-i18n="s5_h">Auswertung & Eingrenzung</h3>
-            <p data-i18n="s5_p">Erhöhte Heliumwerte gegenüber dem natürlichen Hintergrundwert zeigen die Bereiche an, in denen das Leitungsmedium austritt. So lässt sich die Schadstelle punktuell eingrenzen.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="step-num">06</div>
-          <div>
-            <h3 data-i18n="s6_h">Ergebnisbericht für den Betreiber</h3>
-            <p data-i18n="s6_p">Sie erhalten eine schriftliche Dokumentation mit Messwerten, Trassen-Protokoll, Eingrenzung der Schadstelle und Empfehlungen für die weiteren Schritte.</p>
-          </div>
-        </div>
-      </div>
-      <div class="verfahren-visual">
-        <picture>
-          <source srcset="schema-helium-leckortung.webp" type="image/webp">
-          <img src="schema-helium-leckortung.jpg" width="1122" height="1402" loading="lazy" decoding="async" alt="Schema der Helium-Leckortung: Beladestation, gelöstes Helium in Vor- und Rücklauf, Austritt an der Leckstelle und Detektion an Messpunkten an der Oberfläche" style="width:100%;height:auto;display:block;">
-        </picture>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WARUM HELIUM -->
-<section class="warum-section" id="warum">
-  <div class="container">
-    <div class="section-label" data-i18n="warum_label">Warum Helium?</div>
-    <h2 class="section-title" data-i18n="warum_title">Das Tracergas der Wahl.</h2>
-    <div class="warum-split">
-      <div class="warum-text">
-        <p data-i18n="warum_p1">Helium ist das kleinste stabile Molekül der Natur. Mit einem Atomdurchmesser von 0,26 nm und einer Dichte, die rund siebenmal geringer ist als die von Luft, dringt es durch Bodenschichten, Schächte und Prüföffnungen – selbst wenn die Schadstelle tief liegt.</p>
-        <p data-i18n="warum_p2">Der natürliche Heliumgehalt der Atmosphäre liegt bei rund 5,2 ppm – ein stabiler, bekannter Hintergrundwert. Eine deutliche Erhöhung über diesen Wert ist messbar und ein starker Hinweis auf eine austretende Leckstelle, den wir entlang der Trasse systematisch eingrenzen.</p>
-        <p data-i18n="warum_p3">Helium ist chemisch inert, ungiftig, nicht entzündlich und verbleibt in so geringen Mengen im System, dass es keine betrieblichen Auswirkungen hat. Es ist technisch und sicherheitstechnisch unbedenklich.</p>
-        <p data-i18n="warum_p4">Zudem ist Helium beim Umweltbundesamt nach § 20 TrinkwV als Stoff zur Ortung von Leckagen im Rohrsystem gelistet – einsetzbar bis hin zu Trinkwassernetzen.</p>
-        <p style="color: #8FA8C4; font-size: 0.82rem; border-left: 2px solid rgba(0,196,232,0.3); padding-left: 1rem; margin-top: 1.5rem;" data-i18n="warum_hinweis">Hinweis: Helium kann je nach Kunststofftyp, Wandstärke und Temperatur partiell durch Rohrmaterial diffundieren. An Leckstellen, Muffen, Übergängen und beschädigten Bereichen tritt es bevorzugt aus. Aluminium-Barrieren (alu-ummantelte Fernwärmerohre) verringern die Diffusion erheblich. Die Eignung für Ihr Leitungssystem wird im Vorfeld individuell bewertet.</p>
-      </div>
+    <div class="verf2-grid">
       <div>
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th data-i18n="tbl_h1">Verfahren</th>
-              <th data-i18n="tbl_h2">Betrieb läuft</th>
-              <th data-i18n="tbl_h3">Tiefe Leitungen</th>
-              <th data-i18n="tbl_h4">Genaue Lok.</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-i18n="tbl_m1">Helium-Leckortung (wir)</td>
-              <td><span class="badge-yes" data-i18n="tbl_yes">✓ Ja</span></td>
-              <td><span class="badge-yes" data-i18n="tbl_possible">✓ Möglich</span></td>
-              <td><span class="badge-yes" data-i18n="tbl_high">✓ Hoch</span></td>
-            </tr>
-            <tr>
-              <td data-i18n="tbl_m2">Akustik / Korrelation</td>
-              <td><span class="badge-mid" data-i18n="tbl_cond">~ bedingt</span></td>
-              <td><span class="badge-no" data-i18n="tbl_limited">✗ Begrenzt</span></td>
-              <td><span class="badge-mid" data-i18n="tbl_medium">~ mittel</span></td>
-            </tr>
-            <tr>
-              <td data-i18n="tbl_m3">Thermografie</td>
-              <td><span class="badge-yes" data-i18n="tbl_yes">✓ Ja</span></td>
-              <td><span class="badge-no" data-i18n="tbl_no">✗ Nein</span></td>
-              <td><span class="badge-mid" data-i18n="tbl_depends">~ abhängig</span></td>
-            </tr>
-            <tr>
-              <td data-i18n="tbl_m4">Feuchtemessung</td>
-              <td><span class="badge-yes" data-i18n="tbl_yes">✓ Ja</span></td>
-              <td><span class="badge-no" data-i18n="tbl_limited">✗ Begrenzt</span></td>
-              <td><span class="badge-no" data-i18n="tbl_inaccurate">✗ Ungenau</span></td>
-            </tr>
-            <tr>
-              <td data-i18n="tbl_m5">Formiergas (H₂/N₂)</td>
-              <td><span class="badge-mid" data-i18n="tbl_restricted">~ eingeschränkt</span></td>
-              <td><span class="badge-mid" data-i18n="tbl_cond">~ bedingt</span></td>
-              <td><span class="badge-mid" data-i18n="tbl_medium">~ mittel</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="section-label" data-i18n="n_v_label">Das Verfahren</div>
+        <h2 class="section-title" data-i18n="n_v_title">Vier Schritte. Ein Bericht. Kein Stillstand.</h2>
+        <p class="section-sub" data-i18n="n_v_sub">Wir bringen Helium blasenfrei ins Wasser. Es bleibt gelöst, solange das Rohr dicht ist. An der Schadstelle wird es frei, steigt auf und wird an der Oberfläche gemessen.</p>
+        <div class="verf2-steps">
+          <div class="verf2-step"><div class="n">01</div><div><h3 data-i18n="n_s1h">Erstgespräch und Pläne</h3><p data-i18n="n_s1p">Trassenlänge, Medium, Druck, Temperatur, bekannter Verlust.</p></div></div>
+          <div class="verf2-step"><div class="n">02</div><div><h3 data-i18n="n_s2h">Helium einbringen</h3><p data-i18n="n_s2p">Über eine Einspeisestelle, im laufenden Betrieb. Das Helium zirkuliert gelöst im Netz mit.</p></div></div>
+          <div class="verf2-step"><div class="n">03</div><div><h3 data-i18n="n_s3h">Entlang der Trasse messen</h3><p data-i18n="n_s3p">Bodenluft an Prüföffnungen und Schächten prüfen, Werte protokollieren. Erhöhte Werte zeigen die Schadstelle, meist auf wenige Meter.</p></div></div>
+          <div class="verf2-step"><div class="n">04</div><div><h3 data-i18n="n_s4h">Bericht</h3><p data-i18n="n_s4p">Messwerte, Trassenprotokoll, Empfehlung für die Sanierung.</p></div></div>
+        </div>
+        <a href="helium-leckortung-verfahren.html" class="verf2-more" data-i18n="n_v_more">Verfahren im Detail →</a>
+      </div>
+      <div class="verf2-visual">
+        <div class="verf2-glow"></div>
+        <div class="verf2-card">
+          <picture>
+            <source srcset="schema-helium-leckortung.webp" type="image/webp">
+            <img src="schema-helium-leckortung.jpg" width="1122" height="1402" loading="lazy" decoding="async" alt="Schema der Helium-Leckortung: Beladestation, gelöstes Helium in Vor- und Rücklauf, Austritt an der Leckstelle und Detektion an Messpunkten an der Oberfläche">
+          </picture>
+        </div>
+        <div class="verf2-why"><div class="l" data-i18n="n_why_l">Warum Helium</div><div class="p" data-i18n="n_why_p">Das kleinste Atom, das es gibt: steigt durch Boden und Ummantelung auf. Natürlicher Wert 5,2 ppm, jede Erhöhung ist ein Hinweis.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LEISTUNGEN -->
-<section class="leistungen-section" id="leistungen">
+<!-- EINSATZBEREICHE -->
+<section class="einsatz" id="einsatz">
   <div class="container">
-    <div class="section-label" data-i18n="leist_label">Leistungen</div>
-    <h2 class="section-title" data-i18n="leist_title">Unsere Einsatzbereiche.</h2>
-    <p class="section-sub" data-i18n="leist_sub">Spezialisiert auf wasserbefüllte Druckleitungssysteme in Fernwärme, Industrie und Versorgungs­infrastruktur.</p>
-    <div class="leistungen-grid">
-      <div class="leistung-card">
-        <h3><span>🔥</span> <span data-i18n="l1_h">Fernwärme-Leckortung</span></h3>
-        <p data-i18n="l1_p">Leckortung in Fernwärme- und Nahwärmenetzen ohne Abschaltung. Geeignet für einzelne Trassenabschnitte oder komplexe Netzstrukturen mit mehreren Einspeisepunkten.</p>
-        <ul class="leistung-list">
-          <li data-i18n="l1_li1">Vorlauf- und Rücklauf-Leitungen</li>
-          <li data-i18n="l1_li2">Muffenbereiche und Übergänge</li>
-          <li data-i18n="l1_li3">Komplexe Netztopologien</li>
-          <li data-i18n="l1_li4">Auch bei hohen Betriebstemperaturen planbar</li>
-        </ul>
+    <div class="einsatz-head">
+      <div>
+        <div class="section-label" data-i18n="n_e_label">Einsatzbereiche</div>
+        <h2 class="section-title" data-i18n="n_e_title">Wo Wasser unter Druck verloren geht.</h2>
       </div>
-      <div class="leistung-card">
-        <h3><span>⚙️</span> <span data-i18n="l2_h">Prozesswasser-Leckortung</span></h3>
-        <p data-i18n="l2_p">Für Industrieanlagen, Kühlwassernetze, Heizwasserkreisläufe und Prozesswassersysteme, bei denen ein Stillstand nicht akzeptabel ist.</p>
-        <ul class="leistung-list">
-          <li data-i18n="l2_li1">Geschlossene Wasserkreisläufe</li>
-          <li data-i18n="l2_li2">Kühlwasser- und Heizwassernetze</li>
-          <li data-i18n="l2_li3">Werks- und Industriegelände</li>
-          <li data-i18n="l2_li4">Auch unterirdische Trassenführungen</li>
-        </ul>
-      </div>
-      <div class="leistung-card">
-        <h3><span>🏭</span> <span data-i18n="l3_h">Industrie- und Werksnetze</span></h3>
-        <p data-i18n="l3_p">Für Betriebe, Kliniken, Kasernen und große Liegenschaften mit eigenem Wärme- oder Prozesswassernetz. Ortung auch auf weitläufigen Geländen.</p>
-        <ul class="leistung-list">
-          <li data-i18n="l3_li1">Kliniken und Krankenhäuser</li>
-          <li data-i18n="l3_li2">Kasernen und Bundesbehörden</li>
-          <li data-i18n="l3_li3">Wohnungsbaugesellschaften</li>
-          <li data-i18n="l3_li4">Gewerbeparks und Industriegelände</li>
-        </ul>
-      </div>
-      <div class="leistung-card">
-        <h3><span>🚨</span> <span data-i18n="l4_h">Prüfung bei unklarem Wasserverlust</span></h3>
-        <p data-i18n="l4_p">Sie wissen, dass Wasser fehlt – aber wo? Wenn alle bisherigen Methoden gescheitert sind oder keine verwertbare Aussage liefern konnten, ist die Heliumprüfung oft der nächste sinnvolle Schritt.</p>
-        <ul class="leistung-list">
-          <li data-i18n="l4_li1">Diffuse Verluste ohne eindeutige Quelle</li>
-          <li data-i18n="l4_li2">Nach erfolglosen Vorortungen</li>
-          <li data-i18n="l4_li3">Bei schwer zugänglichen Trassen</li>
-          <li data-i18n="l4_li4">Als ergänzende Methode zur Eingrenzung</li>
-        </ul>
-      </div>
-      <div class="leistung-card" style="grid-column: 1 / -1;">
-        <h3><span>🛡️</span> <span data-i18n="l5_h">Dichtheitsprüfung mittels Helium-Tracergas</span></h3>
-        <p data-i18n="l5_p">Hochempfindliche Prüfung der Dichtheit Ihres Leitungsnetzes mit Helium als Tracergas – deutlich sensibler als eine reine Druckprüfung. Kleinste Undichtigkeiten werden nachgewiesen und punktgenau eingegrenzt, im laufenden Betrieb.</p>
-        <ul class="leistung-list">
-          <li data-i18n="l5_li1">Prüfverfahren nach DIN EN ISO 20485 (Tracergas-Verfahren)</li>
-          <li data-i18n="l5_li2">Nachweis kleinster Leckagen weit unterhalb der Druckprüf-Schwelle</li>
-          <li data-i18n="l5_li3">Ergänzend zur Abnahme-Druckprüfung nach AGFW FW 602 · DIN EN 805 · DVGW G 469</li>
-          <li data-i18n="l5_li4">Ohne Abschaltung, ohne Entleerung</li>
-        </ul>
-      </div>
+    </div>
+    <div class="einsatz-grid">
+      <div class="einsatz-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C4E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M3 14h18M6 10V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4M6 14v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4"></path></svg><h3 data-i18n="n_e1h">Fernwärme &amp; Nahwärme</h3><p data-i18n="n_e1p">Vor- und Rücklauf, Muffen, verzweigte Netze mit mehreren Einspeisepunkten.</p></div>
+      <div class="einsatz-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C4E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V9l8-5 8 5v11M9 20v-6h6v6"></path></svg><h3 data-i18n="n_e2h">Prozess- &amp; Kühlwasser</h3><p data-i18n="n_e2p">Industrie, Kliniken, Werksgelände, wo ein Stillstand nicht infrage kommt.</p></div>
+      <div class="einsatz-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C4E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"></path></svg><h3 data-i18n="n_e3h">Trinkwasser</h3><p data-i18n="n_e3p">Helium ist beim Umweltbundesamt nach § 20 TrinkwV für die Leckortung gelistet.</p></div>
+      <div class="einsatz-card"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00C4E8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4M12 16h.01"></path></svg><h3 data-i18n="n_e4h">Unklarer Verlust</h3><p data-i18n="n_e4p">Wasser fehlt, Akustik und Thermografie haben nichts gefunden.</p></div>
     </div>
   </div>
 </section>
 
-<!-- FOTOS PLATZHALTER -->
-<section class="fotos-section" id="fotos">
-  <div class="container">
-    <div class="section-label" data-i18n="fotos_label">Eindrücke aus der Praxis</div>
-    <h2 class="section-title" data-i18n="fotos_title">Bilder vom Einsatz.</h2>
-    <div class="fotos-grid">
-      <div class="foto-real"><img src="beladestation.jpg" width="900" height="1200" alt="Helium-Beladestation – Anlage im Einsatz" loading="lazy" decoding="async"></div>
-      <div class="foto-real"><img src="steuertafel.jpg" width="900" height="1200" alt="Steuertafel der Helium-Beladestation" loading="lazy" decoding="async"></div>
-      <div class="foto-real"><img src="helium-flasche.jpg" width="900" height="1200" alt="Helium-Flasche im Feldeinsatz" loading="lazy" decoding="async"></div>
-      <div class="foto-real"><img src="manometer.jpg" width="900" height="1200" alt="Druck- und Messtechnik" loading="lazy" decoding="async"></div>
-      <div class="foto-real"><img src="armatur.jpg" width="900" height="1200" alt="Fernwärme-Armatur / Regelventil im Schacht" loading="lazy" decoding="async"></div>
-      <div class="foto-real"><img src="helium-label.jpg" width="900" height="1200" alt="Helium 4.6 – das eingesetzte Tracergas" loading="lazy" decoding="async"></div>
-    </div>
-  </div>
-</section>
 
-<!-- ZIELGRUPPEN -->
-<section class="zielgruppen-section" id="zielgruppen">
+
+
+
+
+
+
+<!-- ANFRAGE / KONTAKT -->
+<section class="person-section" id="person">
   <div class="container">
-    <div class="section-label" data-i18n="zg_label">Für wen geeignet</div>
-    <h2 class="section-title" data-i18n="zg_title">Einsatzbereiche im Überblick.</h2>
-    <p class="section-sub" data-i18n="zg_sub">Überall dort, wo Leitungen unter Druck stehen, Verluste entstehen und ein Stillstand teuer oder nicht möglich ist.</p>
-    <div class="zielgruppen-grid">
-      <div class="zg-card">
-        <div class="icon">🏙️</div>
-        <h3 data-i18n="zg1_h">Stadtwerke</h3>
-        <p data-i18n="zg1_p">Fernwärme- und Versorgungsnetze ohne Lieferunterbrechung prüfen</p>
+    <div class="person-grid">
+      <div class="person-visual">
+        <div class="person-photo"><img src="beladestation.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Helium-Beladestation der MS Heliumtechnik im Einsatz"></div>
+        <div class="person-inset"><img src="manometer.jpg" width="900" height="1200" loading="lazy" decoding="async" alt="Manometer der Helium-Beladestation"></div>
       </div>
-      <div class="zg-card">
-        <div class="icon">⚡</div>
-        <h3 data-i18n="zg2_h">Energieversorger</h3>
-        <p data-i18n="zg2_p">Fernwärmenetze, Contractoren, Nahwärme-Betreiber</p>
-      </div>
-      <div class="zg-card">
-        <div class="icon">🏗️</div>
-        <h3 data-i18n="zg3_h">Rohrleitungsbau</h3>
-        <p data-i18n="zg3_p">Tiefbauunternehmen und Leitungsbauer mit Gewährleistungsfällen</p>
-      </div>
-      <div class="zg-card">
-        <div class="icon">🏭</div>
-        <h3 data-i18n="zg4_h">Industrie</h3>
-        <p data-i18n="zg4_p">Betriebe mit Prozesswasser-, Kühl- und Heizkreisläufen</p>
-      </div>
-      <div class="zg-card">
-        <div class="icon">🏥</div>
-        <h3 data-i18n="zg5_h">Kliniken</h3>
-        <p data-i18n="zg5_p">Krankenhäuser mit eigener Fernwärme- oder Heizwasser-Infrastruktur</p>
-      </div>
-      <div class="zg-card">
-        <div class="icon">🏢</div>
-        <h3 data-i18n="zg6_h">Wohnungsbau</h3>
-        <p data-i18n="zg6_p">Große Gesellschaften mit eigenen Nahwärme- oder Heiznetzen</p>
-      </div>
-      <div class="zg-card">
-        <div class="icon">📐</div>
-        <h3 data-i18n="zg7_h">Ingenieurbüros</h3>
-        <p data-i18n="zg7_p">Als Subunternehmer oder direkter Ansprechpartner für Sanierungsplanung</p>
-      </div>
-      <div class="zg-card">
-        <div class="icon">🏛️</div>
-        <h3 data-i18n="zg8_h">Kommunen</h3>
-        <p data-i18n="zg8_p">Öffentliche Liegenschaften, Schulen, Kasernen, Verwaltungsgebäude</p>
+      <div class="person-text">
+        <div class="section-label" data-i18n="person_label">Wer macht das</div>
+        <h2 class="section-title" data-i18n="person_title">Mark Schwarze. Vor Ort, mit dem Messgerät.</h2>
+        <p data-i18n="person_p1"><strong>Sie sprechen direkt mit dem, der die Messung macht.</strong> Mark Schwarze ist seit 2022 in der Helium-Leckortung und führt jeden Auftrag selbst durch: vor Ort auf der Trasse, mit dem Messgerät in der Hand.</p>
+        <p data-i18n="person_p2">Das Verfahren ist seit Jahren erprobt, Anlage und Messtechnik gehören uns. Sie schildern Ihr Netz, wir sagen ehrlich, ob Helium hier passt.</p>
+        <div class="person-facts">
+          <span data-i18n="person_f1">Seit 2022 in der Helium-Leckortung</span>
+          <span data-i18n="person_f2">Eigene Anlage &amp; Messtechnik</span>
+          <span data-i18n="person_f3">Aurich · deutschlandweit &amp; Nachbarländer</span>
+        </div>
+        <div class="person-refs">
+          <span class="lbl" data-i18n="n_refs_l">Erprobt bei</span>
+          <span data-i18n="ref11_h">Stadtwerke (Norddeutschland)</span><span data-i18n="ref4_h">Wasserversorger (Großstadt)</span><span data-i18n="ref1_h">Automobilkonzern</span><span data-i18n="ref3_h">Chemieindustrie</span><span data-i18n="ref9_h">Fernwärmenetz Schweiz</span>
+        </div>
+        <a class="person-cta" href="#kontakt" data-i18n="person_cta">Direkt mit Mark Schwarze sprechen →</a>
       </div>
     </div>
   </div>
@@ -1189,30 +1112,6 @@
   </div>
 </section>
 
-<!-- REFERENZEN -->
-<section class="zielgruppen-section" id="referenzen">
-  <div class="container">
-    <div class="section-label" data-i18n="ref_label">Referenzen</div>
-    <h2 class="section-title" data-i18n="ref_title">Erprobt in anspruchsvollen Netzen.</h2>
-    <p class="section-sub" data-i18n="ref_sub">Eine Auswahl umgesetzter Projekte – aus Vertraulichkeitsgründen ohne Namensnennung. Die <strong>vollständige Referenzliste im Detail erhalten Sie gerne auf Anfrage</strong>.</p>
-    <div class="zielgruppen-grid">
-      <div class="zg-card"><div class="icon">🏭</div><h3 data-i18n="ref1_h">Automobilkonzern</h3><p data-i18n="ref1_p">Fernwärmeleitungen Werksgelände (München)</p></div>
-      <div class="zg-card"><div class="icon">🧪</div><h3 data-i18n="ref2_h">Konsumgüter-Konzern</h3><p data-i18n="ref2_p">Fernwärmenetz</p></div>
-      <div class="zg-card"><div class="icon">🧪</div><h3 data-i18n="ref3_h">Chemieindustrie</h3><p data-i18n="ref3_p">Trinkwasserleitungen</p></div>
-      <div class="zg-card"><div class="icon">💧</div><h3 data-i18n="ref4_h">Wasserversorger (Großstadt)</h3><p data-i18n="ref4_p">Trinkwassernetz</p></div>
-      <div class="zg-card"><div class="icon">🔗</div><h3 data-i18n="ref5_h">Gasnetzbetreiber (europäisch)</h3><p data-i18n="ref5_p">Speicheranlage & Fernwärme</p></div>
-      <div class="zg-card"><div class="icon">🎬</div><h3 data-i18n="ref6_h">Film-/Medienstandort</h3><p data-i18n="ref6_p">Fernwärmenetz (München)</p></div>
-      <div class="zg-card"><div class="icon">⚡</div><h3 data-i18n="ref7_h">Regionaler Energieversorger</h3><p data-i18n="ref7_p">Fernwärmenetz (Sachsen)</p></div>
-      <div class="zg-card"><div class="icon">🏙️</div><h3 data-i18n="ref8_h">Energieversorger</h3><p data-i18n="ref8_p">Fernwärmeleitung (Norddeutschland)</p></div>
-      <div class="zg-card"><div class="icon">🌐</div><h3 data-i18n="ref9_h">Fernwärmenetz Schweiz</h3><p data-i18n="ref9_p">Versorgungsnetz (CH)</p></div>
-      <div class="zg-card"><div class="icon">🏭</div><h3 data-i18n="ref10_h">Aluminium-Industrie</h3><p data-i18n="ref10_p">Kühlwasserleitungen</p></div>
-      <div class="zg-card"><div class="icon">💧</div><h3 data-i18n="ref11_h">Stadtwerke (Norddeutschland)</h3><p data-i18n="ref11_p">Trinkwassernetz</p></div>
-      <div class="zg-card"><div class="icon">🏙️</div><h3 data-i18n="ref12_h">Weitere Stadtwerke</h3><p data-i18n="ref12_p">Fernwärme in mehreren Regionen</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ANFRAGE / KONTAKT -->
 <section class="anfrage-section" id="kontakt">
   <div class="container">
     <div class="anfrage-inner">
@@ -1220,21 +1119,26 @@
         <div class="section-label" data-i18n="kontakt_label">Kontakt & Anfrage</div>
         <h2 class="section-title" data-i18n="kontakt_title">Unklarer Wasserverlust im Netz?</h2>
         <p data-i18n="kontakt_p">Schildern Sie uns Ihr System – wir prüfen die Eignung und erstellen Ihnen ein <strong>kostenloses und unverbindliches Angebot</strong>.</p>
+        <div class="k-steps">
+          <div class="k-step"><span class="n">1</span><span data-i18n="n_step1"><strong>Wir melden uns kurzfristig.</strong> Wir klären Medium, Länge und Verlust.</span></div>
+          <div class="k-step"><span class="n">2</span><span data-i18n="n_step2"><strong>Eignung und Angebot.</strong> Passt das Verfahren nicht, sagen wir das.</span></div>
+          <div class="k-step"><span class="n">3</span><span data-i18n="n_step3"><strong>Einsatz und Bericht.</strong> Messung vor Ort, Dokumentation für die Sanierung.</span></div>
+        </div>
         <div class="contact-info">
           <div>
             <div class="contact-name">MS Heliumtechnik</div>
             <div class="contact-role" data-i18n="kontakt_role">Mark Schwarze · Inhaber</div>
           </div>
           <div class="contact-row">
-            <span class="icon">📞</span>
+            <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C4E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.8 2z"></path></svg></span>
             <a href="tel:+4915679799100">0156&nbsp;79799100</a>
           </div>
           <div class="contact-row">
-            <span class="icon">✉️</span>
+            <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C4E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></span>
             <a href="mailto:info@helium-leckortung.de">info@helium-leckortung.de</a>
           </div>
           <div class="contact-row">
-            <span class="icon">📍</span>
+            <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00C4E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6 7-12a7 7 0 0 0-14 0c0 6 7 12 7 12z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
             <address>Alter Postweg 80<br>26607 Aurich</address>
           </div>
         </div>
@@ -1370,7 +1274,7 @@
           <p class="form-legal" data-i18n="f_legal">Kostenlos und unverbindlich. Ihre Angaben werden ausschließlich zur Bearbeitung Ihrer Anfrage genutzt (Details siehe Datenschutz). Wir melden uns in der Regel innerhalb von 24 Stunden.</p>
         </form>
         <div id="form-success">
-          <div class="check">✅</div>
+          <div class="check"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m8 12 3 3 5-6"></path></svg></div>
           <h3 data-i18n="f_success_h">Anfrage eingegangen!</h3>
           <p data-i18n="f_success_p">Vielen Dank. Wir melden uns schnellstmöglich bei Ihnen – in der Regel innerhalb von 24 Stunden.</p>
         </div>
@@ -1457,11 +1361,10 @@
         <h4 data-i18n="foot_nav">Navigation</h4>
         <ul>
           <li><a href="#verfahren" data-i18n="foot_l1">Das Verfahren</a></li>
-          <li><a href="#leistungen" data-i18n="nav_leistungen">Leistungen</a></li>
-          <li><a href="#warum" data-i18n="foot_l3">Warum Helium?</a></li>
-          <li><a href="#zielgruppen" data-i18n="nav_fuerwen">Für wen</a></li>
+          <li><a href="#einsatz" data-i18n="n_nav_einsatz">Einsatzbereiche</a></li>
+          <li><a href="#person" data-i18n="n_nav_person">Über uns</a></li>
           <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
-          <li><a href="#referenzen" data-i18n="nav_referenzen">Referenzen</a></li>
+          <li><a href="/download.html" data-i18n="n_nav_downloads">Downloads</a></li>
           <li><a href="#kontakt" data-i18n="foot_l7">Kontakt & Anfrage</a></li>
         </ul>
       </div>
@@ -1532,41 +1435,6 @@
     });
   });
 
-  // Leck-Heilung: beim Runterscrollen nimmt das Spritzen ab, unten ist es repariert
-  (function() {
-    var spray = document.getElementById('spray');
-    var clamp = document.getElementById('clamp');
-    var leakdot = document.getElementById('leakdot');
-    var statuslbl = document.getElementById('statuslbl');
-    if (!spray || !clamp) return;
-    var rings = spray.querySelectorAll('.ring');
-    var drops = spray.querySelectorAll('.drop');
-    function lerp(a, b, t) { return Math.round(a + (b - a) * t); }
-    function statusColor(x) {
-      var r, g, b;
-      if (x < 0.5) { var t = x / 0.5; r = lerp(226,239,t); g = lerp(75,159,t); b = lerp(74,39,t); }
-      else { var t2 = (x - 0.5) / 0.5; r = lerp(239,34,t2); g = lerp(159,197,t2); b = lerp(39,94,t2); }
-      return 'rgb(' + r + ',' + g + ',' + b + ')';
-    }
-    function updateLeak() {
-      var doc = document.documentElement;
-      var max = (doc.scrollHeight - doc.clientHeight) || 1;
-      var p = Math.min(1, Math.max(0, (window.scrollY || doc.scrollTop) / max));
-      var c = statusColor(p);
-      spray.style.opacity = Math.max(0, 1 - p * 1.25).toFixed(3);
-      rings.forEach(function(r) { r.setAttribute('stroke', c); });
-      drops.forEach(function(d) { d.setAttribute('fill', c); });
-      if (leakdot) leakdot.setAttribute('fill', c);
-      clamp.style.opacity = Math.min(1, Math.max(0, (p - 0.55) / 0.3)).toFixed(3);
-      if (statuslbl) {
-        statuslbl.setAttribute('fill', c);
-        statuslbl.textContent = p > 0.6 ? (window.__leak_found || 'LECK GEORTET') : (window.__leak_running || 'ORTUNG LÄUFT …');
-      }
-    }
-    window.addEventListener('scroll', updateLeak, { passive: true });
-    window.addEventListener('resize', updateLeak);
-    updateLeak();
-  })();
 </script>
 
 <script>
@@ -1577,6 +1445,78 @@
 
   var I18N = {
     en: {
+      n_nav_einsatz: "Applications",
+      n_nav_person: "About us",
+      n_nav_downloads: "Downloads",
+      n_kicker: "Helium leak detection · District heating · Process water",
+      n_h1: "Find the leak <em>without shutting down the network.</em>",
+      n_sub: "Helium dissolves in the water, escapes only at the damaged spot and is measured at the surface. No draining, no supply gap, pinpoint localisation – even for deeply buried pipes.",
+      n_cta1: "Request a free assessment",
+      n_cta2: "How it works ↓",
+      n_f1: "In use since 2022",
+      n_f2: "Own unit &amp; metrology",
+      n_f3: "Listed under § 20 TrinkwV",
+      n_chip1_l: "Operation",
+      n_chip1_v: "keeps running",
+      n_chip2_l: "Helium",
+      n_chip2_v: "inert, non-toxic",
+      n_card_cap: "District heating route · flow and return",
+      n_illu_t: "The method in one picture",
+      n_illu_s: "Helium travels with the water, leaves the pipe only at the leak and rises to the measuring point.",
+      n_l1: "Injection during operation",
+      n_l2: "Test opening: no helium",
+      n_l3: "Measuring point above the leak: helium elevated",
+      n_l4: "Test opening: no helium",
+      n_vor: "FLOW",
+      n_rueck: "RETURN",
+      n_soil: "SOIL · PIPE DEPTH UP TO SEVERAL METRES",
+      n_surface: "SURFACE",
+      n_t1: "No shutdown",
+      n_t1s: "Located while supply continues",
+      n_t2: "High-sensitivity measurement",
+      n_t2s: "ppm deviation from background",
+      n_t3: "Pinpoint",
+      n_t3s: "Instead of digging on suspicion",
+      n_t4: "Final report",
+      n_t4s: "Basis for the repair",
+      n_v_label: "The method",
+      n_v_title: "Four steps. One report. No downtime.",
+      n_v_sub: "We introduce helium into the water without bubbles. It stays dissolved as long as the pipe is tight. At the damaged spot it is released, rises and is measured at the surface.",
+      n_s1h: "Initial call and drawings",
+      n_s1p: "Route length, medium, pressure, temperature, known loss.",
+      n_s2h: "Inject helium",
+      n_s2p: "Through an injection point, during operation. The helium circulates dissolved in the network.",
+      n_s3h: "Measure along the route",
+      n_s3p: "Check soil air at test openings and shafts, log the readings. Elevated values reveal the damaged spot, usually to within a few metres.",
+      n_s4h: "Report",
+      n_s4p: "Readings, route log, recommendation for the repair.",
+      n_v_more: "The method in detail →",
+      n_why_l: "Why helium",
+      n_why_p: "The smallest atom there is: rises through soil and casing. Natural level 5.2 ppm, any increase is a clue.",
+      n_e_label: "Applications",
+      n_e_title: "Where pressurised water goes missing.",
+      n_e1h: "District &amp; local heating",
+      n_e1p: "Flow and return, joints, branched networks with several feed points.",
+      n_e2h: "Process &amp; cooling water",
+      n_e2p: "Industry, hospitals, plant sites where downtime is not an option.",
+      n_e3h: "Drinking water",
+      n_e3p: "Helium is listed by the German Environment Agency under § 20 TrinkwV for leak detection.",
+      n_e4h: "Unexplained loss",
+      n_e4p: "Water is missing, acoustics and thermography found nothing.",
+      n_refs_l: "Proven with",
+      n_step1: "<strong>We get back to you promptly.</strong> We clarify medium, length and loss.",
+      n_step2: "<strong>Suitability and quote.</strong> If the method does not fit, we say so.",
+      n_step3: "<strong>Job and report.</strong> On-site measurement, documentation for the repair.",
+      n_f_len: "Approx. route length",
+      n_f_len_ph: "e.g. 2.5 km",
+      person_label: "Who does the work",
+      person_title: "Mark Schwarze. On site, with the instrument.",
+      person_p1: "<strong>You speak directly with the person who does the measurement.</strong> Mark Schwarze has worked in helium leak detection since 2022 and carries out every job himself: on site along the pipeline route, instrument in hand.",
+      person_p2: "The method has been proven for years; the unit and the metrology are our own. You describe your network, we tell you honestly whether helium is the right fit.",
+      person_f1: "Helium leak detection since 2022",
+      person_f2: "Own unit &amp; metrology",
+      person_f3: "Aurich · Germany &amp; neighbouring countries",
+      person_cta: "Talk to Mark Schwarze directly →",
       meta_title: "MS Heliumtechnik – Helium leak detection during live operation | District heating & process water",
       meta_desc: "Specialised helium leak detection for district heating and process-water systems. No shutdown, no draining, during live operation. For utilities, energy suppliers and industry.",
       nav_cta: "Request a quote", nav_verfahren: "Method", nav_leistungen: "Services", nav_fuerwen: "For whom", nav_faq: "FAQ", nav_referenzen: "References", nav_kontakt: "Contact",
@@ -1652,6 +1592,78 @@
       leak_running: "LOCATING …", leak_found: "LEAK LOCATED", f_sending: "Sending …", f_error: "Sending failed. Please email us directly at info@helium-leckortung.de."
     },
     fr: {
+      n_nav_einsatz: "Applications",
+      n_nav_person: "À propos",
+      n_nav_downloads: "Téléchargements",
+      n_kicker: "Détection de fuites à l’hélium · Chauffage urbain · Eau de process",
+      n_h1: "Trouver la fuite <em>sans arrêter le réseau.</em>",
+      n_sub: "L’hélium se dissout dans l’eau, ne s’échappe qu’à l’endroit endommagé et est mesuré en surface. Pas de vidange, pas d’interruption, localisation précise – même pour les conduites profondes.",
+      n_cta1: "Demander une évaluation gratuite",
+      n_cta2: "Comment ça marche ↓",
+      n_f1: "En service depuis 2022",
+      n_f2: "Station &amp; instruments en propre",
+      n_f3: "Listé selon § 20 TrinkwV",
+      n_chip1_l: "Exploitation",
+      n_chip1_v: "continue",
+      n_chip2_l: "Hélium",
+      n_chip2_v: "inerte, non toxique",
+      n_card_cap: "Tracé de chaleur · aller et retour",
+      n_illu_t: "La méthode en une image",
+      n_illu_s: "L’hélium circule avec l’eau, ne quitte la conduite qu’à la fuite et monte jusqu’au point de mesure.",
+      n_l1: "Injection en exploitation",
+      n_l2: "Point de contrôle : pas d’hélium",
+      n_l3: "Point de mesure au-dessus de la fuite : hélium élevé",
+      n_l4: "Point de contrôle : pas d’hélium",
+      n_vor: "ALLER",
+      n_rueck: "RETOUR",
+      n_soil: "SOL · PROFONDEUR JUSQU’À PLUSIEURS MÈTRES",
+      n_surface: "SURFACE",
+      n_t1: "Pas d’arrêt",
+      n_t1s: "Localisation pendant la fourniture",
+      n_t2: "Mesure haute sensibilité",
+      n_t2s: "Écart en ppm par rapport au fond",
+      n_t3: "Précis",
+      n_t3s: "Au lieu de fouilles au hasard",
+      n_t4: "Rapport final",
+      n_t4s: "Base pour la réparation",
+      n_v_label: "La méthode",
+      n_v_title: "Quatre étapes. Un rapport. Aucun arrêt.",
+      n_v_sub: "Nous introduisons l’hélium dans l’eau sans bulles. Il reste dissous tant que la conduite est étanche. À l’endroit endommagé, il se libère, monte et est mesuré en surface.",
+      n_s1h: "Premier entretien et plans",
+      n_s1p: "Longueur, fluide, pression, température, perte connue.",
+      n_s2h: "Injecter l’hélium",
+      n_s2p: "Par un point d’injection, en exploitation. L’hélium circule dissous dans le réseau.",
+      n_s3h: "Mesurer le long du tracé",
+      n_s3p: "Analyser l’air du sol aux points de contrôle et regards, consigner les valeurs. Des valeurs élevées révèlent la fuite, généralement à quelques mètres près.",
+      n_s4h: "Rapport",
+      n_s4p: "Mesures, protocole du tracé, recommandation pour la réparation.",
+      n_v_more: "La méthode en détail →",
+      n_why_l: "Pourquoi l’hélium",
+      n_why_p: "Le plus petit atome qui existe : il traverse le sol et la gaine. Valeur naturelle 5,2 ppm, toute hausse est un indice.",
+      n_e_label: "Domaines d’application",
+      n_e_title: "Là où l’eau sous pression disparaît.",
+      n_e1h: "Chauffage urbain &amp; de proximité",
+      n_e1p: "Aller et retour, manchons, réseaux ramifiés à plusieurs points d’injection.",
+      n_e2h: "Eau de process &amp; de refroidissement",
+      n_e2p: "Industrie, cliniques, sites où l’arrêt n’est pas envisageable.",
+      n_e3h: "Eau potable",
+      n_e3p: "L’hélium est listé par l’Agence fédérale de l’environnement selon § 20 TrinkwV pour la détection de fuites.",
+      n_e4h: "Perte inexpliquée",
+      n_e4p: "L’eau manque, acoustique et thermographie n’ont rien trouvé.",
+      n_refs_l: "Éprouvé chez",
+      n_step1: "<strong>Nous vous recontactons rapidement.</strong> Nous précisons fluide, longueur et perte.",
+      n_step2: "<strong>Faisabilité et offre.</strong> Si la méthode ne convient pas, nous le disons.",
+      n_step3: "<strong>Intervention et rapport.</strong> Mesure sur place, documentation pour la réparation.",
+      n_f_len: "Longueur approx. du tracé",
+      n_f_len_ph: "p. ex. 2,5 km",
+      person_label: "Qui intervient",
+      person_title: "Mark Schwarze. Sur place, avec l’appareil de mesure.",
+      person_p1: "<strong>Vous parlez directement avec celui qui effectue la mesure.</strong> Mark Schwarze travaille depuis 2022 dans la détection de fuites à l’hélium et réalise chaque mission lui-même : sur place, le long du tracé, l’appareil à la main.",
+      person_p2: "La méthode est éprouvée depuis des années ; la station et les instruments nous appartiennent. Vous décrivez votre réseau, nous vous disons franchement si l’hélium convient.",
+      person_f1: "Détection de fuites à l’hélium depuis 2022",
+      person_f2: "Station &amp; instruments en propre",
+      person_f3: "Aurich · Allemagne &amp; pays voisins",
+      person_cta: "Parler directement à Mark Schwarze →",
       meta_title: "MS Heliumtechnik – Détection de fuites à l'hélium en fonctionnement | Chauffage urbain & eau de process",
       meta_desc: "Détection de fuites à l'hélium spécialisée pour réseaux de chauffage urbain et d'eau de process. Sans coupure, sans vidange, en fonctionnement. Pour régies, fournisseurs d'énergie et industrie.",
       nav_cta: "Demander un devis", nav_verfahren: "Méthode", nav_leistungen: "Prestations", nav_fuerwen: "Pour qui", nav_faq: "FAQ", nav_referenzen: "Références", nav_kontakt: "Contact",
@@ -1727,6 +1739,78 @@
       leak_running: "LOCALISATION …", leak_found: "FUITE LOCALISÉE", f_sending: "Envoi …", f_error: "L'envoi a échoué. Merci de nous écrire directement à info@helium-leckortung.de."
     },
     nl: {
+      n_nav_einsatz: "Toepassingen",
+      n_nav_person: "Over ons",
+      n_nav_downloads: "Downloads",
+      n_kicker: "Heliumlekdetectie · Stadsverwarming · Proceswater",
+      n_h1: "Het lek vinden <em>zonder het net af te schakelen.</em>",
+      n_sub: "Helium lost op in het water, ontsnapt alleen bij de schadeplek en wordt aan het oppervlak gemeten. Geen aftappen, geen leveringsonderbreking, nauwkeurige lokalisatie – ook bij diep liggende leidingen.",
+      n_cta1: "Gratis inschatting aanvragen",
+      n_cta2: "Zo werkt het ↓",
+      n_f1: "In gebruik sinds 2022",
+      n_f2: "Eigen installatie &amp; meettechniek",
+      n_f3: "Vermeld onder § 20 TrinkwV",
+      n_chip1_l: "Bedrijf",
+      n_chip1_v: "loopt door",
+      n_chip2_l: "Helium",
+      n_chip2_v: "inert, niet giftig",
+      n_card_cap: "Stadsverwarmingstracé · aanvoer en retour",
+      n_illu_t: "De methode in één beeld",
+      n_illu_s: "Helium stroomt mee met het water, verlaat de buis alleen bij het lek en stijgt naar het meetpunt.",
+      n_l1: "Invoeding in bedrijf",
+      n_l2: "Meetopening: geen helium",
+      n_l3: "Meetpunt boven het lek: helium verhoogd",
+      n_l4: "Meetopening: geen helium",
+      n_vor: "AANVOER",
+      n_rueck: "RETOUR",
+      n_soil: "GROND · LEIDINGDIEPTE TOT MEERDERE METERS",
+      n_surface: "OPPERVLAK",
+      n_t1: "Geen bedrijfsstop",
+      n_t1s: "Lokalisatie tijdens de levering",
+      n_t2: "Hooggevoelige meting",
+      n_t2s: "ppm-afwijking van de achtergrond",
+      n_t3: "Nauwkeurig",
+      n_t3s: "In plaats van graven op verdenking",
+      n_t4: "Eindrapport",
+      n_t4s: "Basis voor de sanering",
+      n_v_label: "De methode",
+      n_v_title: "Vier stappen. Eén rapport. Geen stilstand.",
+      n_v_sub: "We brengen helium zonder bellen in het water. Het blijft opgelost zolang de buis dicht is. Bij de schadeplek komt het vrij, stijgt op en wordt aan het oppervlak gemeten.",
+      n_s1h: "Eerste gesprek en tekeningen",
+      n_s1p: "Tracélengte, medium, druk, temperatuur, bekend verlies.",
+      n_s2h: "Helium invoeden",
+      n_s2p: "Via een invoedpunt, in bedrijf. Het helium circuleert opgelost mee in het net.",
+      n_s3h: "Meten langs het tracé",
+      n_s3p: "Bodemlucht bij meetopeningen en putten controleren, waarden vastleggen. Verhoogde waarden tonen de schadeplek, meestal tot op enkele meters.",
+      n_s4h: "Rapport",
+      n_s4p: "Meetwaarden, tracéprotocol, aanbeveling voor de sanering.",
+      n_v_more: "De methode in detail →",
+      n_why_l: "Waarom helium",
+      n_why_p: "Het kleinste atoom dat er is: stijgt door grond en mantel. Natuurlijke waarde 5,2 ppm, elke verhoging is een aanwijzing.",
+      n_e_label: "Toepassingen",
+      n_e_title: "Waar water onder druk verloren gaat.",
+      n_e1h: "Stads- &amp; blokverwarming",
+      n_e1p: "Aanvoer en retour, moffen, vertakte netten met meerdere invoedpunten.",
+      n_e2h: "Proces- &amp; koelwater",
+      n_e2p: "Industrie, klinieken, bedrijfsterreinen waar stilstand geen optie is.",
+      n_e3h: "Drinkwater",
+      n_e3p: "Helium staat bij het Duitse milieuagentschap onder § 20 TrinkwV vermeld voor lekdetectie.",
+      n_e4h: "Onverklaard verlies",
+      n_e4p: "Water ontbreekt, akoestiek en thermografie vonden niets.",
+      n_refs_l: "Bewezen bij",
+      n_step1: "<strong>We nemen snel contact op.</strong> We bespreken medium, lengte en verlies.",
+      n_step2: "<strong>Geschiktheid en offerte.</strong> Past de methode niet, dan zeggen we dat.",
+      n_step3: "<strong>Inzet en rapport.</strong> Meting ter plaatse, documentatie voor de sanering.",
+      n_f_len: "Geschatte tracélengte",
+      n_f_len_ph: "bv. 2,5 km",
+      person_label: "Wie doet het werk",
+      person_title: "Mark Schwarze. Ter plaatse, met het meetinstrument.",
+      person_p1: "<strong>U spreekt rechtstreeks met degene die de meting uitvoert.</strong> Mark Schwarze werkt sinds 2022 in de heliumlekdetectie en voert elke opdracht zelf uit: ter plaatse langs het tracé, met het meetinstrument in de hand.",
+      person_p2: "De methode is al jaren beproefd; installatie en meettechniek zijn van onszelf. U beschrijft uw net, wij zeggen eerlijk of helium hier past.",
+      person_f1: "Heliumlekdetectie sinds 2022",
+      person_f2: "Eigen installatie &amp; meettechniek",
+      person_f3: "Aurich · Duitsland &amp; buurlanden",
+      person_cta: "Rechtstreeks met Mark Schwarze spreken →",
       meta_title: "MS Heliumtechnik – Heliumlekdetectie tijdens bedrijf | Stadsverwarming & proceswater",
       meta_desc: "Gespecialiseerde heliumlekdetectie voor stadsverwarming en proceswatersystemen. Zonder uitschakeling, zonder aftappen, tijdens bedrijf. Voor nutsbedrijven, energieleveranciers en industrie.",
       nav_cta: "Offerte aanvragen", nav_verfahren: "Methode", nav_leistungen: "Diensten", nav_fuerwen: "Voor wie", nav_faq: "FAQ", nav_referenzen: "Referenties", nav_kontakt: "Contact",
@@ -1802,6 +1886,78 @@
       leak_running: "LOKALISEREN …", leak_found: "LEK GELOKALISEERD", f_sending: "Verzenden …", f_error: "Verzenden is mislukt. Mail ons rechtstreeks op info@helium-leckortung.de."
     },
     it: {
+      n_nav_einsatz: "Applicazioni",
+      n_nav_person: "Chi siamo",
+      n_nav_downloads: "Download",
+      n_kicker: "Ricerca perdite con elio · Teleriscaldamento · Acqua di processo",
+      n_h1: "Trovare la perdita <em>senza fermare la rete.</em>",
+      n_sub: "L’elio si scioglie nell’acqua, fuoriesce solo nel punto danneggiato e viene misurato in superficie. Nessuno svuotamento, nessuna interruzione, localizzazione precisa – anche per condotte profonde.",
+      n_cta1: "Richiedi una valutazione gratuita",
+      n_cta2: "Come funziona ↓",
+      n_f1: "In servizio dal 2022",
+      n_f2: "Impianto &amp; strumentazione propri",
+      n_f3: "Elencato ai sensi del § 20 TrinkwV",
+      n_chip1_l: "Esercizio",
+      n_chip1_v: "continua",
+      n_chip2_l: "Elio",
+      n_chip2_v: "inerte, atossico",
+      n_card_cap: "Tracciato teleriscaldamento · mandata e ritorno",
+      n_illu_t: "Il metodo in un’immagine",
+      n_illu_s: "L’elio scorre con l’acqua, esce dal tubo solo in corrispondenza della perdita e sale fino al punto di misura.",
+      n_l1: "Immissione in esercizio",
+      n_l2: "Foro di prova: niente elio",
+      n_l3: "Punto di misura sopra la perdita: elio elevato",
+      n_l4: "Foro di prova: niente elio",
+      n_vor: "MANDATA",
+      n_rueck: "RITORNO",
+      n_soil: "TERRENO · PROFONDITÀ FINO A DIVERSI METRI",
+      n_surface: "SUPERFICIE",
+      n_t1: "Nessun fermo",
+      n_t1s: "Localizzazione durante la fornitura",
+      n_t2: "Misura ad alta sensibilità",
+      n_t2s: "Scostamento in ppm dal fondo",
+      n_t3: "Precisa",
+      n_t3s: "Invece di scavi alla cieca",
+      n_t4: "Rapporto finale",
+      n_t4s: "Base per il risanamento",
+      n_v_label: "Il metodo",
+      n_v_title: "Quattro passi. Un rapporto. Nessun fermo.",
+      n_v_sub: "Introduciamo l’elio nell’acqua senza bolle. Resta disciolto finché il tubo è a tenuta. Nel punto danneggiato si libera, sale e viene misurato in superficie.",
+      n_s1h: "Primo colloquio e planimetrie",
+      n_s1p: "Lunghezza, fluido, pressione, temperatura, perdita nota.",
+      n_s2h: "Immettere l’elio",
+      n_s2p: "Da un punto di immissione, in esercizio. L’elio circola disciolto nella rete.",
+      n_s3h: "Misurare lungo il tracciato",
+      n_s3p: "Analizzare l’aria del terreno ai fori di prova e ai pozzetti, registrare i valori. Valori elevati rivelano il punto danneggiato, di solito entro pochi metri.",
+      n_s4h: "Rapporto",
+      n_s4p: "Valori misurati, protocollo del tracciato, raccomandazione per il risanamento.",
+      n_v_more: "Il metodo in dettaglio →",
+      n_why_l: "Perché l’elio",
+      n_why_p: "L’atomo più piccolo che esista: attraversa terreno e guaina. Valore naturale 5,2 ppm, ogni aumento è un indizio.",
+      n_e_label: "Campi di applicazione",
+      n_e_title: "Dove l’acqua in pressione si perde.",
+      n_e1h: "Teleriscaldamento",
+      n_e1p: "Mandata e ritorno, giunti, reti ramificate con più punti di immissione.",
+      n_e2h: "Acqua di processo &amp; raffreddamento",
+      n_e2p: "Industria, cliniche, siti produttivi dove un fermo non è accettabile.",
+      n_e3h: "Acqua potabile",
+      n_e3p: "L’elio è elencato dall’Agenzia federale per l’ambiente ai sensi del § 20 TrinkwV per la ricerca perdite.",
+      n_e4h: "Perdita inspiegabile",
+      n_e4p: "Manca acqua, acustica e termografia non hanno trovato nulla.",
+      n_refs_l: "Collaudato presso",
+      n_step1: "<strong>Vi ricontattiamo a breve.</strong> Chiariamo fluido, lunghezza e perdita.",
+      n_step2: "<strong>Idoneità e offerta.</strong> Se il metodo non è adatto, lo diciamo.",
+      n_step3: "<strong>Intervento e rapporto.</strong> Misura sul posto, documentazione per il risanamento.",
+      n_f_len: "Lunghezza approx. del tracciato",
+      n_f_len_ph: "es. 2,5 km",
+      person_label: "Chi esegue il lavoro",
+      person_title: "Mark Schwarze. Sul posto, con lo strumento di misura.",
+      person_p1: "<strong>Parlate direttamente con chi esegue la misura.</strong> Mark Schwarze lavora dal 2022 nella ricerca perdite con elio ed esegue personalmente ogni incarico: sul posto, lungo il tracciato, con lo strumento in mano.",
+      person_p2: "Il metodo è collaudato da anni; impianto e strumentazione sono nostri. Descrivete la vostra rete, vi diciamo con franchezza se l’elio è la scelta giusta.",
+      person_f1: "Ricerca perdite con elio dal 2022",
+      person_f2: "Impianto &amp; strumentazione propri",
+      person_f3: "Aurich · Germania &amp; paesi confinanti",
+      person_cta: "Parlare direttamente con Mark Schwarze →",
       meta_title: "MS Heliumtechnik – Localizzazione perdite a elio durante l'esercizio | Teleriscaldamento & acqua di processo",
       meta_desc: "Localizzazione perdite a elio specializzata per reti di teleriscaldamento e sistemi ad acqua di processo. Senza spegnimento, senza svuotamento, durante l'esercizio. Per aziende municipalizzate, fornitori di energia e industria.",
       nav_cta: "Richiedi preventivo", nav_verfahren: "Metodo", nav_leistungen: "Servizi", nav_fuerwen: "Per chi", nav_faq: "FAQ", nav_referenzen: "Referenze", nav_kontakt: "Contatti",
@@ -1989,6 +2145,17 @@
       if (btn) { btn.disabled = false; btn.textContent = 'Jetzt kostenlos anfragen →'; }
     });
   });
+})();
+</script>
+<script>
+(function(){
+  var els = document.querySelectorAll('.illu, .h2-scene');
+  var svgEl = document.querySelector('svg.illu-svg');
+  function fitIllu(){ if (!svgEl) return; svgEl.setAttribute('preserveAspectRatio', window.innerWidth <= 600 ? 'xMidYMid slice' : 'xMidYMid meet'); }
+  fitIllu(); window.addEventListener('resize', fitIllu);
+  if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('is-visible'); }); return; }
+  var io = new IntersectionObserver(function(entries){ entries.forEach(function(en){ en.target.classList.toggle('is-visible', en.isIntersecting); var svg = en.target.querySelector('svg.illu-svg'); if (svg && svg.pauseAnimations) { if (en.isIntersecting) { svg.unpauseAnimations(); } else { svg.pauseAnimations(); } } }); }, { threshold: 0.05 });
+  els.forEach(function(e){ io.observe(e); });
 })();
 </script>
 <script src="/consent.js" defer></script>
