@@ -781,6 +781,10 @@
   .person-refs span:not(.lbl) { background: var(--off-white); border-radius: 8px; padding: 0.45rem 0.75rem; font-size: 0.85rem; color: #4A5B73; }
   .person-cta { color: var(--navy); border-bottom-color: var(--helium); }
   .person-cta:hover { color: var(--helium-dark); }
+  .fotos-section { background: var(--off-white); color: var(--navy); padding: 6rem 2rem; }
+  .fotos-section .section-label { color: var(--helium-dark); }
+  .fotos-section .section-title { color: var(--navy); }
+  .fotos-section .foto-real { border-color: #D5DEE8; background: var(--white); box-shadow: 0 14px 30px rgba(11,31,58,0.10); }
   .faq-section { background: var(--navy); }
   .form-pdf { text-align: center; margin-top: 0.8rem; font-size: 0.85rem; }
   .form-pdf a { color: var(--helium); text-decoration: none; font-weight: 600; }
@@ -801,7 +805,7 @@
     .h2-chip { display: none; }
     .illu { margin-top: 2.5rem; border-radius: 14px 14px 0 0; }
     .trust2-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .verf2, .einsatz, .person-section { padding: 4rem 1.25rem; }
+    .verf2, .einsatz, .person-section, .fotos-section { padding: 4rem 1.25rem; }
     .verf2-grid { grid-template-columns: 1fr; gap: 3rem; }
     .verf2-card { transform: none; }
     .verf2-why { position: static; margin-top: 1rem; max-width: none; }
@@ -1047,6 +1051,22 @@
 
 
 <!-- ANFRAGE / KONTAKT -->
+<!-- FOTOS -->
+<section class="fotos-section" id="fotos">
+  <div class="container">
+    <div class="section-label" data-i18n="fotos_label">Eindrücke aus der Praxis</div>
+    <h2 class="section-title" data-i18n="fotos_title">Bilder vom Einsatz.</h2>
+    <div class="fotos-grid">
+      <div class="foto-real"><img src="beladestation.jpg" width="900" height="1200" alt="Helium-Beladestation – Anlage im Einsatz" loading="lazy" decoding="async"></div>
+      <div class="foto-real"><img src="steuertafel.jpg" width="900" height="1200" alt="Steuertafel der Helium-Beladestation" loading="lazy" decoding="async"></div>
+      <div class="foto-real"><img src="helium-flasche.jpg" width="900" height="1200" alt="Helium-Flasche im Feldeinsatz" loading="lazy" decoding="async"></div>
+      <div class="foto-real"><img src="manometer.jpg" width="900" height="1200" alt="Druck- und Messtechnik" loading="lazy" decoding="async"></div>
+      <div class="foto-real"><img src="armatur.jpg" width="900" height="1200" alt="Fernwärme-Armatur / Regelventil im Schacht" loading="lazy" decoding="async"></div>
+      <div class="foto-real"><img src="helium-label.jpg" width="900" height="1200" alt="Helium 4.6 – das eingesetzte Tracergas" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+</section>
+
 <section class="person-section" id="person">
   <div class="container">
     <div class="person-grid">
