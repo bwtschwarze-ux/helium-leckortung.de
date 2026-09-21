@@ -49,6 +49,7 @@ Stadtwerke, Energieversorger, Netzbetreiber, Rohrleitungsbau, Industrie, Klinike
 
 - https://helium-leckortung.de/fernwaerme-leckortung.html – Fernwärme-Leckortung ohne Abschaltung
 - https://helium-leckortung.de/prozesswasser-leckortung.html – Prozesswasser-Leckortung ohne Stillstand
+- https://helium-leckortung.de/trinkwasser-leckortung.html – Leckortung im Trinkwassernetz (Helium nach § 20 TrinkwV gelistet)
 - https://helium-leckortung.de/dichtheitspruefung-helium.html – Dichtheitsprüfung mit Helium-Tracergas
 - https://helium-leckortung.de/helium-leckortung-verfahren.html – So funktioniert das Verfahren
 - https://helium-leckortung.de/download.html – Infoflyer und ausfüllbarer Anfragebogen (PDF, je 9 Sprachen: DE/EN/FR/IT/NL/NO/PL/SV/DA)

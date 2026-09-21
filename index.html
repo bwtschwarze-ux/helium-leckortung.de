@@ -782,6 +782,9 @@
   .person-cta { color: var(--navy); border-bottom-color: var(--helium); }
   .person-cta:hover { color: var(--helium-dark); }
   .faq-section { background: var(--navy); }
+  .form-pdf { text-align: center; margin-top: 0.8rem; font-size: 0.85rem; }
+  .form-pdf a { color: var(--helium); text-decoration: none; font-weight: 600; }
+  .form-pdf a:hover { color: var(--white); }
   .k-steps { display: flex; flex-direction: column; gap: 0.8rem; margin: 1.4rem 0 1.8rem; }
   .k-step { display: flex; gap: 0.8rem; align-items: flex-start; color: var(--steel); font-size: 0.95rem; line-height: 1.55; }
   .k-step .n { width: 26px; height: 26px; border-radius: 50%; background: var(--helium); color: var(--navy); font-weight: 800; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -1273,6 +1276,7 @@
           </div>
           <button type="submit" class="form-submit" data-i18n="f_submit">Jetzt kostenlos anfragen →</button>
           <p class="form-legal" data-i18n="f_legal">Kostenlos und unverbindlich. Ihre Angaben werden ausschließlich zur Bearbeitung Ihrer Anfrage genutzt (Details siehe Datenschutz). Wir melden uns in der Regel innerhalb von 24 Stunden.</p>
+          <p class="form-pdf"><a href="/download.html" data-i18n="n_f_pdf">Lieber auf Papier? Anfragebogen als PDF herunterladen →</a></p>
         </form>
         <div id="form-success">
           <div class="check"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m8 12 3 3 5-6"></path></svg></div>
@@ -1373,6 +1377,7 @@
         <h4>Fachthemen</h4>
         <ul>
           <li><a href="/fernwaerme-leckortung.html">Fernwärme-Leckortung</a></li>
+          <li><a href="/trinkwasser-leckortung.html">Trinkwasser-Leckortung</a></li>
           <li><a href="/prozesswasser-leckortung.html">Prozesswasser-Leckortung</a></li>
           <li><a href="/dichtheitspruefung-helium.html">Dichtheitsprüfung mit Helium</a></li>
           <li><a href="/helium-leckortung-verfahren.html">So funktioniert das Verfahren</a></li>
@@ -1446,6 +1451,7 @@
 
   var I18N = {
     en: {
+      n_f_pdf: "Prefer paper? Download the enquiry form as PDF →",
       n_nav_einsatz: "Applications",
       n_nav_person: "About us",
       n_nav_downloads: "Downloads",
@@ -1593,6 +1599,7 @@
       leak_running: "LOCATING …", leak_found: "LEAK LOCATED", f_sending: "Sending …", f_error: "Sending failed. Please email us directly at info@helium-leckortung.de."
     },
     fr: {
+      n_f_pdf: "Vous préférez le papier ? Télécharger le formulaire en PDF →",
       n_nav_einsatz: "Applications",
       n_nav_person: "À propos",
       n_nav_downloads: "Téléchargements",
@@ -1740,6 +1747,7 @@
       leak_running: "LOCALISATION …", leak_found: "FUITE LOCALISÉE", f_sending: "Envoi …", f_error: "L'envoi a échoué. Merci de nous écrire directement à info@helium-leckortung.de."
     },
     nl: {
+      n_f_pdf: "Liever op papier? Aanvraagformulier als PDF downloaden →",
       n_nav_einsatz: "Toepassingen",
       n_nav_person: "Over ons",
       n_nav_downloads: "Downloads",
@@ -1887,6 +1895,7 @@
       leak_running: "LOKALISEREN …", leak_found: "LEK GELOKALISEERD", f_sending: "Verzenden …", f_error: "Verzenden is mislukt. Mail ons rechtstreeks op info@helium-leckortung.de."
     },
     it: {
+      n_f_pdf: "Preferite la carta? Scaricate il modulo in PDF →",
       n_nav_einsatz: "Applicazioni",
       n_nav_person: "Chi siamo",
       n_nav_downloads: "Download",
