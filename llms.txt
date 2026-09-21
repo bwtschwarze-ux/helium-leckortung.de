@@ -16,6 +16,7 @@ Wir orten Leckagen in wasserbefüllten Druckleitungssystemen mit Helium als Trac
 ## Alleinstellungsmerkmale (USP)
 
 - Leckortung im laufenden Betrieb – keine Abschaltung, keine Entleerung
+- Eigene Beladeanlage, seit 2010 im Einsatz; Mark Schwarze führt die Einsätze seit 2022 selbst durch
 - Hochsensible Messtechnik, misst kleinste Abweichungen vom natürlichen Heliumwert
 - Auch bei tief liegenden Leitungen über mehrere Meter messbar
 - Punktgenaue Lokalisierung statt teurer Suchgrabungen
